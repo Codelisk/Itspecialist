@@ -17,7 +17,7 @@ namespace Itspecialist.Presentation
         {
             _navigator = navigator;
             _authentication = authentication;
-            Title = "Main";
+            Title = "Test";
             Title += $" - {localizer["ApplicationName"]}";
             Title += $" - {appInfo?.Value?.Environment}";
             GoToSecond = new AsyncRelayCommand(GoToSecondView);
@@ -38,6 +38,7 @@ namespace Itspecialist.Presentation
         {
             var test = await _authentication.LoginAsync(new Dictionary<string, string> { { "Logout", "true" } });
             await _authentication.LogoutAsync(token);
+            throw new Exception();
         }
     }
 }
