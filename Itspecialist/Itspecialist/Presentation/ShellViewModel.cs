@@ -2,23 +2,19 @@ namespace Itspecialist.Presentation
 {
     public class ShellViewModel
     {
-        private readonly IAuthenticationService _authentication;
+        private readonly IRegionManager _regionManager;
 
-
-        private readonly INavigator _navigator;
-
+        public DelegateCommand<string> NavigateCommand { get; }
         public ShellViewModel(
-            IAuthenticationService authentication,
-            INavigator navigator)
+            IRegionManager regionManager)
         {
-            _navigator = navigator;
-            _authentication = authentication;
-            _authentication.LoggedOut += LoggedOut;
+            _regionManager = regionManager;
+            NavigateCommand = new DelegateCommand<string>(ExecuteNavigateCommand);
         }
 
-        private async void LoggedOut(object? sender, EventArgs e)
+        private void ExecuteNavigateCommand(string viewName)
         {
-            await _navigator.NavigateViewModelAsync<LoginViewModel>(this, qualifier: Qualifiers.ClearBackStack);
+            _regionManager.RequestNavigate("ContentRegion", viewName);
         }
     }
 }

@@ -1,11 +1,21 @@
-﻿namespace Itspecialist.Presentation
+using Uno.Toolkit;
+
+namespace Itspecialist.Presentation
 {
-    public sealed partial class Shell : UserControl, IContentControlProvider
+    /// <summary>
+    /// An empty page that can be used on its own or navigated to within a Frame.
+    /// </summary>
+    public sealed partial class Shell : Page, ILoadableShell
     {
         public Shell()
         {
             this.InitializeComponent();
         }
-        public ContentControl ContentControl => Splash;
+
+        public ILoadable Source
+        {
+            get => Splash.Source;
+            set => Splash.Source = value;
+        }
     }
 }

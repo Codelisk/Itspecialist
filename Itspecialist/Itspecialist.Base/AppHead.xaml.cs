@@ -13,17 +13,5 @@ namespace Itspecialist
         {
             this.InitializeComponent();
         }
-
-        /// <summary>
-        /// Invoked when the application is launched normally by the end user.  Other entry points
-        /// will be used such as when the application is launched to open a specific file.
-        /// </summary>
-        /// <param name="args">Details about the launch request and process.</param>
-        protected override void OnLaunched(LaunchActivatedEventArgs args)
-        {
-            base.OnLaunched(args);
-
-            MainWindow.SetWindowIcon();
-        }
     }
 }

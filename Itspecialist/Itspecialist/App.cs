@@ -1,18 +1,19 @@
+using Prism.DryIoc;
+
 namespace Itspecialist
 {
-    public class App : Application
+    public partial class App : PrismApplication
     {
         protected Window? MainWindow { get; private set; }
         protected IHost? Host { get; private set; }
 
-        protected async override void OnLaunched(LaunchActivatedEventArgs args)
+        protected override void ConfigureHost(IHostBuilder builder)
         {
-            var builder = this.CreateBuilder(args)
-                // Add navigation support for toolkit controls such as TabBar and NavigationView
-                .UseToolkitNavigation()
-                .Configure(host => host
+            base.ConfigureHost(builder);
+            builder
 #if DEBUG
                     // Switch to Development environment when running in DEBUG
+                    .UseToolkitNavigation()
                     .UseEnvironment(Environments.Development)
 #endif
                     .UseLogging(configure: (context, logBuilder) =>
@@ -70,16 +71,16 @@ namespace Itspecialist
                     .Login((sp, dispatcher, credentials, cancellationToken) =>
                     {
                         // TODO: Write code to process credentials that are passed into the LoginAsync method
-                        if (credentials?.TryGetValue(nameof(LoginViewModel.Username), out var username) ?? false &&
-                            !username.IsNullOrEmpty())
-                        {
-                            // Return IDictionary containing any tokens used by service calls or in the app
-                            credentials ??= new Dictionary<string, string>();
-                            credentials[TokenCacheExtensions.AccessTokenKey] = "SampleToken";
-                            credentials[TokenCacheExtensions.RefreshTokenKey] = "RefreshToken";
-                            credentials["Expiry"] = DateTime.Now.AddMinutes(5).ToString("g");
-                            return ValueTask.FromResult<IDictionary<string, string>?>(credentials);
-                        }
+                        //if (credentials?.TryGetValue(nameof(LoginViewModel.Username), out var username) ?? false &&
+                        //    !username.IsNullOrEmpty())
+                        //{
+                        //    // Return IDictionary containing any tokens used by service calls or in the app
+                        //    credentials ??= new Dictionary<string, string>();
+                        //    credentials[TokenCacheExtensions.AccessTokenKey] = "SampleToken";
+                        //    credentials[TokenCacheExtensions.RefreshTokenKey] = "RefreshToken";
+                        //    credentials["Expiry"] = DateTime.Now.AddMinutes(5).ToString("g");
+                        //    return ValueTask.FromResult<IDictionary<string, string>?>(credentials);
+                        //}
 
                         // Return null/default to fail the LoginAsync method
                         return ValueTask.FromResult<IDictionary<string, string>?>(default);
@@ -109,36 +110,22 @@ namespace Itspecialist
                         // TODO: Register your services
                         //services.AddSingleton<IMyService, MyService>();
                     })
-                    .UseNavigation(RegisterRoutes)
-                );
-            MainWindow = builder.Window;
-
-#if DEBUG
-            MainWindow.EnableHotReload();
-#endif
-
-            Host = await builder.NavigateAsync<MainPage>(); 
+                    .UseNavigation();
         }
 
-        private static void RegisterRoutes(IViewRegistry views, IRouteRegistry routes)
+        protected override UIElement CreateShell()
         {
-            views.Register(
-                new ViewMap(ViewModel: typeof(ShellViewModel)),
-                new ViewMap<LoginPage, LoginViewModel>(),
-                new ViewMap<MainPage, MainViewModel>(),
-                new DataViewMap<SecondPage, SecondViewModel, Entity>()
-            );
+            return Container.Resolve<Shell>();
+        }
 
-            routes.Register(
-                new RouteMap("", View: views.FindByViewModel<ShellViewModel>(),
-                    Nested: new RouteMap[]
-                    {
-                        new RouteMap("Login", View: views.FindByViewModel<LoginViewModel>()),
-                        new RouteMap("Main", View: views.FindByViewModel<MainViewModel>()),
-                        new RouteMap("Second", View: views.FindByViewModel<SecondViewModel>()),
-                    }
-                )
-            );
+        protected override void RegisterTypes(IContainerRegistry containerRegistry)
+        {
+
+        }
+
+        protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
+        {
+            //moduleCatalog.AddModule<ModuleAccounts.Views.Uno.ModuleInitializer>();
         }
     }
 }

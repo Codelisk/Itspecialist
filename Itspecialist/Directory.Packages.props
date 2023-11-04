@@ -5,6 +5,11 @@
     <PackageVersion Include="Microsoft.Windows.Compatibility" Version="8.0.0-rc.2.23479.10" />
     <PackageVersion Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.25936-preview" />
     <PackageVersion Include="Microsoft.WindowsAppSDK" Version="1.4.231008000" />
+    <PackageVersion Include="Prism.Container.Abstractions" Version="9.0.70-pre" />
+    <PackageVersion Include="Prism.Container.DryIoc" Version="9.0.70-pre" />
+    <PackageVersion Include="Prism.DryIoc.Uno" Version="8.1.97" />
+    <PackageVersion Include="Prism.DryIoc.Uno.WinUI" Version="9.0.286-pre" />
+    <PackageVersion Include="Prism.Uno.WinUI" Version="9.0.286-pre" />
     <PackageVersion Include="Swashbuckle.AspNetCore" Version="6.5.0" />
     <PackageVersion Include="Uno.Core.Extensions.Logging.Singleton" Version="4.0.1" />
     <PackageVersion Include="Uno.Extensions.Core.WinUI" Version="3.1.0-dev.3" />

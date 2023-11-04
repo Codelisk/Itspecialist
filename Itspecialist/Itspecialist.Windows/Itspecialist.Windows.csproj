@@ -23,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Uno.WinUI" />
+    <PackageReference Include="Uno.WinUI"  PrivateAssets="all" />
     <PackageReference Include="Microsoft.WindowsAppSDK" />
     <PackageReference Include="Microsoft.Windows.SDK.BuildTools" />
     <PackageReference Include="CommunityToolkit.Mvvm" />
@@ -33,9 +33,9 @@
     <PackageReference Include="Uno.Extensions.Logging.WinUI" />
     <PackageReference Include="Uno.Extensions.Serialization.Http" />
     <PackageReference Include="Uno.Extensions.Serialization.Refit" />
-    <PackageReference Include="Uno.Material.WinUI" />
-    <PackageReference Include="Uno.Toolkit.WinUI.Material" />
-    <PackageReference Include="Uno.Toolkit.WinUI" />
+    <PackageReference Include="Uno.Material.WinUI"  PrivateAssets="all" />
+    <PackageReference Include="Uno.Toolkit.WinUI.Material"  PrivateAssets="all" />
+    <PackageReference Include="Uno.Toolkit.WinUI"  PrivateAssets="all" />
     <PackageReference Include="Uno.Extensions.Authentication.WinUI" />
     <PackageReference Include="Uno.Extensions.Hosting.WinUI" />
     <PackageReference Include="Uno.Extensions.Localization.WinUI" />

@@ -10,7 +10,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Uno.WinUI" />
+    <PackageReference Include="Prism.Container.Abstractions" />
+    <PackageReference Include="Prism.Container.DryIoc" />
+    <PackageReference Include="Prism.DryIoc.Uno.WinUI" />
+    <PackageReference Include="Prism.Uno.WinUI" />
+    <PackageReference Include="Uno.WinUI" PrivateAssets="all" />
     <PackageReference Include="Uno.Resizetizer" />
     <PackageReference Include="CommunityToolkit.Mvvm" />
     <PackageReference Include="Uno.Extensions.Configuration" />
@@ -22,8 +26,8 @@
     <PackageReference Include="Uno.Extensions.Serialization.Refit" />
     <PackageReference Include="Uno.Material.WinUI" />
     <PackageReference Include="Uno.Dsp.Tasks" />
-    <PackageReference Include="Uno.Toolkit.WinUI.Material" />
-    <PackageReference Include="Uno.Toolkit.WinUI" />
+    <PackageReference Include="Uno.Toolkit.WinUI.Material" PrivateAssets="all" />
+    <PackageReference Include="Uno.Toolkit.WinUI" PrivateAssets="all" />
     <PackageReference Include="Uno.Extensions.Core.WinUI" />
     <PackageReference Include="Uno.Extensions.Authentication.WinUI" />
     <PackageReference Include="Uno.Extensions.Hosting.WinUI" />
@@ -72,6 +76,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Itspecialist.DataContracts\Itspecialist.DataContracts.csproj" />
+    <ProjectReference Include="..\Modules\ModuleAccount\ModuleAccounts.Views.Uno\ModuleAccounts.Views.Uno.csproj" />
   </ItemGroup>
 
   <ItemGroup>
