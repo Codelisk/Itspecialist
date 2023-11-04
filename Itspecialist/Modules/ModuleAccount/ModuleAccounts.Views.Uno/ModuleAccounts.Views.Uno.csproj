@@ -5,7 +5,6 @@
     <TargetFrameworks>$(TargetFrameworks);net8.0;net8.0-android;net8.0-ios;net8.0-maccatalyst</TargetFrameworks>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <GenerateLibraryLayout>true</GenerateLibraryLayout>
   </PropertyGroup>
 
   <ItemGroup>
@@ -13,11 +12,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Prism.Container.Abstractions" />
-    <PackageReference Include="Prism.Container.DryIoc" />
-    <PackageReference Include="Prism.DryIoc.Uno.WinUI" />
+    <PackageReference Include="Prism.Core" />
     <PackageReference Include="Prism.Uno.WinUI" />
-    <PackageReference Include="Uno.WinUI"  PrivateAssets="all" />
+    <PackageReference Include="Uno.WinUI" />
+    <PackageReference Include="Uno.Toolkit.WinUI" />
   </ItemGroup>
 
   <Choose>
