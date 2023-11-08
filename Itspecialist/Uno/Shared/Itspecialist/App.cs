@@ -55,16 +55,16 @@ namespace Itspecialist
                     .UseLocalization()
                     // Register Json serializers (ISerializer and ISerializer)
                     .UseSerialization((context, services) => services
-                        .AddContentSerializer(context)
-                        .AddJsonTypeInfo(WeatherForecastContext.Default.IImmutableListWeatherForecast))
+                        .AddContentSerializer(context))
                     .UseHttp((context, services) => services
                         // Register HttpClient
 #if DEBUG
                         // DelegatingHandler will be automatically injected into Refit Client
                         .AddTransient<DelegatingHandler, DebugHttpHandler>()
 #endif
-                        .AddSingleton<IWeatherCache, WeatherCache>()
-                        .AddRefitClient<IApiClient>(context))
+                        )
+                        //.AddSingleton<IWeatherCache, WeatherCache>()
+                        //.AddRefitClient<IApiClient>(context))
                     .UseAuthentication(auth =>
         auth.AddCustom(custom =>
                 custom

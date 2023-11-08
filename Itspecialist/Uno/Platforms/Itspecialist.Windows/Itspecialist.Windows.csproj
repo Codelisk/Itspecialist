@@ -23,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Uno.WinUI"/>
+    <PackageReference Include="Uno.WinUI" />
     <PackageReference Include="Microsoft.WindowsAppSDK" />
     <PackageReference Include="Microsoft.Windows.SDK.BuildTools" />
     <PackageReference Include="CommunityToolkit.Mvvm" />
@@ -33,7 +33,7 @@
     <PackageReference Include="Uno.Extensions.Logging.WinUI" />
     <PackageReference Include="Uno.Extensions.Serialization.Http" />
     <PackageReference Include="Uno.Extensions.Serialization.Refit" />
-    <PackageReference Include="Uno.Material.WinUI"  />
+    <PackageReference Include="Uno.Material.WinUI" />
     <PackageReference Include="Uno.Extensions.Authentication.WinUI" />
     <PackageReference Include="Uno.Extensions.Hosting.WinUI" />
     <PackageReference Include="Uno.Extensions.Localization.WinUI" />
@@ -46,33 +46,16 @@
     <PackageReference Include="Uno.UI.Adapter.Microsoft.Extensions.Logging" />
   </ItemGroup>
 
-  <ItemGroup>
-    <!--
-    If you encounter this error message:
-
-      error NETSDK1148: A referenced assembly was compiled using a newer version of Microsoft.Windows.SDK.NET.dll.
-      Please update to a newer .NET SDK in order to reference this assembly.
-
-    This means that the two packages below must be aligned with the "build" version number of
-    the "Microsoft.Windows.SDK.BuildTools" package above, and the "revision" version number
-    must be the highest found in https://www.nuget.org/packages/Microsoft.Windows.SDK.NET.Ref.
-    -->
-    <!-- <FrameworkReference Update="Microsoft.Windows.SDK.NET.Ref" RuntimeFrameworkVersion="10.0.22621.28" />
-    <FrameworkReference Update="Microsoft.Windows.SDK.NET.Ref" TargetingPackVersion="10.0.22621.28" /> -->
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Itspecialist\Itspecialist.csproj" />
-    <ProjectReference Include="..\Itspecialist.DataContracts\Itspecialist.DataContracts.csproj" />
-  </ItemGroup>
-
   <!--
     Defining the "Msix" ProjectCapability here allows the Single-project MSIX Packaging
     Tools extension to be activated for this project even if the Windows App SDK Nuget
     package has not yet been restored.
   -->
   <ItemGroup Condition="'$(DisableMsixProjectCapabilityAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
-    <ProjectCapability Include="Msix"/>
+    <ProjectCapability Include="Msix" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Shared\Itspecialist\Itspecialist.csproj" />
   </ItemGroup>
 
   <!--
@@ -84,5 +67,5 @@
     <HasPackageAndPublishMenu>true</HasPackageAndPublishMenu>
   </PropertyGroup>
 
-  <Import Project="..\Itspecialist.Base\base.props" />
+  <Import Project="..\..\Shared\Itspecialist.Base\base.props" />
 </Project>

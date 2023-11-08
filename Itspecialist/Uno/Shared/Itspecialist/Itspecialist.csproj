@@ -74,15 +74,19 @@
   </Choose>
 
   <ItemGroup>
-    <ProjectReference Include="..\Itspecialist.DataContracts\Itspecialist.DataContracts.csproj" />
-    <ProjectReference Include="..\Modules\ModuleAccount\ModuleAccounts.Views.Uno\ModuleAccounts.Views.Uno.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <UnoDspImportColors Include="Styles\*.zip" Generator="Xaml" />
     <UnoImage Include="Assets\**\*.svg" />
     <EmbeddedResource Include="appsettings.json" />
     <EmbeddedResource Include="appsettings.*.json" DependentUpon="appsettings.json" />
     <UpToDateCheckInput Include="**\*.xaml" Exclude="bin\**\*.xaml;obj\**\*.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Modules\ModuleAccount\ModuleAccounts.Views.Uno\ModuleAccounts.Views.Uno.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Services\Caching\" />
+    <Folder Include="Services\Endpoints\" />
   </ItemGroup>
 </Project>
