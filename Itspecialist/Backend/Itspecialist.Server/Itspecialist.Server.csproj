@@ -6,13 +6,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Itspecialist.Wasm\Itspecialist.Wasm.csproj" />
-    <ProjectReference Include="..\Itspecialist.DataContracts\Itspecialist.DataContracts.csproj" />
+    <PackageReference Include="Swashbuckle.AspNetCore" />
+    <PackageReference Include="Uno.Wasm.Bootstrap.Server" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Swashbuckle.AspNetCore" />
-    <PackageReference Include="Uno.Wasm.Bootstrap.Server" />
+    <Folder Include="Apis\" />
   </ItemGroup>
 
 </Project>
