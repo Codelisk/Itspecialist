@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Codelisk.GeneratorAttributes.WebAttributes.Dto;
 using Codelisk.GeneratorAttributes;
 
+
 namespace Itspecialist.Foundation.Dtos
 {
     [Dto]

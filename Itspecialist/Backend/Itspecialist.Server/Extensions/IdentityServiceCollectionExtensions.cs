@@ -1,3 +1,4 @@
+using Itspecialist.Database;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
@@ -9,7 +10,7 @@ namespace Itspecialist.Server.Extensions
         public static void AddIdentity(this IServiceCollection services)
         {
             services.AddIdentityCore<UserDto>()
-                .AddEntityFrameworkStores<DbContext>()
+                .AddEntityFrameworkStores<ItspecialistDbContext>()
                 .AddApiEndpoints();
 
             services.AddAuthentication()

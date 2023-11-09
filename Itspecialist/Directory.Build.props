@@ -10,7 +10,4 @@
     <CompilerGeneratedFilesOutputPath>$(BaseIntermediateOutputPath)obj/generated</CompilerGeneratedFilesOutputPath>
 	</PropertyGroup>
 
-  <ItemGroup>
-    <Compile Include="Shared/**/GlobalUsings.cs" Link="GlobalUsings.cs" />
-  </ItemGroup>
 </Project>

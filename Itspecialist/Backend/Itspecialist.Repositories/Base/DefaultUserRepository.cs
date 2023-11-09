@@ -12,7 +12,6 @@ namespace Itspecialist.Repositories.Base
         {
             HttpContextAccessor = defaultRepositoryProvider.HttpContextAccessor;
             UserManager = defaultRepositoryProvider.UserManager;
-            TestEntity t;
         }
         [Save]
         public override async Task<T> Save(T t)
