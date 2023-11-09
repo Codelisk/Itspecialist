@@ -1,9 +1,23 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+    <Folder Include="Services\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!--<Compile Include="obj/generated/**" />-->
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" />
+    <PackageReference Include="Swashbuckle.AspNetCore" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Shared\Itspecialist.Foundation\Itspecialist.Foundation.csproj" PrivateAssets="all" OutputItemType="Analyzer" />
+    <ProjectReference Include="..\..\Submodules\CodeGen\src\Common\Codelisk.GeneratorAttributes\Codelisk.GeneratorAttributes.csproj" PrivateAssets="all" OutputItemType="Analyzer" />
+    <ProjectReference Include="..\..\Submodules\CodeGen\src\Generators\Web\Codelisk.Controller.Generator\Codelisk.Controller.Generator.csproj" PrivateAssets="all" OutputItemType="Analyzer" />
+    <ProjectReference Include="..\Itspecialist.Managers\Itspecialist.Managers.csproj" />
+    <ProjectReference Include="..\Itspecialist.Repositories\Itspecialist.Repositories.csproj" />
+  </ItemGroup>
 </Project>

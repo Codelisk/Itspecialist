@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Submodules\CodeGen\src\Common\Codelisk.GeneratorAttributes\Codelisk.GeneratorAttributes.csproj" />
+    <ProjectReference Include="..\..\Submodules\CodeGen\src\Generators\Web\WebAutoMapperProfile.Generator\WebAutoMapperProfile.Generator.csproj" PrivateAssets="all" OutputItemType="Analyzer" />
+  </ItemGroup>
+
+</Project>
