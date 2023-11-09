@@ -9,5 +9,4 @@
     <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
     <CompilerGeneratedFilesOutputPath>$(BaseIntermediateOutputPath)obj/generated</CompilerGeneratedFilesOutputPath>
 	</PropertyGroup>
-
 </Project>

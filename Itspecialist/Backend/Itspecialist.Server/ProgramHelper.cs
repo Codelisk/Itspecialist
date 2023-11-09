@@ -31,12 +31,12 @@ namespace Itspecialist.Server
 
         public static void AddAllServices(this IServiceCollection services)
         {
-            services.ConfigureModules();
             services.AddControllers();
+            services.ConfigureModules();
             services.AddIdentity();
 
             // Configure the RouteOptions to use lowercase URLs
-            services.Configure<RouteOptions>(options => options.LowercaseUrls = true);
+            //services.Configure<RouteOptions>(options => options.LowercaseUrls = true);
             services.AddSwagger();
         }
 
