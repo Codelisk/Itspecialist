@@ -10,7 +10,7 @@ namespace Itspecialist.Server.Extensions
         public static void AddIdentity(this IServiceCollection services)
         {
             services.AddIdentityCore<UserDto>()
-                .AddEntityFrameworkStores<ItspecialistDbContext>()
+                .AddEntityFrameworkStores<ItspecialistContext>()
                 .AddApiEndpoints();
 
             services.AddAuthentication()

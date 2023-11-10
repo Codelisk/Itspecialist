@@ -8,5 +8,5 @@ using Microsoft.AspNetCore.Http;
 
 namespace Itspecialist.Repositories.Services.Providers
 {
-    public record DefaultRepositoryProvider(ItspecialistDbContext PrintingContext, UserManager<UserDto> UserManager, IHttpContextAccessor HttpContextAccessor);
+    public record DefaultRepositoryProvider(ItspecialistContext PrintingContext, UserManager<UserDto> UserManager, IHttpContextAccessor HttpContextAccessor);
 }

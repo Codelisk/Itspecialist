@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Itspecialist.Server.Migrations
 {
     [DbContext(typeof(ItspecialistContext))]
-    [Migration("20231109162556_m1")]
-    partial class m1
+    [Migration("20231110093343_m3")]
+    partial class m3
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

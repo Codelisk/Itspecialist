@@ -4,8 +4,8 @@ namespace Itspecialist.Repositories.Base
     [DefaultRepository]
     public class DefaultRepository<T, TKey> : IDefaultRepository<T, TKey> where T : class
     {
-        private readonly ItspecialistDbContext _context;
-        public DefaultRepository(ItspecialistDbContext context)
+        private readonly ItspecialistContext _context;
+        public DefaultRepository(ItspecialistContext context)
         {
             _context = context;
         }

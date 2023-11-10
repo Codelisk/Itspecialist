@@ -12,9 +12,9 @@ using Microsoft.EntityFrameworkCore;
 namespace Itspecialist.Database
 {
     [BaseContext]
-    public partial class ItspecialistDbContext : IdentityDbContext<UserDto, IdentityRole<Guid>, Guid>
+    public partial class ItspecialistContext : IdentityDbContext<UserDto, IdentityRole<Guid>, Guid>
     {
-        public ItspecialistDbContext(DbContextOptions options) : base(options)
+        public ItspecialistContext(DbContextOptions options) : base(options)
         {
         }
     }

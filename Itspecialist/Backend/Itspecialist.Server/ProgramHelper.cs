@@ -82,7 +82,7 @@ namespace Itspecialist.Server
         {
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
-            builder.Services.AddDbContext<ItspecialistDbContext>(opt =>
+            builder.Services.AddDbContext<ItspecialistContext>(opt =>
             {
                 opt.UseSqlite(connectionString, x => x.MigrationsAssembly("Itspecialist.Server"));
                 //opt.UseSqlite(connectionString);

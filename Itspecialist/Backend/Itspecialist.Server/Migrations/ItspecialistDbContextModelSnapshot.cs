@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Itspecialist.Server.Migrations
 {
-    [DbContext(typeof(ItspecialistDbContext))]
+    [DbContext(typeof(ItspecialistContext))]
     partial class ItspecialistDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
