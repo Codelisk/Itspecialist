@@ -108,6 +108,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Uno", "Uno", "{4D4FF5ED-50F
 		Itspecialist\Uno\Directory.Packages.props = Itspecialist\Uno\Directory.Packages.props
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{DCE75CCB-A196-4CE4-BF4E-9C80F61B2AF1}"
+	ProjectSection(SolutionItems) = preProject
+		Itspecialist\Submodules\CodeGen\Directory.Build.props = Itspecialist\Submodules\CodeGen\Directory.Build.props
+		Itspecialist\Submodules\CodeGen\Directory.Build.targets = Itspecialist\Submodules\CodeGen\Directory.Build.targets
+		Itspecialist\Submodules\CodeGen\README.md = Itspecialist\Submodules\CodeGen\README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -680,6 +687,7 @@ Global
 		{3B2D131C-38F9-4648-9999-C5E86206E445} = {898FA8E1-110E-4257-8297-0B0B2B5E9E5E}
 		{991A185B-FF65-4729-A441-02D34F5D2F1B} = {C44FABC1-A33F-49DA-840E-7CD35A697FD0}
 		{4D4FF5ED-50F5-44DA-AC7F-2182A8C3115F} = {C44FABC1-A33F-49DA-840E-7CD35A697FD0}
+		{DCE75CCB-A196-4CE4-BF4E-9C80F61B2AF1} = {599044F1-638D-48F9-BAB5-8AA0F2A4154C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A6E9BB8A-C390-483E-B203-63E4092FAFB1}

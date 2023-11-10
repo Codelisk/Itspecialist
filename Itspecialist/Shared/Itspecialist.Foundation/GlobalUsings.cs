@@ -14,3 +14,4 @@ global using Itspecialist.Foundation.Dtos.Account;
 global using Itspecialist.Foundation.Entities.Account;
 global using Itspecialist.Foundation.Entities.User;
 global using Itspecialist.Foundation.Entities.Specialist;
+global using Itspecialist.Foundation.Dtos.Specialist;
