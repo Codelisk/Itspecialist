@@ -39,7 +39,7 @@ namespace Itspecialist.Repositories.Base
 
         private TKey GetUserId()
         {
-            string id = null;
+            string id = HttpContextAccessor.HttpContext.User.Claims.FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier).Value;
 
             if (typeof(Guid) == typeof(TKey))
             {

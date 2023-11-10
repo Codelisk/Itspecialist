@@ -6,9 +6,9 @@
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.0-rc.2.23480.2" />
   </ItemGroup>-->
   <ItemGroup>
-    <PackageReference Include="AutoMapper"  />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection"  />
-    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore"  />
+    <PackageReference Include="AutoMapper" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Submodules\CodeGen\src\Common\Codelisk.GeneratorAttributes\Codelisk.GeneratorAttributes.csproj" />

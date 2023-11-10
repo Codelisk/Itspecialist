@@ -7,7 +7,7 @@ using Itspecialist.Foundation.Dtos.Account;
 
 namespace Itspecialist.Foundation.Entities.Account
 {
-    [Entity(typeof(DistrictDto))]
+    [Codelisk.GeneratorAttributes.WebAttributes.Repository.Entity(typeof(DistrictDto))]
     public class DistrictEntity : DistrictDto
     {
     }

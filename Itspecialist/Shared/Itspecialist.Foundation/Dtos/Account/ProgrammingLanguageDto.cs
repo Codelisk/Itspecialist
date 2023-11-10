@@ -3,15 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Codelisk.GeneratorAttributes.WebAttributes.Dto;
 using Codelisk.GeneratorAttributes;
 
-
-namespace Itspecialist.Foundation.Dtos
+namespace Itspecialist.Foundation.Dtos.Account
 {
     [Dto]
-    [UserDto]
-    public class TestDto : BaseUserDto
+    public class ProgrammingLanguageDto : Base.BaseDtoWithName
     {
     }
 }

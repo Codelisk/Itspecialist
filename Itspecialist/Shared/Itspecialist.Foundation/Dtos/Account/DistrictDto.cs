@@ -8,8 +8,7 @@ using Codelisk.GeneratorAttributes;
 namespace Itspecialist.Foundation.Dtos.Account
 {
     [Dto]
-    public class DistrictDto : BaseDto
+    public class DistrictDto : Base.BaseDtoWithName
     {
-        public string Name { get; set; }
     }
 }
