@@ -11,7 +11,7 @@ namespace Itspecialist.Foundation.Dtos.Account
 {
     [Dto]
     [UserDto]
-    public class AccountProgrammingFrameworkDto
+    public class AccountProgrammingFrameworkDto : Base.BaseUserDto
     {
         [ForeignKey(nameof(AccountDto))]
         public required Guid AccountId { get; set; }

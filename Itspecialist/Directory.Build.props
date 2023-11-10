@@ -7,7 +7,7 @@
 	<PropertyGroup>
 		<TargetFramework>net8.0</TargetFramework>
     <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
-    <CompilerGeneratedFilesOutputPath>$(BaseIntermediateOutputPath)obj/generated</CompilerGeneratedFilesOutputPath>
+    <CompilerGeneratedFilesOutputPath>$(ProjectDir)Generated</CompilerGeneratedFilesOutputPath>
 	</PropertyGroup>
   <Target Name="SkipSourceGeneratedFiles" BeforeTargets="CoreCompile">
     <ItemGroup>
