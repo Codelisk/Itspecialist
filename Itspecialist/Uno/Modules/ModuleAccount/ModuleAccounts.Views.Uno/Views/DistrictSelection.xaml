@@ -9,6 +9,7 @@
              mc:Ignorable="d">
 
     <Grid>
-        <Button Content="DistrictSelection" />
+        <Button Command="{Binding AuthCommand}"
+                Content="DistrictSelection" />
     </Grid>
 </UserControl>

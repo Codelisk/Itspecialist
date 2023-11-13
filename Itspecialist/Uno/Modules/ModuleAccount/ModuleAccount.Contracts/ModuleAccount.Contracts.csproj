@@ -8,5 +8,7 @@
   <ItemGroup>
     <PackageReference Include="Prism.Container.Abstractions" />
     <PackageReference Include="Prism.Container.DryIoc" />
+    <PackageReference Include="Prism.Core" />
+    <PackageReference Include="Uno.Extensions.Authentication" />
   </ItemGroup>
 </Project>

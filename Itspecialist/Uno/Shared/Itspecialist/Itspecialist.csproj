@@ -82,11 +82,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Modules\ModuleAccount\ModuleAccounts.Views.Uno\ModuleAccounts.Views.Uno.csproj" />
+    <Compile Remove="Services\**" />
+    <Content Remove="Services\**" />
+    <EmbeddedResource Remove="Services\**" />
+    <None Remove="Services\**" />
+    <Page Remove="Services\**" />
+    <PRIResource Remove="Services\**" />
+    <UpToDateCheckInput Remove="Services\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Services\Caching\" />
-    <Folder Include="Services\Endpoints\" />
+    <ProjectReference Include="..\..\Modules\ModuleAccount\ModuleAccounts.Views.Uno\ModuleAccounts.Views.Uno.csproj" />
   </ItemGroup>
 </Project>

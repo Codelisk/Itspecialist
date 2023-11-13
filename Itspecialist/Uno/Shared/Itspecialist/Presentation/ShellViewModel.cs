@@ -6,7 +6,7 @@ namespace Itspecialist.Presentation
 
         public DelegateCommand<string> NavigateCommand { get; }
         public ShellViewModel(
-            IRegionManager regionManager)
+            IRegionManager regionManager, IAuthenticationService authenticationService=null)
         {
             _regionManager = regionManager;
             NavigateCommand = new DelegateCommand<string>(ExecuteNavigateCommand);
