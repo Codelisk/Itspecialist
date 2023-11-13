@@ -11,6 +11,7 @@ namespace Itspecialist
         {
             base.ConfigureHost(builder);
             builder
+                .UseAuthentication(b=>b.AddCustom())
 #if DEBUG
                     // Switch to Development environment when running in DEBUG
                     .UseToolkitNavigation()
@@ -65,12 +66,6 @@ namespace Itspecialist
                         )
                         //.AddSingleton<IWeatherCache, WeatherCache>()
                         //.AddRefitClient<IApiClient>(context))
-                    .AddAuthentication()
-                    .ConfigureServices((context, services) =>
-                    {
-                        // TODO: Register your services
-                        //services.AddSingleton<IMyService, MyService>();
-                    })
                     .UseNavigation();
         }
 
