@@ -18,3 +18,4 @@ global using Itspecialist.Foundation.Dtos.User;
 global using Itspecialist.Repositories.Services.Providers;
 global using Itspecialist.Foundation.Dtos.Base;
 global using Itspecialist.Repositories.Base;
+global using Itspecialist.Foundation.Entities.Opportunity;

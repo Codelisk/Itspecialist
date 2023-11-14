@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 using Itspecialist.Foundation.Dtos.Account;
 using Itspecialist.Foundation.Dtos.Talent;
 
-namespace Itspecialist.Foundation.Entities.Specialist
+namespace Itspecialist.Foundation.Entities.Talent
 {
     [Codelisk.GeneratorAttributes.WebAttributes.Repository.Entity(typeof(TalentCompensationDto))]
-    public class SpecialistCompensationEntity : TalentCompensationDto
+    public class TalentCompensationEntity : TalentCompensationDto
     {
     }
 }
