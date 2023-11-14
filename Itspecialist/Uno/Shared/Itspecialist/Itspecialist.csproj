@@ -82,16 +82,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="Services\**" />
-    <Content Remove="Services\**" />
-    <EmbeddedResource Remove="Services\**" />
-    <None Remove="Services\**" />
-    <Page Remove="Services\**" />
-    <PRIResource Remove="Services\**" />
-    <UpToDateCheckInput Remove="Services\**" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\..\..\Shared\Api\Itspecialist.Api\Itspecialist.Api.csproj" />
     <ProjectReference Include="..\..\Modules\ModuleAccount\ModuleAccounts.Views.Uno\ModuleAccounts.Views.Uno.csproj" />
   </ItemGroup>
