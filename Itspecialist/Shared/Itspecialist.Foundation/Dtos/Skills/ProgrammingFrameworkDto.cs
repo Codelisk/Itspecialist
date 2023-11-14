@@ -6,10 +6,10 @@ using System.Text;
 using System.Threading.Tasks;
 using Codelisk.GeneratorAttributes;
 
-namespace Itspecialist.Foundation.Dtos.Account
+namespace Itspecialist.Foundation.Dtos.Skills
 {
     [Dto]
-    public class ProgrammingFrameworkDto : Base.BaseDtoWithName
+    public class ProgrammingFrameworkDto : BaseDtoWithName
     {
         [ForeignKey(nameof(ProgrammingLanguageDto))]
         public required Guid ProgrammingLanguageId { get; set; }

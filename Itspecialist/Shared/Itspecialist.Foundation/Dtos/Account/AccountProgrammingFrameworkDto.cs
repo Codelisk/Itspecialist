@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Codelisk.GeneratorAttributes.WebAttributes.Dto;
 using Codelisk.GeneratorAttributes;
+using Itspecialist.Foundation.Dtos.Skills;
 
 namespace Itspecialist.Foundation.Dtos.Account
 {

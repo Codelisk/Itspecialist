@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Prism.Commands;
+using Uno.Extensions;
+using Uno.Extensions.Authentication;
 
 namespace ModuleAccount.Contracts.ViewModels
 {
@@ -12,7 +15,7 @@ namespace ModuleAccount.Contracts.ViewModels
         private readonly IAuthenticationService _authenticationService;
         private readonly IDispatcher _dispatcher;
 
-        public DistrictSelectionViewModel(IAuthenticationService authenticationService=null)
+        public DistrictSelectionViewModel()
         {
             //_authenticationService = authenticationService;
             //_dispatcher = dispatcher;

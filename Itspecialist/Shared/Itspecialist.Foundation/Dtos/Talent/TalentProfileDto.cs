@@ -9,18 +9,18 @@ using Codelisk.GeneratorAttributes.WebAttributes.Dto;
 using Itspecialist.Foundation.Dtos.Account;
 using Itspecialist.Foundation.Dtos.Base;
 
-namespace Itspecialist.Foundation.Dtos.Specialist
+namespace Itspecialist.Foundation.Dtos.Talent
 {
     [Dto]
     [UserDto]
-    public class SpecialistProfileDto : BaseUserDto
+    public class TalentProfileDto : BaseUserDto
     {
         public required string Title { get; set; }
         public required string FirstName { get; set; }
         public required string LastName { get; set; }
         [ForeignKey(nameof(AccountDto))]
         public required Guid AccountId { get; set; }
-        [ForeignKey(nameof(SpecialistCompensationDto))]
+        [ForeignKey(nameof(TalentCompensationDto))]
         public Guid? SpecialistCompensationId { get; set; }
     }
 }

@@ -5,10 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using Codelisk.GeneratorAttributes;
 
-namespace Itspecialist.Foundation.Dtos.Account
+namespace Itspecialist.Foundation.Dtos.Skills
 {
     [Dto]
-    public class ProgrammingLanguageDto : Base.BaseDtoWithName
+    public class ProgrammingLanguageDto : BaseDtoWithName
     {
     }
 }

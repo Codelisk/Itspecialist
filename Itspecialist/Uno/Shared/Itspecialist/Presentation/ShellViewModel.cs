@@ -40,7 +40,7 @@ namespace Itspecialist.Presentation
         }
         private void ExecuteNavigateCommand(string viewName)
         {
-            var test = _resolveAuthService();
+            //var test = _resolveAuthService();
             _regionManager.RequestNavigate("ContentRegion", viewName);
         }
     }

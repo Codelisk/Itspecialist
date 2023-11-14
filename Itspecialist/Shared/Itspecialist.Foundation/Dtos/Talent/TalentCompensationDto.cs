@@ -10,11 +10,11 @@ using Itspecialist.Foundation.Dtos.Account;
 using Itspecialist.Foundation.Dtos.Base;
 using Itspecialist.Foundation.Enums.Account;
 
-namespace Itspecialist.Foundation.Dtos.Specialist
+namespace Itspecialist.Foundation.Dtos.Talent
 {
     [Dto]
     [UserDto]
-    public class SpecialistCompensationDto : BaseUserDto
+    public class TalentCompensationDto : BaseUserDto
     {
         [ForeignKey(nameof(AccountDto))]
         public required Guid AccountId { get; set; }
