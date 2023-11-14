@@ -15,3 +15,5 @@ global using Itspecialist.Foundation.Entities.Account;
 global using Itspecialist.Foundation.Entities.User;
 global using Itspecialist.Foundation.Entities.Specialist;
 global using Itspecialist.Foundation.Dtos.Talent;
+global using Itspecialist.Foundation.Dtos.Opportunity;
+global using Itspecialist.Foundation.Dtos.Skills;

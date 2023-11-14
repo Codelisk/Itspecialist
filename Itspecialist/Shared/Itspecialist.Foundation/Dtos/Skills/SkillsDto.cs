@@ -10,7 +10,7 @@ namespace Itspecialist.Foundation.Dtos.Skills
 {
     [UserDto]
     [Dto]
-    internal class SkillsDto : BaseUserDto
+    public class SkillsDto : BaseUserDto
     {
         [ForeignKey(nameof(ProgrammingLanguageDto))]
         public required Guid PrimaryProgrammingLanguage { get; set; }

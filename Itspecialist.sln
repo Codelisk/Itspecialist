@@ -115,6 +115,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionIt
 		Itspecialist\Submodules\CodeGen\README.md = Itspecialist\Submodules\CodeGen\README.md
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{B1865F43-DBBF-4CAF-8548-5E7F532B78C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Itspecialist.Api", "Itspecialist\Shared\Api\Itspecialist.Api\Itspecialist.Api.csproj", "{61F40DEF-67A7-4A09-877C-700B29C1C1A4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{A7D70F20-9EA8-4CA7-B3E1-1E4A858E0D23}"
+	ProjectSection(SolutionItems) = preProject
+		Itspecialist\Shared\Directory.Build.targets = Itspecialist\Shared\Directory.Build.targets
+		Itspecialist\Shared\Directory.Packages.props = Itspecialist\Shared\Directory.Packages.props
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{99781474-0D41-481D-B059-0B207721F27F}"
+	ProjectSection(SolutionItems) = preProject
+		Itspecialist\Shared\Api\Directory.Build.targets = Itspecialist\Shared\Api\Directory.Build.targets
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -639,6 +654,22 @@ Global
 		{3B2D131C-38F9-4648-9999-C5E86206E445}.Release|x64.Build.0 = Release|Any CPU
 		{3B2D131C-38F9-4648-9999-C5E86206E445}.Release|x86.ActiveCfg = Release|Any CPU
 		{3B2D131C-38F9-4648-9999-C5E86206E445}.Release|x86.Build.0 = Release|Any CPU
+		{61F40DEF-67A7-4A09-877C-700B29C1C1A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61F40DEF-67A7-4A09-877C-700B29C1C1A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61F40DEF-67A7-4A09-877C-700B29C1C1A4}.Debug|arm64.ActiveCfg = Debug|Any CPU
+		{61F40DEF-67A7-4A09-877C-700B29C1C1A4}.Debug|arm64.Build.0 = Debug|Any CPU
+		{61F40DEF-67A7-4A09-877C-700B29C1C1A4}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{61F40DEF-67A7-4A09-877C-700B29C1C1A4}.Debug|x64.Build.0 = Debug|Any CPU
+		{61F40DEF-67A7-4A09-877C-700B29C1C1A4}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{61F40DEF-67A7-4A09-877C-700B29C1C1A4}.Debug|x86.Build.0 = Debug|Any CPU
+		{61F40DEF-67A7-4A09-877C-700B29C1C1A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61F40DEF-67A7-4A09-877C-700B29C1C1A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61F40DEF-67A7-4A09-877C-700B29C1C1A4}.Release|arm64.ActiveCfg = Release|Any CPU
+		{61F40DEF-67A7-4A09-877C-700B29C1C1A4}.Release|arm64.Build.0 = Release|Any CPU
+		{61F40DEF-67A7-4A09-877C-700B29C1C1A4}.Release|x64.ActiveCfg = Release|Any CPU
+		{61F40DEF-67A7-4A09-877C-700B29C1C1A4}.Release|x64.Build.0 = Release|Any CPU
+		{61F40DEF-67A7-4A09-877C-700B29C1C1A4}.Release|x86.ActiveCfg = Release|Any CPU
+		{61F40DEF-67A7-4A09-877C-700B29C1C1A4}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -688,6 +719,10 @@ Global
 		{991A185B-FF65-4729-A441-02D34F5D2F1B} = {C44FABC1-A33F-49DA-840E-7CD35A697FD0}
 		{4D4FF5ED-50F5-44DA-AC7F-2182A8C3115F} = {C44FABC1-A33F-49DA-840E-7CD35A697FD0}
 		{DCE75CCB-A196-4CE4-BF4E-9C80F61B2AF1} = {599044F1-638D-48F9-BAB5-8AA0F2A4154C}
+		{B1865F43-DBBF-4CAF-8548-5E7F532B78C9} = {5B1A43C9-4408-4028-AA8F-651FEC793135}
+		{61F40DEF-67A7-4A09-877C-700B29C1C1A4} = {B1865F43-DBBF-4CAF-8548-5E7F532B78C9}
+		{A7D70F20-9EA8-4CA7-B3E1-1E4A858E0D23} = {C44FABC1-A33F-49DA-840E-7CD35A697FD0}
+		{99781474-0D41-481D-B059-0B207721F27F} = {A7D70F20-9EA8-4CA7-B3E1-1E4A858E0D23}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A6E9BB8A-C390-483E-B203-63E4092FAFB1}

@@ -35,5 +35,9 @@
     <PackageVersion Include="Microsoft.Extensions.Configuration.Json" Version="$(MicrosoftExtensionsVersion)"/>
 
 
+    <PackageVersion  PrivateAssets="all" Include="Newtonsoft.Json" Version="13.0.3" />
+	<PackageVersion  PrivateAssets="all" Include="Refit.Newtonsoft.Json" Version="7.0.0" />
+    <PackageVersion  PrivateAssets="all" Include="Refit" Version="7.0.0" />
+    <PackageVersion  PrivateAssets="all" Include="Polly" Version="8.0.0-alpha.8" />
   </ItemGroup>
 </Project>
