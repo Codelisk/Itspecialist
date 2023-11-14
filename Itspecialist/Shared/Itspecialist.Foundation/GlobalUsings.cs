@@ -18,3 +18,4 @@ global using Itspecialist.Foundation.Dtos.Talent;
 global using Itspecialist.Foundation.Dtos.Opportunity;
 global using Itspecialist.Foundation.Dtos.Skills;
 global using Itspecialist.Foundation.Entities.Skills;
+global using Itspecialist.Foundation.Entities.Opportunity;

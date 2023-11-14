@@ -11,7 +11,7 @@ namespace Itspecialist.Foundation.Dtos.Opportunity
 {
     [Dto]
     [UserDto]
-    public class CareerOpportunityDto : Base.BaseDto
+    public class CareerOpportunityDto : Base.BaseUserDto
     {
         [ForeignKey(nameof(DistrictDto))]
         public required Guid DistrictId { get; set; }
