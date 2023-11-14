@@ -6,9 +6,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Submodules\CodeGen\src\Common\Codelisk.GeneratorAttributes\Codelisk.GeneratorAttributes.csproj" />
     <ProjectReference Include="..\..\Submodules\CodeGen\src\Generators\Web\WebManager.Contract.Generator\WebManager.Contract.Generator.csproj" PrivateAssets="all" OutputItemType="Analyzer" />
     <ProjectReference Include="..\..\Submodules\CodeGen\src\Generators\Web\WebManager.Generator\WebManager.Generator.csproj" PrivateAssets="all" OutputItemType="Analyzer" />
-    <ProjectReference Include="..\..\Submodules\CodeGen\src\Submodules\AutoRegisterInject\src\AutoRegisterInject\Codelisk.AutoRegisterInject.Generator.csproj" PrivateAssets="all" OutputItemType="Analyzer" />
     <ProjectReference Include="..\Itspecialist.Repositories\Itspecialist.Repositories.csproj" />
     <ProjectReference Include="..\..\Shared\Itspecialist.Foundation\Itspecialist.Foundation.csproj" />
   </ItemGroup>

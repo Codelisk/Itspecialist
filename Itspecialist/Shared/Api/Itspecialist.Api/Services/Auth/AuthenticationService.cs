@@ -1,24 +1,22 @@
-﻿using Foundation.Api.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Foundation.Api.Models;
 
 namespace Itspecialist.Api.Services.Auth
 {
-    public class AuthenticationService : IAuthenticationService
+    internal class AuthenticationService : IAuthenticationService
     {
-        private readonly ITokenProvider _tokenProvider;
-
-        public AuthenticationService(ITokenProvider tokenProvider)
+        public Task<bool> AuthenticateAndCacheTokenAsync(AuthPayload auth)
         {
-            _tokenProvider = tokenProvider;
+            throw new NotImplementedException();
         }
 
-        public async Task<bool> AuthenticateAndCacheTokenAsync(AuthPayload auth)
+        public Task<bool> RefreshAndCacheTokenAsync()
         {
-            return true;
-        }
-
-        public async Task<bool> RefreshAndCacheTokenAsync()
-        {
-            return true;
+            throw new NotImplementedException();
         }
     }
 }

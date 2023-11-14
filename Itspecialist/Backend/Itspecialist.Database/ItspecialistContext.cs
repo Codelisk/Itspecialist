@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Itspecialist.Database
 {
-    [BaseContext]
+    [Codelisk.GeneratorAttributes.WebAttributes.Database.BaseContext]
     public partial class ItspecialistContext : IdentityDbContext<UserDto, IdentityRole<Guid>, Guid>
     {
         public ItspecialistContext(DbContextOptions options) : base(options)

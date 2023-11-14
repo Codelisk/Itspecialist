@@ -92,6 +92,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Shared\Api\Itspecialist.Api\Itspecialist.Api.csproj" />
     <ProjectReference Include="..\..\Modules\ModuleAccount\ModuleAccounts.Views.Uno\ModuleAccounts.Views.Uno.csproj" />
   </ItemGroup>
 </Project>

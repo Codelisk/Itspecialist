@@ -11,4 +11,7 @@
     <PackageReference Include="Prism.Core" />
     <PackageReference Include="Uno.Extensions.Authentication" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Shared\Api\Itspecialist.Api\Itspecialist.Api.csproj" />
+  </ItemGroup>
 </Project>

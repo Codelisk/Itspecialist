@@ -50,6 +50,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Uno", "Uno", "{4D4FF5ED-50F
 		Itspecialist\Uno\Directory.Packages.props = Itspecialist\Uno\Directory.Packages.props
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{D3E260C8-01D6-46C1-A267-C8F6117D6A67}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Itspecialist.Api", "Itspecialist\Shared\Api\Itspecialist.Api\Itspecialist.Api.csproj", "{D1310DBE-5DE7-4400-9AEF-8DA2A8D485E7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -158,6 +162,22 @@ Global
 		{3B2D131C-38F9-4648-9999-C5E86206E445}.Release|x64.Build.0 = Release|Any CPU
 		{3B2D131C-38F9-4648-9999-C5E86206E445}.Release|x86.ActiveCfg = Release|Any CPU
 		{3B2D131C-38F9-4648-9999-C5E86206E445}.Release|x86.Build.0 = Release|Any CPU
+		{D1310DBE-5DE7-4400-9AEF-8DA2A8D485E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1310DBE-5DE7-4400-9AEF-8DA2A8D485E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1310DBE-5DE7-4400-9AEF-8DA2A8D485E7}.Debug|arm64.ActiveCfg = Debug|Any CPU
+		{D1310DBE-5DE7-4400-9AEF-8DA2A8D485E7}.Debug|arm64.Build.0 = Debug|Any CPU
+		{D1310DBE-5DE7-4400-9AEF-8DA2A8D485E7}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{D1310DBE-5DE7-4400-9AEF-8DA2A8D485E7}.Debug|x64.Build.0 = Debug|Any CPU
+		{D1310DBE-5DE7-4400-9AEF-8DA2A8D485E7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D1310DBE-5DE7-4400-9AEF-8DA2A8D485E7}.Debug|x86.Build.0 = Debug|Any CPU
+		{D1310DBE-5DE7-4400-9AEF-8DA2A8D485E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1310DBE-5DE7-4400-9AEF-8DA2A8D485E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1310DBE-5DE7-4400-9AEF-8DA2A8D485E7}.Release|arm64.ActiveCfg = Release|Any CPU
+		{D1310DBE-5DE7-4400-9AEF-8DA2A8D485E7}.Release|arm64.Build.0 = Release|Any CPU
+		{D1310DBE-5DE7-4400-9AEF-8DA2A8D485E7}.Release|x64.ActiveCfg = Release|Any CPU
+		{D1310DBE-5DE7-4400-9AEF-8DA2A8D485E7}.Release|x64.Build.0 = Release|Any CPU
+		{D1310DBE-5DE7-4400-9AEF-8DA2A8D485E7}.Release|x86.ActiveCfg = Release|Any CPU
+		{D1310DBE-5DE7-4400-9AEF-8DA2A8D485E7}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -177,6 +197,8 @@ Global
 		{3B2D131C-38F9-4648-9999-C5E86206E445} = {898FA8E1-110E-4257-8297-0B0B2B5E9E5E}
 		{991A185B-FF65-4729-A441-02D34F5D2F1B} = {C44FABC1-A33F-49DA-840E-7CD35A697FD0}
 		{4D4FF5ED-50F5-44DA-AC7F-2182A8C3115F} = {C44FABC1-A33F-49DA-840E-7CD35A697FD0}
+		{D3E260C8-01D6-46C1-A267-C8F6117D6A67} = {898FA8E1-110E-4257-8297-0B0B2B5E9E5E}
+		{D1310DBE-5DE7-4400-9AEF-8DA2A8D485E7} = {D3E260C8-01D6-46C1-A267-C8F6117D6A67}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A6E9BB8A-C390-483E-B203-63E4092FAFB1}

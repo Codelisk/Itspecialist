@@ -31,7 +31,7 @@ namespace Itspecialist.Api.Services.Base
 
         public string GetRestUrl()
         {
-            return "";
+            return "https://localhost:7004/";
         }
     }
 }
