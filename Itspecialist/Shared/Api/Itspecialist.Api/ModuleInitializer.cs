@@ -16,6 +16,8 @@ namespace Itspecialist.Api
 
             services.AddSingleton<IApiBuilder, ApiBuilder>();
             services.AddSingleton<IBaseRepositoryProvider, BaseRepositoryProvider>();
+
+            services.AddAddRepositories();
         }
 
         private static void SetupAuthentication<TAuthService>(this IServiceCollection services) where TAuthService : class, IAuthenticationService

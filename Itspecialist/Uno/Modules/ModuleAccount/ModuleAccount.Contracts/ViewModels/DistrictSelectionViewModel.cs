@@ -17,11 +17,11 @@ namespace ModuleAccount.Contracts.ViewModels
     {
         private readonly IAuthenticationService _authenticationService;
 
-        public DistrictSelectionViewModel(IAuthenticationService authenticationService)
+        public DistrictSelectionViewModel(IAuthenticationService authenticationService, IDistrictRepository districtRepository)
         {
             _authenticationService = authenticationService;
         }
-
+        public List<string> Districts { get; set; } = new List<string>() { "Gmunden", "Bad Ischl" };
         public ICommand AuthCommand => new AsyncDelegateCommand(OnAuthAsync);
         private async Task OnAuthAsync()
         {
