@@ -10,7 +10,6 @@ namespace Itspecialist.Api.Services.Base
     public interface IBaseRepositoryProvider
     {
         IApiBuilder GetApiBuilder();
-        IAuthenticationService GetAuthenticationService();
         ILogger GetLogger();
         ITokenProvider GetTokenProvider();
     }

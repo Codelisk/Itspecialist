@@ -5,30 +5,27 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Itspecialist.Api.Repositories;
+using Itspecialist.Api.Services.Auth;
 using Prism.Commands;
 using Uno.Extensions;
 using Uno.Extensions.Authentication;
+using IAuthenticationService = Itspecialist.Api.Services.Auth.IAuthenticationService;
 
 namespace ModuleAccount.Contracts.ViewModels
 {
     public class DistrictSelectionViewModel
     {
         private readonly IAuthenticationService _authenticationService;
-        private readonly IDispatcher _dispatcher;
-        private readonly IAuthRepository _authRepository;
 
-        public DistrictSelectionViewModel(IAuthRepository authRepository)
+        public DistrictSelectionViewModel(IAuthenticationService authenticationService)
         {
-            _authRepository = authRepository;
-            //_authenticationService = authenticationService;
-            //_dispatcher = dispatcher;
+            _authenticationService = authenticationService;
         }
 
         public ICommand AuthCommand => new AsyncDelegateCommand(OnAuthAsync);
         private async Task OnAuthAsync()
         {
-            var test = await _authRepository.LoginAsync(new Foundation.Api.Models.AuthPayload() { email = "user@test.at", password = "Test1234!" });
-            await _authenticationService.LoginAsync(_dispatcher);
+            await _authenticationService.AuthenticateAndCacheTokenAsync(new Foundation.Api.Models.AuthPayload() { email = "user@test.at", password = "Test1234!" });
         }
     }
 }

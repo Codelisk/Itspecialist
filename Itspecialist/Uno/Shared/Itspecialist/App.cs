@@ -1,4 +1,5 @@
 using Itspecialist.Api;
+using Itspecialist.Services;
 using Prism.DryIoc;
 
 namespace Itspecialist
@@ -16,6 +17,7 @@ namespace Itspecialist
                     .UseToolkitNavigation()
                     .UseEnvironment(Environments.Development)
 #endif
+                    .UseSerialization()
                     .UseLogging(configure: (context, logBuilder) =>
                     {
                         // Configure log levels for different categories of logging
@@ -38,7 +40,7 @@ namespace Itspecialist
                     .UseLocalization()
                     .ConfigureServices((context, services) =>
                     {
-                        services.AddApi(null);
+                        services.AddApi<AuthenticationService>();
                     })
                         //.AddSingleton<IWeatherCache, WeatherCache>()
                         //.AddRefitClient<IApiClient>(context))

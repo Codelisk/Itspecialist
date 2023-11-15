@@ -14,5 +14,7 @@ namespace Itspecialist.Api.Apis
         Task<AuthResult> Login([Body] AuthPayload request);
         [Post("/register")]
         Task<AuthResult> Register([Body] AuthPayload request);
+        [Post("/refresh")]
+        Task<AuthResult> Refresh([Body] string refreshToken);
     }
 }

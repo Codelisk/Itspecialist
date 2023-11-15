@@ -4,14 +4,12 @@ namespace Itspecialist.Presentation
     {
         private readonly IRegionManager _regionManager;
         private bool _isInitialized;
-        private readonly Func<IAuthenticationService> _resolveAuthService;
 
         public DelegateCommand<string> NavigateCommand { get; }
         public ShellViewModel(
-            IRegionManager regionManager, Func<IAuthenticationService> resolveAuthService)
+            IRegionManager regionManager)
         {
             _regionManager = regionManager;
-            _resolveAuthService = resolveAuthService;
             NavigateCommand = new DelegateCommand<string>(ExecuteNavigateCommand);
         }
         private bool _isActive;
@@ -29,14 +27,6 @@ namespace Itspecialist.Presentation
         {
             _isInitialized = true;
 
-            try
-            {
-                var authService = _resolveAuthService();
-            }
-            catch(Exception ex)
-            {
-
-            }
         }
         private void ExecuteNavigateCommand(string viewName)
         {

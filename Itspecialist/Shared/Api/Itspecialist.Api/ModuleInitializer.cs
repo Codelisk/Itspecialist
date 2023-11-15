@@ -10,19 +10,19 @@ namespace Itspecialist.Api
 {
     public static partial class ModuleInitializer
     {
-        public static void AddApi(this IServiceCollection services, IAuthenticationService authenticationService)
+        public static void AddApi<TAuthService>(this IServiceCollection services) where TAuthService : class, IAuthenticationService
         {
-            services.SetupAuthentication(authenticationService);
+            services.SetupAuthentication<TAuthService>();
 
             services.AddSingleton<IApiBuilder, ApiBuilder>();
             services.AddSingleton<IBaseRepositoryProvider, BaseRepositoryProvider>();
         }
 
-        private static void SetupAuthentication(this IServiceCollection services, IAuthenticationService authenticationService)
+        private static void SetupAuthentication<TAuthService>(this IServiceCollection services) where TAuthService : class, IAuthenticationService
         {
             services.AddSingleton<ITokenProvider, TokenProvider>();
             services.AddSingleton<IAuthRepository, AuthRepository>();
-            services.AddSingleton<IAuthenticationService>(x => authenticationService);
+            services.AddSingleton<IAuthenticationService, TAuthService>();
         }
     }
 }

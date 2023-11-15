@@ -9,7 +9,6 @@ using Itspecialist.Api.Services.Base;
 
 namespace Itspecialist.Api.Repositories.Base
 {
-    [Codelisk.GeneratorAttributes.ApiAttributes.DefaultApiRepository]
     public abstract class BaseRepository<TApi> where TApi : IBaseApi
     {
         protected readonly TApi _repositoryApi;
