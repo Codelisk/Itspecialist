@@ -28,11 +28,12 @@ namespace Itspecialist.Api.Repositories.Base
             _baseRepositoryProvider = baseRepositoryProvider;
         }
 
+
         /// <summary>
         /// Here we provide the Auth token for requests
         /// </summary>
         /// <returns>Current access token</returns>
-        protected virtual Task<string> GetAuthorizationHeaderValueAsync()
+        protected virtual Task<string> GetAuthorizationHeaderValueAsync(HttpRequestMessage message, CancellationToken token)
         {
             return Task.FromResult(_baseRepositoryProvider.GetTokenProvider().GetCurrentAccessToken());
         }

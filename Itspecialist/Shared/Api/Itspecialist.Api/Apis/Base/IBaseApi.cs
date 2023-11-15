@@ -8,6 +8,7 @@ using Codelisk.GeneratorAttributes.ApiAttributes;
 namespace Itspecialist.Api.Apis.Base
 {
     [BaseApi]
+    [Headers("Authorization:Bearer")]
     public interface IBaseApi
     {
     }

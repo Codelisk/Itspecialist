@@ -8,7 +8,7 @@ namespace Itspecialist.Api.Services.Base
 {
     public interface IApiBuilder
     {
-        TApi BuildRestService<TApi>(Func<Task<string>>? AuthorizationHeaderValueGetter = null);
+        TApi BuildRestService<TApi>(Func<HttpRequestMessage, CancellationToken, Task<string>>? AuthorizationHeaderValueGetter = null);
         string GetRestUrl();
     }
 }
