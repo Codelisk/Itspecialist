@@ -1,0 +1,3 @@
+<Project>
+  <Import Project="Uno.Modules.Directory.Build.targets" Condition="exists('Uno.Modules.Directory.Build.targets')" />
+</Project>

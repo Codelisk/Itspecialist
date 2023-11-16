@@ -1,6 +1,15 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  
+  <Import Project="..\Modules.Directory.Build.props" Condition="exists('..\Modules.Directory.Build.props')" />
+  <Import Project="..\..\Modules.Directory.Build.props" Condition="exists('..\..\Modules.Directory.Build.props')" />
+  <Import Project="..\..\..\Modules.Directory.Build.props" Condition="exists('..\..\..\Modules.Directory.Build.props')" />
+  <Import Project="..\..\..\..\Modules.Directory.Build.props" Condition="exists('..\..\..\..\Modules.Directory.Build.props')" />
+
+  <Import Project="..\Modules.Directory.Build.targets" Condition="exists('..\Modules.Directory.Build.targets')" />
+  <Import Project="..\..\Modules.Directory.Build.targets" Condition="exists('..\..\Modules.Directory.Build.targets')" />
+  <Import Project="..\..\..\Modules.Directory.Build.targets" Condition="exists('..\..\..\Modules.Directory.Build.targets')" />
+  <Import Project="..\..\..\..\Modules.Directory.Build.targets" Condition="exists('..\..\..\..\Modules.Directory.Build.targets')" />
+
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\..\Shared\Api\Itspecialist.Api\Itspecialist.Api.csproj" />
     <ProjectReference Include="..\..\BaseModules\BasePagesBackendModule\BasePagesBackendModule.csproj" />

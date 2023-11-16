@@ -1,4 +1,16 @@
 <Project>
+  
+  <Import Project="..\Library.Directory.Build.props" Condition="exists('..\Library.Directory.Build.props')" />
+  <Import Project="..\..\Library.Directory.Build.props" Condition="exists('..\..\Library.Directory.Build.props')" />
+  <Import Project="..\..\..\Library.Directory.Build.props" Condition="exists('..\..\..\Library.Directory.Build.props')" />
+  <Import Project="..\..\..\..\Library.Directory.Build.props" Condition="exists('..\..\..\..\Library.Directory.Build.props')" />
+
+  <Import Project="..\Library.Directory.Build.targets" Condition="exists('..\Library.Directory.Build.targets')" />
+  <Import Project="..\..\Library.Directory.Build.targets" Condition="exists('..\..\Library.Directory.Build.targets')" />
+  <Import Project="..\..\..\Library.Directory.Build.targets" Condition="exists('..\..\..\Library.Directory.Build.targets')" />
+  <Import Project="..\..\..\..\Library.Directory.Build.targets" Condition="exists('..\..\..\..\Library.Directory.Build.targets')" />
+
+
   <ItemGroup>
     <PackageReference Include="Uno.Resizetizer" />
   </ItemGroup>

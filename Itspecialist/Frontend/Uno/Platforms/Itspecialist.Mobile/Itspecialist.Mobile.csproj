@@ -1,4 +1,16 @@
 <Project Sdk="Microsoft.NET.Sdk">
+  
+  <Import Project="..\Uno.Directory.Build.props" Condition="exists('..\Uno.Directory.Build.props')" />
+  <Import Project="..\..\Uno.Directory.Build.props" Condition="exists('..\..\Uno.Directory.Build.props')" />
+  <Import Project="..\..\..\Uno.Directory.Build.props" Condition="exists('..\..\..\Uno.Directory.Build.props')" />
+  <Import Project="..\..\..\..\Uno.Directory.Build.props" Condition="exists('..\..\..\..\Uno.Directory.Build.props')" />
+
+  <Import Project="..\Uno.Directory.Build.targets" Condition="exists('..\Uno.Directory.Build.targets')" />
+  <Import Project="..\..\Uno.Directory.Build.targets" Condition="exists('..\..\Uno.Directory.Build.targets')" />
+  <Import Project="..\..\..\Uno.Directory.Build.targets" Condition="exists('..\..\..\Uno.Directory.Build.targets')" />
+  <Import Project="..\..\..\..\Uno.Directory.Build.targets" Condition="exists('..\..\..\..\Uno.Directory.Build.targets')" />
+
+  
   <PropertyGroup>
     <TargetFrameworks>net8.0-android;net8.0-ios;net8.0-maccatalyst</TargetFrameworks>
     <TargetFrameworks Condition="'$(OverrideTargetFrameworks)'!=''">$(OverrideTargetFrameworks)</TargetFrameworks>

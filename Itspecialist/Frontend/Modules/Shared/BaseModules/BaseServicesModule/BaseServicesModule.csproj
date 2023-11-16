@@ -1,1 +1,13 @@
-<Project Sdk="Microsoft.NET.Sdk" />
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <Import Project="..\Modules.Directory.Build.props" Condition="exists('..\Modules.Directory.Build.props')" />
+    <Import Project="..\..\Modules.Directory.Build.props" Condition="exists('..\..\Modules.Directory.Build.props')" />
+    <Import Project="..\..\..\Modules.Directory.Build.props" Condition="exists('..\..\..\Modules.Directory.Build.props')" />
+    <Import Project="..\..\..\..\Modules.Directory.Build.props" Condition="exists('..\..\..\..\Modules.Directory.Build.props')" />
+  
+    <Import Project="..\Modules.Directory.Build.targets" Condition="exists('..\Modules.Directory.Build.targets')" />
+    <Import Project="..\..\Modules.Directory.Build.targets" Condition="exists('..\..\Modules.Directory.Build.targets')" />
+    <Import Project="..\..\..\Modules.Directory.Build.targets" Condition="exists('..\..\..\Modules.Directory.Build.targets')" />
+    <Import Project="..\..\..\..\Modules.Directory.Build.targets" Condition="exists('..\..\..\..\Modules.Directory.Build.targets')" />
+  
+ </Project>

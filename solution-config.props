@@ -9,6 +9,17 @@
             3) Make sure to do a Rebuild, so that nuget restores the proper packages for the new target
     -->
 
+    <Import Project="Directory.Packages.props" Condition="exists('Directory.Packages.props')" />
+    <Import Project="..\Directory.Packages.props" Condition="exists('..\Directory.Packages.props')" />
+    <Import Project="..\..\Directory.Packages.props" Condition="exists('..\..\Directory.Packages.props')" />
+    <Import Project="..\..\..\Directory.Packages.props" Condition="exists('..\..\..\Directory.Packages.props')" />
+    <Import Project="..\..\..\..\Directory.Packages.props" Condition="exists('..\..\..\..\Directory.Packages.props')" />
+    <Import Project="..\..\..\..\..\Directory.Packages.props" Condition="exists('..\..\..\..\..\Directory.Packages.props')" />
+    <Import Project="..\..\..\..\..\..\Directory.Packages.props" Condition="exists('..\..\..\..\..\..\Directory.Packages.props')" />
+    <Import Project="..\..\..\..\..\..\..\Directory.Packages.props" Condition="exists('..\..\..\..\..\..\..\Directory.Packages.props')" />
+    <Import Project="..\..\..\..\..\..\..\..\Directory.Packages.props" Condition="exists('..\..\..\..\..\..\..\..\Directory.Packages.props')" />
+    <Import Project="..\..\..\..\..\..\..\..\..\Directory.Packages.props" Condition="exists('..\..\..\..\..\..\..\..\..\Directory.Packages.props')" />
+
     <PropertyGroup>
       <LangVersion>preview</LangVersion>
       <ImplicitUsings>enable</ImplicitUsings>
@@ -18,6 +29,11 @@
       <DebugSymbols>True</DebugSymbols>
 
       <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+      <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
+      <CompilerGeneratedFilesOutputPath>$(BaseIntermediateOutputPath)obj/generated</CompilerGeneratedFilesOutputPath>
+      
+    <!-- Removes native usings to avoid Ambiguous reference -->
+    <Using Remove="@(Using->HasMetadata('Platform'))" />
     </PropertyGroup>
 
 

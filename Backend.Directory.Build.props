@@ -1,0 +1,5 @@
+<Project>
+
+
+  <Import Project="Library.Directory.Build.props" Condition="exists('Library.Directory.Build.props')" />
+</Project>

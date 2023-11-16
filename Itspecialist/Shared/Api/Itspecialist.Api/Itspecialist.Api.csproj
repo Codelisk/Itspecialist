@@ -1,5 +1,15 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
+  <Import Project="..\Library.Directory.Build.props" Condition="exists('..\Library.Directory.Build.props')" />
+  <Import Project="..\..\Library.Directory.Build.props" Condition="exists('..\..\Library.Directory.Build.props')" />
+  <Import Project="..\..\..\Library.Directory.Build.props" Condition="exists('..\..\..\Library.Directory.Build.props')" />
+  <Import Project="..\..\..\..\Library.Directory.Build.props" Condition="exists('..\..\..\..\Library.Directory.Build.props')" />
+
+  <Import Project="..\Library.Directory.Build.targets" Condition="exists('..\Library.Directory.Build.targets')" />
+  <Import Project="..\..\Library.Directory.Build.targets" Condition="exists('..\..\Library.Directory.Build.targets')" />
+  <Import Project="..\..\..\Library.Directory.Build.targets" Condition="exists('..\..\..\Library.Directory.Build.targets')" />
+  <Import Project="..\..\..\..\Library.Directory.Build.targets" Condition="exists('..\..\..\..\Library.Directory.Build.targets')" />
+
   <ItemGroup>
     <ProjectReference Include="..\..\..\Submodules\CodeGen\src\Generators\Api\Api.Generator\Api.Generator.csproj" PrivateAssets="all" OutputItemType="Analyzer" />
     <!--<ProjectReference Include="..\..\..\Submodules\CodeGen\src\Generators\Api\Codelisk.Api.RefitApis.Generator\Codelisk.Api.RefitApis.Generator.csproj" PrivateAssets="all" OutputItemType="Analyzer" />-->

@@ -10,7 +10,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C44FABC1-A33F-49DA-840E-7CD35A697FD0}"
 	ProjectSection(SolutionItems) = preProject
 		Itspecialist\.gitignore = Itspecialist\.gitignore
-		Itspecialist\Directory.Build.props = Itspecialist\Directory.Build.props
+		Directory.Packages.props = Directory.Packages.props
 		ReadME.md = ReadME.md
 		solution-config.props = solution-config.props
 	EndProjectSection
@@ -35,15 +35,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Itspecialist.Foundation", "
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Backend", "Backend", "{991A185B-FF65-4729-A441-02D34F5D2F1B}"
 	ProjectSection(SolutionItems) = preProject
-		Itspecialist\Backend\Directory.Build.targets = Itspecialist\Backend\Directory.Build.targets
-		Itspecialist\Backend\Directory.Packages.props = Itspecialist\Backend\Directory.Packages.props
+		Backend.Directory.Build.props = Backend.Directory.Build.props
+		Backend.Directory.Build.targets = Backend.Directory.Build.targets
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Uno", "Uno", "{4D4FF5ED-50F5-44DA-AC7F-2182A8C3115F}"
 	ProjectSection(SolutionItems) = preProject
-		Itspecialist\Frontend\Uno\Directory.Build.props = Itspecialist\Frontend\Uno\Directory.Build.props
-		Itspecialist\Frontend\Uno\Directory.Build.targets = Itspecialist\Frontend\Uno\Directory.Build.targets
-		Itspecialist\Frontend\Uno\Directory.Packages.props = Itspecialist\Frontend\Uno\Directory.Packages.props
+		Uno.Directory.Build.props = Uno.Directory.Build.props
+		Uno.Directory.Build.targets = Uno.Directory.Build.targets
+		Uno.Modules.Directory.Build.props = Uno.Modules.Directory.Build.props
+		Uno.Modules.Directory.Build.targets = Uno.Modules.Directory.Build.targets
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{D3E260C8-01D6-46C1-A267-C8F6117D6A67}"
@@ -80,7 +81,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModuleAccounts.Views.Uno", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{EB8B2BC5-0E48-46B9-93F5-58A38ED162E3}"
 	ProjectSection(SolutionItems) = preProject
-		Itspecialist\Frontend\Modules\Directory.Build.props = Itspecialist\Frontend\Modules\Directory.Build.props
+		Modules.Directory.Build.props = Modules.Directory.Build.props
+		Modules.Directory.Build.targets = Modules.Directory.Build.targets
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Library", "Library", "{68041D54-959F-48F2-B30B-D9A821F4EC20}"
+	ProjectSection(SolutionItems) = preProject
+		Library.Directory.Build.props = Library.Directory.Build.props
+		Library.Directory.Build.targets = Library.Directory.Build.targets
 	EndProjectSection
 EndProject
 Global
@@ -385,6 +393,7 @@ Global
 		{7965E50C-0195-4249-8234-A9A49A18C49F} = {3DFAF55C-CF89-41C0-8366-ADCD405B34F0}
 		{C2B8FE0C-51BE-4735-A831-925D53B63295} = {3DFAF55C-CF89-41C0-8366-ADCD405B34F0}
 		{EB8B2BC5-0E48-46B9-93F5-58A38ED162E3} = {C44FABC1-A33F-49DA-840E-7CD35A697FD0}
+		{68041D54-959F-48F2-B30B-D9A821F4EC20} = {C44FABC1-A33F-49DA-840E-7CD35A697FD0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A6E9BB8A-C390-483E-B203-63E4092FAFB1}

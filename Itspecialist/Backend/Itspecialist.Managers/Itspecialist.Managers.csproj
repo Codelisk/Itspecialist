@@ -1,5 +1,15 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
+  <Import Project="..\Backend.Directory.Build.props" Condition="exists('..\Backend.Directory.Build.props')" />
+  <Import Project="..\..\Backend.Directory.Build.props" Condition="exists('..\..\Backend.Directory.Build.props')" />
+  <Import Project="..\..\..\Backend.Directory.Build.props" Condition="exists('..\..\..\Backend.Directory.Build.props')" />
+  <Import Project="..\..\..\..\Backend.Directory.Build.props" Condition="exists('..\..\..\..\Backend.Directory.Build.props')" />
+
+  <Import Project="..\Backend.Directory.Build.targets" Condition="exists('..\Backend.Directory.Build.targets')" />
+  <Import Project="..\..\Backend.Directory.Build.targets" Condition="exists('..\..\Backend.Directory.Build.targets')" />
+  <Import Project="..\..\..\Backend.Directory.Build.targets" Condition="exists('..\..\..\Backend.Directory.Build.targets')" />
+  <Import Project="..\..\..\..\Backend.Directory.Build.targets" Condition="exists('..\..\..\..\Backend.Directory.Build.targets')" />
+
   <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" />
     <PackageReference Include="AutoMapper" />
