@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\Shared\Api\Itspecialist.Api\Itspecialist.Api.csproj" />
+    <ProjectReference Include="..\..\BaseModules\BasePagesBackendModule\BasePagesBackendModule.csproj" />
+    <ProjectReference Include="..\..\BaseModules\BaseServicesModule\BaseServicesModule.csproj" />
+  </ItemGroup>
+</Project>

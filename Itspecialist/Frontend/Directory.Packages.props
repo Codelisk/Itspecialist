@@ -1,5 +1,7 @@
 <Project ToolsVersion="15.0">
   <ItemGroup>
+    <PackageVersion Include="ReactiveUI" Version="19.5.1"/>
+    <PackageVersion Include="AsyncAwaitBestPractices" Version="7.0.0"/>
     <PackageVersion Include="CommunityToolkit.Mvvm" Version="8.2.2" />
     <PackageVersion Include="Microsoft.Extensions.Logging.Console" Version="8.0.0-rc.2.23479.6" />
     <PackageVersion Include="Microsoft.Windows.Compatibility" Version="8.0.0-rc.2.23479.10" />

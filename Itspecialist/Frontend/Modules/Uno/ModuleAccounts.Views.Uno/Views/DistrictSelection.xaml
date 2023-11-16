@@ -8,9 +8,10 @@
              d:DesignWidth="400"
              mc:Ignorable="d">
 
-    <Grid>
-      
+    <StackPanel>
+        <ComboBox ItemsSource="{Binding Districts}"
+                  SelectedItem="{Binding SelectedDistrict}" />
         <Button Command="{Binding AuthCommand}"
                 Content="DistrictSelection" />
-    </Grid>
+    </StackPanel>
 </UserControl>

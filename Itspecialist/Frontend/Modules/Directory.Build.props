@@ -1,0 +1,28 @@
+<Project>
+
+  <Import Project="..\Directory.Build.props" Condition="exists('..\Directory.Build.props')" />
+  <Import Project="..\..\Directory.Build.props" Condition="exists('..\..\Directory.Build.props')" />
+  <Import Project="..\..\..\Directory.Build.props" Condition="exists('..\..\..\Directory.Build.props')" />
+  <Import Project="..\..\..\..\Directory.Build.props" Condition="exists('..\..\..\..\Directory.Build.props')" />
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+        <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
+        <CompilerGeneratedFilesOutputPath>$(BaseIntermediateOutputPath)obj/generated</CompilerGeneratedFilesOutputPath>
+	</PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Prism.Core" />
+    <PackageReference Include="AsyncAwaitBestPractices" />
+    <PackageReference Include="ReactiveUI"/>
+  </ItemGroup>
+  <!--<Project>
+    <CompilerGeneratedFilesOutputPath>$(ProjectDir)Generated</CompilerGeneratedFilesOutputPath>
+  <Target Name="SkipSourceGeneratedFiles" BeforeTargets="CoreCompile">
+    <ItemGroup>
+      <Compile Remove="Generated/**/*" />
+    </ItemGroup>
+  </Target>
+</Project>
+-->
+</Project>
