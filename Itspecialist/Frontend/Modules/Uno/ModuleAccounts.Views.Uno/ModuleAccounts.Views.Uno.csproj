@@ -55,6 +55,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ModuleAccount.Contracts\ModuleAccount.Contracts.csproj" />
+    <ProjectReference Include="..\..\Shared\ModuleAccount\ModuleAccount.Contracts\ModuleAccount.Contracts.csproj" />
   </ItemGroup>
 </Project>

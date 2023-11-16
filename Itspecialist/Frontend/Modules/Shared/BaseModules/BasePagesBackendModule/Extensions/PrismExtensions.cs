@@ -1,4 +1,4 @@
-﻿using Prism.Navigation;
+using Prism.Navigation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,7 +22,7 @@ namespace BasePagesBackendModule.Extensions
         {
             try
             {
-                return navigationParameters.GetNavigationMode() == NavigationMode.Back;
+                throw new NotImplementedException();
             }
             catch (Exception e)
             {

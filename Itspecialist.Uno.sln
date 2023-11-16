@@ -70,11 +70,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.Generator", "Itspeciali
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BaseModules", "BaseModules", "{58D64903-0AE8-4390-B1BB-C54AFBB0C06F}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{F9195F4B-460A-4C02-9BE4-E00A2657C915}"
-	ProjectSection(SolutionItems) = preProject
-		Itspecialist\Frontend\Uno\Modules\Directory.Build.props = Itspecialist\Frontend\Uno\Modules\Directory.Build.props
-	EndProjectSection
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BasePagesBackendModule", "Itspecialist\Frontend\Modules\Shared\BaseModules\BasePagesBackendModule\BasePagesBackendModule.csproj", "{653A0CBC-62BE-4E5D-B775-7AD40CC8BC47}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BaseServicesModule", "Itspecialist\Frontend\Modules\Shared\BaseModules\BaseServicesModule\BaseServicesModule.csproj", "{7C2066ED-74E1-4959-9069-B4F71565962D}"
@@ -82,6 +77,11 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModuleAccount.Contracts", "Itspecialist\Frontend\Modules\Shared\ModuleAccount\ModuleAccount.Contracts\ModuleAccount.Contracts.csproj", "{7965E50C-0195-4249-8234-A9A49A18C49F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModuleAccounts.Views.Uno", "Itspecialist\Frontend\Modules\Uno\ModuleAccounts.Views.Uno\ModuleAccounts.Views.Uno.csproj", "{C2B8FE0C-51BE-4735-A831-925D53B63295}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{EB8B2BC5-0E48-46B9-93F5-58A38ED162E3}"
+	ProjectSection(SolutionItems) = preProject
+		Itspecialist\Frontend\Modules\Directory.Build.props = Itspecialist\Frontend\Modules\Directory.Build.props
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -380,11 +380,11 @@ Global
 		{3CF3B42B-173E-4E3A-9E6B-AFC00E47B9BA} = {437EC613-727F-4496-A25D-71273B8AED0C}
 		{2EB406C9-14E4-4DE9-9114-0C30A550FDCC} = {437EC613-727F-4496-A25D-71273B8AED0C}
 		{58D64903-0AE8-4390-B1BB-C54AFBB0C06F} = {F29639A8-EDD7-4051-90E4-F3994B30EA5D}
-		{F9195F4B-460A-4C02-9BE4-E00A2657C915} = {4D4FF5ED-50F5-44DA-AC7F-2182A8C3115F}
 		{653A0CBC-62BE-4E5D-B775-7AD40CC8BC47} = {58D64903-0AE8-4390-B1BB-C54AFBB0C06F}
 		{7C2066ED-74E1-4959-9069-B4F71565962D} = {58D64903-0AE8-4390-B1BB-C54AFBB0C06F}
 		{7965E50C-0195-4249-8234-A9A49A18C49F} = {3DFAF55C-CF89-41C0-8366-ADCD405B34F0}
 		{C2B8FE0C-51BE-4735-A831-925D53B63295} = {3DFAF55C-CF89-41C0-8366-ADCD405B34F0}
+		{EB8B2BC5-0E48-46B9-93F5-58A38ED162E3} = {C44FABC1-A33F-49DA-840E-7CD35A697FD0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A6E9BB8A-C390-483E-B203-63E4092FAFB1}

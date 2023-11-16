@@ -1,9 +1,9 @@
 <Project>
 
-  <Import Project="..\Directory.Build.props" Condition="exists('..\Directory.Build.props')" />
-  <Import Project="..\..\Directory.Build.props" Condition="exists('..\..\Directory.Build.props')" />
-  <Import Project="..\..\..\Directory.Build.props" Condition="exists('..\..\..\Directory.Build.props')" />
-  <Import Project="..\..\..\..\Directory.Build.props" Condition="exists('..\..\..\..\Directory.Build.props')" />
+  <Import Project="..\solution-config.props" Condition="exists('..\solution-config.props')" />
+  <Import Project="..\..\solution-config.props" Condition="exists('..\..\solution-config.props')" />
+  <Import Project="..\..\..\solution-config.props" Condition="exists('..\..\..\solution-config.props')" />
+  <Import Project="..\..\..\..\solution-config.props" Condition="exists('..\..\..\..\solution-config.props')" />
 
 	<PropertyGroup>
 		<TargetFramework>net8.0</TargetFramework>
