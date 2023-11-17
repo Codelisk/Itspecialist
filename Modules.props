@@ -1,4 +1,8 @@
 <Project>
 
 	<Import Project="Library.props" Condition="exists('Library.props')" />
+	
+	<ItemGroup>
+    <PackageReference Include="Prism.DryIoc.Uno.WinUI" />
+	</ItemGroup>
 </Project>

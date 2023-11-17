@@ -13,8 +13,18 @@
   <ItemGroup>
     <None Remove="Views\DistrictSelection.xaml" />
   </ItemGroup>
+  <PropertyGroup>
+    <TargetFrameworks>net8.0;net8.0-ios;net8.0-android;net8.0-maccatalyst</TargetFrameworks>
+    <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows')) or '$(EnableWindowsTargeting)' == 'true'">$(TargetFrameworks);net8.0-windows10.0.19041.0</TargetFrameworks>
+
+    <!-- Ensures the .xr.xml files are generated in a proper layout folder -->
+    <GenerateLibraryLayout>true</GenerateLibraryLayout>
+  </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Uno.WinUI" />
+    <PackageReference Include="Prism.DryIoc.Uno.WinUI" />
+    <PackageReference Include="Newtonsoft.Json" />
     <!--<ProjectReference Include="..\..\Shared\ModuleAccount\ModuleAccount.Contracts\ModuleAccount.Contracts.csproj" />-->
   </ItemGroup>
 </Project>
