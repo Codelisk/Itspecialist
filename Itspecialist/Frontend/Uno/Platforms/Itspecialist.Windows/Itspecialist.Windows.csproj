@@ -1,16 +1,15 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  
-  <Import Project="..\Uno.Directory.Build.props" Condition="exists('..\Uno.Directory.Build.props')" />
-  <Import Project="..\..\Uno.Directory.Build.props" Condition="exists('..\..\Uno.Directory.Build.props')" />
-  <Import Project="..\..\..\Uno.Directory.Build.props" Condition="exists('..\..\..\Uno.Directory.Build.props')" />
-  <Import Project="..\..\..\..\Uno.Directory.Build.props" Condition="exists('..\..\..\..\Uno.Directory.Build.props')" />
 
-  <Import Project="..\Uno.Directory.Build.targets" Condition="exists('..\Uno.Directory.Build.targets')" />
-  <Import Project="..\..\Uno.Directory.Build.targets" Condition="exists('..\..\Uno.Directory.Build.targets')" />
-  <Import Project="..\..\..\Uno.Directory.Build.targets" Condition="exists('..\..\..\Uno.Directory.Build.targets')" />
-  <Import Project="..\..\..\..\Uno.Directory.Build.targets" Condition="exists('..\..\..\..\Uno.Directory.Build.targets')" />
-
+  <Import Project="Uno.props" Condition="exists('Uno.props')" />
+  <Import Project="..\Uno.props" Condition="exists('..\Uno.props')" />
+  <Import Project="..\..\Uno.props" Condition="exists('..\..\Uno.props')" />
+  <Import Project="..\..\..\Uno.props" Condition="exists('..\..\..\Uno.props')" />
+  <Import Project="..\..\..\..\Uno.props" Condition="exists('..\..\..\..\Uno.props')" />
+  <Import Project="..\..\..\..\..\Uno.props" Condition="exists('..\..\..\..\..\Uno.props')" />
+  <Import Project="..\..\..\..\..\..\Uno.props" Condition="exists('..\..\..\..\..\..\Uno.props')" />
+  <Import Project="..\..\..\..\..\..\..\Uno.props" Condition="exists('..\..\..\..\..\..\..\Uno.props')" />
+  <Import Project="..\..\..\..\..\..\..\..\Uno.props" Condition="exists('..\..\..\..\..\..\..\..\Uno.props')" />
   
   <PropertyGroup>
     <OutputType>WinExe</OutputType>

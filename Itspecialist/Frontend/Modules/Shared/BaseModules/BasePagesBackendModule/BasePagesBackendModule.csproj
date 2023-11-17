@@ -1,11 +1,14 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
+  <Import Project="Modules.props" Condition="exists('Modules.props')" />
   <Import Project="..\Modules.props" Condition="exists('..\Modules.props')" />
   <Import Project="..\..\Modules.props" Condition="exists('..\..\Modules.props')" />
   <Import Project="..\..\..\Modules.props" Condition="exists('..\..\..\Modules.props')" />
   <Import Project="..\..\..\..\Modules.props" Condition="exists('..\..\..\..\Modules.props')" />
   <Import Project="..\..\..\..\..\Modules.props" Condition="exists('..\..\..\..\..\Modules.props')" />
-
+  <Import Project="..\..\..\..\..\..\Modules.props" Condition="exists('..\..\..\..\..\..\Modules.props')" />
+  <Import Project="..\..\..\..\..\..\..\Modules.props" Condition="exists('..\..\..\..\..\..\..\Modules.props')" />
+  <Import Project="..\..\..\..\..\..\..\..\Modules.props" Condition="exists('..\..\..\..\..\..\..\..\Modules.props')" />
   <ItemGroup>
     <ProjectReference Include="..\BaseServicesModule\BaseServicesModule.csproj" />
   </ItemGroup>

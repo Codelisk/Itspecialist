@@ -1,10 +1,14 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
+  <Import Project="Modules.props" Condition="exists('Modules.props')" />
   <Import Project="..\Modules.props" Condition="exists('..\Modules.props')" />
   <Import Project="..\..\Modules.props" Condition="exists('..\..\Modules.props')" />
   <Import Project="..\..\..\Modules.props" Condition="exists('..\..\..\Modules.props')" />
   <Import Project="..\..\..\..\Modules.props" Condition="exists('..\..\..\..\Modules.props')" />
   <Import Project="..\..\..\..\..\Modules.props" Condition="exists('..\..\..\..\..\Modules.props')" />
+  <Import Project="..\..\..\..\..\..\Modules.props" Condition="exists('..\..\..\..\..\..\Modules.props')" />
+  <Import Project="..\..\..\..\..\..\..\Modules.props" Condition="exists('..\..\..\..\..\..\..\Modules.props')" />
+  <Import Project="..\..\..\..\..\..\..\..\Modules.props" Condition="exists('..\..\..\..\..\..\..\..\Modules.props')" />
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\..\Shared\Api\Itspecialist.Api\Itspecialist.Api.csproj" />
     <ProjectReference Include="..\..\BaseModules\BasePagesBackendModule\BasePagesBackendModule.csproj" />

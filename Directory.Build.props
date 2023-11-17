@@ -13,6 +13,11 @@
       <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
       <CompilerGeneratedFilesOutputPath>$(BaseIntermediateOutputPath)obj/generated</CompilerGeneratedFilesOutputPath>
       
+    <IsAndroid>false</IsAndroid>
+    <IsIOS>false</IsIOS>
+    <IsMac>false</IsMac>
+    <IsMacCatalyst>false</IsMacCatalyst>
+    <IsWinAppSdk>false</IsWinAppSdk>
     </PropertyGroup>
 <ItemGroup>
   <!-- Removes native usings to avoid Ambiguous reference -->
