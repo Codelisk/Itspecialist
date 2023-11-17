@@ -1,14 +1,14 @@
 <Project>
   
-  <Import Project="..\Library.Directory.Build.props" Condition="exists('..\Library.Directory.Build.props')" />
-  <Import Project="..\..\Library.Directory.Build.props" Condition="exists('..\..\Library.Directory.Build.props')" />
-  <Import Project="..\..\..\Library.Directory.Build.props" Condition="exists('..\..\..\Library.Directory.Build.props')" />
-  <Import Project="..\..\..\..\Library.Directory.Build.props" Condition="exists('..\..\..\..\Library.Directory.Build.props')" />
+  <Import Project="..\Library.props" Condition="exists('..\Library.props')" />
+  <Import Project="..\..\Library.props" Condition="exists('..\..\Library.props')" />
+  <Import Project="..\..\..\Library.props" Condition="exists('..\..\..\Library.props')" />
+  <Import Project="..\..\..\..\Library.props" Condition="exists('..\..\..\..\Library.props')" />
 
-  <Import Project="..\Library.Directory.Build.targets" Condition="exists('..\Library.Directory.Build.targets')" />
-  <Import Project="..\..\Library.Directory.Build.targets" Condition="exists('..\..\Library.Directory.Build.targets')" />
-  <Import Project="..\..\..\Library.Directory.Build.targets" Condition="exists('..\..\..\Library.Directory.Build.targets')" />
-  <Import Project="..\..\..\..\Library.Directory.Build.targets" Condition="exists('..\..\..\..\Library.Directory.Build.targets')" />
+  <Import Project="..\Library.targets" Condition="exists('..\Library.targets')" />
+  <Import Project="..\..\Library.targets" Condition="exists('..\..\Library.targets')" />
+  <Import Project="..\..\..\Library.targets" Condition="exists('..\..\..\Library.targets')" />
+  <Import Project="..\..\..\..\Library.targets" Condition="exists('..\..\..\..\Library.targets')" />
 
 
   <ItemGroup>

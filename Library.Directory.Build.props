@@ -1,9 +1,0 @@
-<Project>
-
-  <Import Project="solution-config.props" Condition="exists('solution-config.Build.props')" />
-  <Import Project="Directory.Packages.props" Condition="exists('Directory.Packages.props')" />
-  
-	<PropertyGroup>
-		<TargetFramework>net8.0</TargetFramework>
-	</PropertyGroup>
-</Project>

@@ -1,14 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <Import Project="..\Uno.Modules.Directory.Build.props" Condition="exists('..\Uno.Modules.Directory.Build.props')" />
-  <Import Project="..\..\Uno.Modules.Directory.Build.props" Condition="exists('..\..\Uno.Modules.Directory.Build.props')" />
-  <Import Project="..\..\..\Uno.Modules.Directory.Build.props" Condition="exists('..\..\..\Uno.Modules.Directory.Build.props')" />
-  <Import Project="..\..\..\..\Uno.Modules.Directory.Build.props" Condition="exists('..\..\..\..\Uno.Modules.Directory.Build.props')" />
-
-  <Import Project="..\Uno.Modules.Directory.Build.targets" Condition="exists('..\Uno.Modules.Directory.Build.targets')" />
-  <Import Project="..\..\Uno.Modules.Directory.Build.targets" Condition="exists('..\..\Uno.Modules.Directory.Build.targets')" />
-  <Import Project="..\..\..\Uno.Modules.Directory.Build.targets" Condition="exists('..\..\..\Uno.Modules.Directory.Build.targets')" />
-  <Import Project="..\..\..\..\Uno.Modules.Directory.Build.targets" Condition="exists('..\..\..\..\Uno.Modules.Directory.Build.targets')" />
+  <Import Project="..\Uno.Modules.props" Condition="exists('..\Uno.Modules.props')" />
+  <Import Project="..\..\Uno.Modules.props" Condition="exists('..\..\Uno.Modules.props')" />
+  <Import Project="..\..\..\Uno.Modules.props" Condition="exists('..\..\..\Uno.Modules.props')" />
+  <Import Project="..\..\..\..\Uno.Modules.props" Condition="exists('..\..\..\..\Uno.Modules.props')" />
+  <Import Project="..\..\..\..\..\Uno.Modules.props" Condition="exists('..\..\..\..\..\Uno.Modules.props')" />
 
   <ItemGroup>
     <None Remove="Views\DistrictSelection.xaml" />

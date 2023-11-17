@@ -1,8 +1,23 @@
 <Project>
 
+  <PropertyGroup>
+    <OrderlyzeFoundationVersion>3.0.10</OrderlyzeFoundationVersion>
+    <CodeliskVersion>2.13.99</CodeliskVersion>
+    <MicrosoftAspNetCore>8.0.0-rc.2.23480.2</MicrosoftAspNetCore>
+    <MicrosoftEntityFrameworkCore>8.0.0-rc.2.23480.1</MicrosoftEntityFrameworkCore>
+    <MicrosoftExtensionsVersion>8.0.0-rc.2.23479.6</MicrosoftExtensionsVersion>
+  </PropertyGroup>
+
+  <ItemGroup Label="Global Package versions">
+    <PackageVersion Include="AutoMapper" Version="12.0.1" />
+    <PackageVersion Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="$(MicrosoftAspNetCore)"  />
+    <PackageVersion Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="$(MicrosoftExtensionsVersion)" />
+    <PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="$(MicrosoftExtensionsVersion)" />
+  </ItemGroup>
+  
   <ItemGroup>
     <PackageVersion Include="Swashbuckle.AspNetCore" Version="6.5.0" />
-	  <PackageVersion Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.21.0" />
+	<PackageVersion Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.21.0" />
     <PackageVersion Include="Microsoft.OpenApi" Version="1.6.6" />
     <PackageVersion Include="System.IdentityModel.Tokens.Jwt" Version="7.0.1" />
 

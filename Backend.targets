@@ -1,6 +1,6 @@
 <Project>
 
-  <Import Project="Library.Directory.Build.targets" Condition="exists('Library.Directory.Build.targets')" />
+  <Import Project="Library.targets" Condition="exists('Library.targets')" />
 
   <ItemGroup>
     <!-- Removes native usings to avoid Ambiguous reference -->

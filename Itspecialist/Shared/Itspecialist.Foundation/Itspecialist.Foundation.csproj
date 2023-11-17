@@ -1,14 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <Import Project="..\Library.Directory.Build.props" Condition="exists('..\Library.Directory.Build.props')" />
-  <Import Project="..\..\Library.Directory.Build.props" Condition="exists('..\..\Library.Directory.Build.props')" />
-  <Import Project="..\..\..\Library.Directory.Build.props" Condition="exists('..\..\..\Library.Directory.Build.props')" />
-  <Import Project="..\..\..\..\Library.Directory.Build.props" Condition="exists('..\..\..\..\Library.Directory.Build.props')" />
-
-  <Import Project="..\Library.Directory.Build.targets" Condition="exists('..\Library.Directory.Build.targets')" />
-  <Import Project="..\..\Library.Directory.Build.targets" Condition="exists('..\..\Library.Directory.Build.targets')" />
-  <Import Project="..\..\..\Library.Directory.Build.targets" Condition="exists('..\..\..\Library.Directory.Build.targets')" />
-  <Import Project="..\..\..\..\Library.Directory.Build.targets" Condition="exists('..\..\..\..\Library.Directory.Build.targets')" />
+  <Import Project="..\Library.props" Condition="exists('..\Library.props')" />
+  <Import Project="..\..\Library.props" Condition="exists('..\..\Library.props')" />
+  <Import Project="..\..\..\Library.props" Condition="exists('..\..\..\Library.props')" />
+  <Import Project="..\..\..\..\Library.props" Condition="exists('..\..\..\..\Library.props')" />
 
   <!--<ItemGroup>
     <PackageReference Include="AutoMapper" Version="12.0.1" />

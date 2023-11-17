@@ -1,14 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <Import Project="..\Modules.Directory.Build.props" Condition="exists('..\Modules.Directory.Build.props')" />
-  <Import Project="..\..\Modules.Directory.Build.props" Condition="exists('..\..\Modules.Directory.Build.props')" />
-  <Import Project="..\..\..\Modules.Directory.Build.props" Condition="exists('..\..\..\Modules.Directory.Build.props')" />
-  <Import Project="..\..\..\..\Modules.Directory.Build.props" Condition="exists('..\..\..\..\Modules.Directory.Build.props')" />
-
-  <Import Project="..\Modules.Directory.Build.targets" Condition="exists('..\Modules.Directory.Build.targets')" />
-  <Import Project="..\..\Modules.Directory.Build.targets" Condition="exists('..\..\Modules.Directory.Build.targets')" />
-  <Import Project="..\..\..\Modules.Directory.Build.targets" Condition="exists('..\..\..\Modules.Directory.Build.targets')" />
-  <Import Project="..\..\..\..\Modules.Directory.Build.targets" Condition="exists('..\..\..\..\Modules.Directory.Build.targets')" />
+  <Import Project="..\Modules.props" Condition="exists('..\Modules.props')" />
+  <Import Project="..\..\Modules.props" Condition="exists('..\..\Modules.props')" />
+  <Import Project="..\..\..\Modules.props" Condition="exists('..\..\..\Modules.props')" />
+  <Import Project="..\..\..\..\Modules.props" Condition="exists('..\..\..\..\Modules.props')" />
+  <Import Project="..\..\..\..\..\Modules.props" Condition="exists('..\..\..\..\..\Modules.props')" />
 
   <ItemGroup>
     <ProjectReference Include="..\BaseServicesModule\BaseServicesModule.csproj" />

@@ -1,0 +1,23 @@
+<Project>
+    <Import Project="Directory.Packages.props" Condition="exists('Directory.Packages.props')" />
+
+    <PropertyGroup>
+      <LangVersion>preview</LangVersion>
+      <ImplicitUsings>enable</ImplicitUsings>
+      <Nullable>enable</Nullable>
+
+      <DebugType>portable</DebugType>
+      <DebugSymbols>True</DebugSymbols>
+
+      <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+      <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
+      <CompilerGeneratedFilesOutputPath>$(BaseIntermediateOutputPath)obj/generated</CompilerGeneratedFilesOutputPath>
+      
+    </PropertyGroup>
+<ItemGroup>
+  <!-- Removes native usings to avoid Ambiguous reference -->
+  <Using Remove="@(Using->HasMetadata('Platform'))" />
+    
+  </ItemGroup>
+
+</Project>
