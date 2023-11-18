@@ -18,4 +18,9 @@
     <PackageReference Include="Prism.Uno.WinUI" />
     <PackageReference Include="Prism.DryIoc.Uno.WinUI" />
   </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Shared\Itspecialist.Foundation\Itspecialist.Foundation.csproj" />
+    <ProjectReference Include="..\..\Shared\ModuleAccount\ModuleAccount.Contracts\ModuleAccount.Contracts.csproj" />
+  </ItemGroup>
 </Project>
