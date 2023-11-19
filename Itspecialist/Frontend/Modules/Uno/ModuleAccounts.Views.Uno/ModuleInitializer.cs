@@ -23,6 +23,7 @@ namespace ModuleAccounts.Views.Uno
         public void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterForNavigation<DistrictSelection, DistrictSelectionViewModel>();
+            containerRegistry.RegisterForNavigation<ChooseSkills, ChooseSkillsViewModel>();
         }
     }
 }

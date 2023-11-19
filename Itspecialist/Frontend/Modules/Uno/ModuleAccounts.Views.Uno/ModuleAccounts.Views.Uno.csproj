@@ -13,6 +13,7 @@
     <PackageReference Include="Prism.Core" />
     <PackageReference Include="Prism.Uno.WinUI" />
     <PackageReference Include="Prism.DryIoc.Uno.WinUI" />
+    <PackageReference Include="Uno.WinUI.DevServer" Condition="'$(Configuration)'=='Debug'"/>
   </ItemGroup>
 
   <ItemGroup>
@@ -58,9 +59,17 @@
 
   <ItemGroup>
     <None Remove="DistrictSelection.xaml" />
+    <None Remove="Views\ChooseSkills.xaml" />
   </ItemGroup>
 
   <ItemGroup>
     <UpToDateCheckInput Remove="DistrictSelection.xaml" />
+    <UpToDateCheckInput Remove="Views\ChooseSkills.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Views\ChooseSkills.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
 </Project>

@@ -6,12 +6,10 @@ namespace Itspecialist
 {
     public partial class App : PrismApplication
     {
-        protected Window? MainWindow { get; private set; }
-
         protected override void ConfigureHost(IHostBuilder builder)
         {
             builder
-                .UseAuthentication(b=>b.AddCustom())
+                .UseAuthentication(b => b.AddCustom())
 #if DEBUG
                     // Switch to Development environment when running in DEBUG
                     .UseEnvironment(Environments.Development)
@@ -40,10 +38,7 @@ namespace Itspecialist
                     .ConfigureServices((context, services) =>
                     {
                         services.AddApi<AuthenticationService>();
-                    })
-                        //.AddSingleton<IWeatherCache, WeatherCache>()
-                        //.AddRefitClient<IApiClient>(context))
-                    .UseNavigation();
+                    });
         }
 
         protected override UIElement CreateShell()

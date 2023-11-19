@@ -38,7 +38,7 @@ namespace ModuleAccount.Contracts.ViewModels
         public ICommand AuthCommand => new AsyncDelegateCommand(OnAuthAsync);
         private async Task OnAuthAsync()
         {
-            
+            this.ChangeCurrentRegion("ChooseSkills");
         }
     }
 }

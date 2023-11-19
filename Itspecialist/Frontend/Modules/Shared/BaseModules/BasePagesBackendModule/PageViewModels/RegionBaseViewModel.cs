@@ -87,7 +87,7 @@ namespace BasePagesBackendModule.PageViewModels
 
         public override void Destroy()
         {
-            _vmServices.VmContainer.DestroyWith.Dispose();
+            _vmServices.VmContainer.DestroyWith?.Dispose();
         }
 
     }
