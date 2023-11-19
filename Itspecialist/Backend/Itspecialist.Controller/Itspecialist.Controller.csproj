@@ -1,14 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <Import Project="..\Backend.Directory.Build.props" Condition="exists('..\Backend.Directory.Build.props')" />
-  <Import Project="..\..\Backend.Directory.Build.props" Condition="exists('..\..\Backend.Directory.Build.props')" />
-  <Import Project="..\..\..\Backend.Directory.Build.props" Condition="exists('..\..\..\Backend.Directory.Build.props')" />
-  <Import Project="..\..\..\..\Backend.Directory.Build.props" Condition="exists('..\..\..\..\Backend.Directory.Build.props')" />
-
-  <Import Project="..\Backend.Directory.Build.targets" Condition="exists('..\Backend.Directory.Build.targets')" />
-  <Import Project="..\..\Backend.Directory.Build.targets" Condition="exists('..\..\Backend.Directory.Build.targets')" />
-  <Import Project="..\..\..\Backend.Directory.Build.targets" Condition="exists('..\..\..\Backend.Directory.Build.targets')" />
-  <Import Project="..\..\..\..\Backend.Directory.Build.targets" Condition="exists('..\..\..\..\Backend.Directory.Build.targets')" />
+  <Import Project="..\Backend.props" Condition="exists('..\Backend.props')" />
+  <Import Project="..\..\Backend.props" Condition="exists('..\..\Backend.props')" />
+  <Import Project="..\..\..\Backend.props" Condition="exists('..\..\..\Backend.props')" />
+  <Import Project="..\..\..\..\Backend.props" Condition="exists('..\..\..\..\Backend.props')" />
+  <Import Project="..\..\..\..\..\Backend.props" Condition="exists('..\..\..\..\..\Backend.props')" />
+  <Import Project="..\..\..\..\..\..\Backend.props" Condition="exists('..\..\..\..\..\..\Backend.props')" />
+  <Import Project="..\..\..\..\..\..\..\Backend.props" Condition="exists('..\..\..\..\..\..\..\Backend.props')" />
+  <Import Project="..\..\..\..\..\..\..\..\Backend.props" Condition="exists('..\..\..\..\..\..\..\..\Backend.props')" />
 
   <ItemGroup>
     <Folder Include="Services\" />
