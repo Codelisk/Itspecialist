@@ -14,7 +14,6 @@ namespace Itspecialist
                 .UseAuthentication(b=>b.AddCustom())
 #if DEBUG
                     // Switch to Development environment when running in DEBUG
-                    .UseToolkitNavigation()
                     .UseEnvironment(Environments.Development)
 #endif
                     .UseSerialization()

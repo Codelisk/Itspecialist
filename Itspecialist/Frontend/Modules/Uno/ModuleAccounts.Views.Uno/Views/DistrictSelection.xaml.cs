@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -17,7 +17,7 @@ using Windows.Foundation.Collections;
 
 namespace ModuleAccounts.Views.Uno.Views
 {
-    public sealed partial class DistrictSelection : UserControl
+    public sealed partial class DistrictSelection
     {
         public DistrictSelection()
         {

@@ -8,7 +8,7 @@
   <Import Project="..\..\..\..\..\..\Library.props" Condition="exists('..\..\..\..\..\..\Library.props')" />
   <Import Project="..\..\..\..\..\..\..\Library.props" Condition="exists('..\..\..\..\..\..\..\Library.props')" />
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Submodules\CodeGen\src\Generators\Api\Api.Generator\Api.Generator.csproj" PrivateAssets="all" OutputItemType="Analyzer"/>
+    <ProjectReference Include="..\..\..\Submodules\CodeGen\src\Generators\Api\Api.Generator\Api.Generator.csproj" PrivateAssets="all" OutputItemType="Analyzer" />
     <ProjectReference Include="..\..\Itspecialist.Foundation\Itspecialist.Foundation.csproj" />
     <!--<ProjectReference Include="..\..\..\Submodules\CodeGen\src\Generators\Api\Codelisk.Api.RefitApis.Generator\Codelisk.Api.RefitApis.Generator.csproj" PrivateAssets="all" OutputItemType="Analyzer" />-->
   </ItemGroup>
