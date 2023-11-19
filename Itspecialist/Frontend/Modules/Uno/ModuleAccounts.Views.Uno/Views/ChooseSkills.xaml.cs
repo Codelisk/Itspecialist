@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -17,10 +17,12 @@ using Windows.Foundation.Collections;
 
 namespace ModuleAccounts.Views.Uno.Views
 {
-    public sealed partial class ChooseSkills : UserControl
+    public sealed partial class ChooseSkills
     {
         public ChooseSkills()
         {
+            System.Diagnostics.Debug.WriteLine("YYYYYYYYY");
+            Console.WriteLine("TESTTT222");
             this.InitializeComponent();
         }
     }

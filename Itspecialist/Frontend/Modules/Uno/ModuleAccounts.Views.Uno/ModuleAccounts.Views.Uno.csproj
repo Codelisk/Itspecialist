@@ -67,9 +67,4 @@
     <UpToDateCheckInput Remove="Views\ChooseSkills.xaml" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Page Update="Views\ChooseSkills.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-  </ItemGroup>
 </Project>
