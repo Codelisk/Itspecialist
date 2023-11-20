@@ -20,8 +20,8 @@ namespace ModuleShell.Contracts.ViewModels.Headers
             _shellNavigatorService = shellNavigatorService;
         }
 
-        public ICommand JobCommand => this.LoadingCommand(OnJobAsync);
-        private async Task OnJobAsync()
+        public ICommand OpportunityCommand => this.LoadingCommand(OnOpportunityAsync);
+        private async Task OnOpportunityAsync()
         {
             await _shellNavigatorService.NavigateToJobsAsync(_vmServices.RegionManager);
         }

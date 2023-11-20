@@ -9,8 +9,8 @@
       <ImplicitUsings>enable</ImplicitUsings>
       <Nullable>enable</Nullable>
 
-      <DebugType>portable</DebugType>
-      <DebugSymbols>True</DebugSymbols>
+      <!--<!<DebugType>portable</DebugType>
+      <DebugSymbols>True</DebugSymbols>-->
 
       <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
       <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>

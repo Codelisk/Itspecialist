@@ -15,5 +15,12 @@ namespace ModuleShell.Contracts.Services
                 regionManager.RequestNavigate("ContentRegion", "OpportunityOverview");
             }
         }
+        public async Task NavigateToTalentsAsync<TNavigator>(TNavigator navigator)
+        {
+            if (navigator is IRegionManager regionManager)
+            {
+                regionManager.RequestNavigate("ContentRegion", "TalentOverview");
+            }
+        }
     }
 }

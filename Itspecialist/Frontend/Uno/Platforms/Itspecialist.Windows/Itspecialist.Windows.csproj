@@ -27,7 +27,6 @@
     <PackageReference Include="Uno.WinUI" />
     <PackageReference Include="Microsoft.WindowsAppSDK" />
     <PackageReference Include="Microsoft.Windows.SDK.BuildTools" />
-    <PackageReference Include="CommunityToolkit.Mvvm" />
     <PackageReference Include="Uno.Extensions.Configuration" />
     <PackageReference Include="Uno.Extensions.Http" />
     <PackageReference Include="Uno.Extensions.Http.Refit" />
@@ -41,8 +40,6 @@
     <PackageReference Include="Microsoft.Extensions.Logging.Console" />
     <PackageReference Include="Uno.Core.Extensions.Logging.Singleton" />
     <PackageReference Include="Uno.UI.Adapter.Microsoft.Extensions.Logging" />
-    <PackageReference Include="Uno.Toolkit.WinUI.Material" />
-    <PackageReference Include="Uno.Toolkit.WinUI" />
     <PackageReference Include="Uno.WinUI.DevServer" Condition="'$(Configuration)'=='Debug'" />
   </ItemGroup>
 
@@ -68,4 +65,11 @@
   </PropertyGroup>
 
   <Import Project="..\..\Shared\Itspecialist.Base\base.props" />
+
+  <Target Name="_FixMUXPri" AfterTargets="RemoveDuplicatePriFiles" BeforeTargets="_ComputeInputPriFiles">
+    <ItemGroup>
+      <MyPriToBeRemoved Include="@(_PriFilesFromPayload)" Condition="'%(_PriFilesFromPayload.NuGetPackageId)' == 'Microsoft.UI.Xaml' and '%(_PriFilesFromPayload.NuGetPackageVersion)' == '2.4.2'" />
+      <_PriFilesFromPayload Remove="@(MyPriToBeRemoved)" />
+    </ItemGroup>
+  </Target>
 </Project>

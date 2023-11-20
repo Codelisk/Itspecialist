@@ -58,10 +58,20 @@
 
   <ItemGroup>
     <None Remove="Views\Opportunity\OpportunityOverview.xaml" />
+    <None Remove="Views\Talent\TalentOverview.xaml" />
   </ItemGroup>
 
   <ItemGroup>
     <UpToDateCheckInput Remove="Views\Opportunity\OpportunityOverview.xaml" />
+    <UpToDateCheckInput Remove="Views\Talent\TalentOverview.xaml" />
   </ItemGroup>
-
+  
+  <ItemGroup>
+    <Page Update="Views\Opportunity\OpportunityOverview.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="Views\Talent\TalentOverview.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
 </Project>

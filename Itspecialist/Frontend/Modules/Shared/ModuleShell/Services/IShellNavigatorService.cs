@@ -9,5 +9,6 @@ namespace ModuleShell.Contracts.Services
     public interface IShellNavigatorService
     {
         Task NavigateToJobsAsync<TNavigator>(TNavigator navigator);
+        Task NavigateToTalentsAsync<TNavigator>(TNavigator navigator);
     }
 }

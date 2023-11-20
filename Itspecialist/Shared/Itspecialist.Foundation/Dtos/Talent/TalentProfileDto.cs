@@ -21,6 +21,6 @@ namespace Itspecialist.Foundation.Dtos.Talent
         [ForeignKey(nameof(AccountDto))]
         public required Guid AccountId { get; set; }
         [ForeignKey(nameof(TalentCompensationDto))]
-        public Guid? SpecialistCompensationId { get; set; }
+        public Guid? TalentCompensationId { get; set; }
     }
 }

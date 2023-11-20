@@ -15,11 +15,11 @@ using Windows.Foundation.Collections;
 
 // The User Control item template is documented at https://go.microsoft.com/fwlink/?LinkId=234236
 
-namespace ModuleDashboard.Views.Uno.Views.Opportunity
+namespace ModuleDashboard.Views.Uno.Views.Talent
 {
-    public sealed partial class OpportunityOverview
+    public sealed partial class TalentOverview
     {
-        public OpportunityOverview()
+        public TalentOverview()
         {
             this.InitializeComponent();
         }
