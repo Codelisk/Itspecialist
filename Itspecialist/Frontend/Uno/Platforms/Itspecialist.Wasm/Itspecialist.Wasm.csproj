@@ -91,9 +91,9 @@
     <PackageReference Include="Uno.Extensions.Navigation.WinUI" />
     <PackageReference Include="Microsoft.Extensions.Logging.Console" />
   </ItemGroup>
+
   <ItemGroup>
-    <ProjectReference Include="..\Itspecialist\Itspecialist.csproj" />
-    <ProjectReference Include="..\Itspecialist.DataContracts\Itspecialist.DataContracts.csproj" />
+    <ProjectReference Include="..\..\Shared\Itspecialist\Itspecialist.csproj" />
   </ItemGroup>
-  <Import Project="..\Itspecialist.Base\base.props" />
+  <Import Project="..\..\Shared\Itspecialist.Base\base.props" />
 </Project>
