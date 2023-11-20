@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Foundation.Api.Models;
+using Itspecialist.Api.Models.Auth;
 using Itspecialist.Api.Repositories;
 using Itspecialist.Api.Services.Auth;
 
@@ -20,6 +21,13 @@ namespace Itspecialist.Services
         {
             _authRepository = authRepository;
             _tokenProvider = tokenProvider;
+        }
+
+        public async Task<bool> RegisterAsync(string email, string password)
+        {
+            var authResult = await _authRepository.RegisterAsync(new AuthPayload() { email = email, password = password });
+            _tokenProvider.UpdateCurrentToken(authResult.accessToken, authResult.refreshToken);
+            return true;
         }
 
         public async Task<bool> AuthenticateAndCacheTokenAsync(AuthPayload auth)

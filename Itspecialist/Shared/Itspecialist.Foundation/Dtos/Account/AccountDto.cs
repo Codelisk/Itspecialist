@@ -18,7 +18,6 @@ namespace Itspecialist.Foundation.Dtos.Account
         public required string Email { get; set; }
         [ForeignKey(nameof(SkillsDto))]
         public required Guid SkillsId { get; set; }
-        public required PreferredEmploymentStatusEnum PreferredEmploymentStatus { get; set; }
         public required AccountTypeEnum AccountType { get; set; }
         [ForeignKey(nameof(DistrictDto))]
         public required Guid DistrictId { get; set; }

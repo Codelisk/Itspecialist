@@ -48,7 +48,8 @@ namespace ModuleAccount.Contracts.ViewModels
                     Title = "",
                     FirstName = "",
                     LastName = "",
-                    AccountId = account.id
+                    AccountId = account.id,
+                    PreferredEmploymentStatus = PreferredEmploymentStatusEnum.Contract,
                 };
             }
 

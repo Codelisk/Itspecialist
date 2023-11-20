@@ -8,6 +8,7 @@ using Codelisk.GeneratorAttributes;
 using Codelisk.GeneratorAttributes.WebAttributes.Dto;
 using Itspecialist.Foundation.Dtos.Account;
 using Itspecialist.Foundation.Dtos.Base;
+using Itspecialist.Foundation.Enums.Account;
 
 namespace Itspecialist.Foundation.Dtos.Talent
 {
@@ -22,5 +23,6 @@ namespace Itspecialist.Foundation.Dtos.Talent
         public required Guid AccountId { get; set; }
         [ForeignKey(nameof(TalentCompensationDto))]
         public Guid? TalentCompensationId { get; set; }
+        public required PreferredEmploymentStatusEnum PreferredEmploymentStatus { get; set; }
     }
 }

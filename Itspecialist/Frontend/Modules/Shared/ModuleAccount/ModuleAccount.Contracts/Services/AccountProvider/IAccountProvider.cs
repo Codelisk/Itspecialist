@@ -11,5 +11,6 @@ namespace ModuleAccount.Contracts.Services.AccountProvider
         AccountDto? Account { get; }
 
         Task<bool> SetAccountAsync();
+        void SetAccountFromRegister(AccountDto account);
     }
 }

@@ -9,5 +9,8 @@
   <Import Project="..\..\..\..\..\..\Modules.props" Condition="exists('..\..\..\..\..\..\Modules.props')" />
   <Import Project="..\..\..\..\..\..\..\Modules.props" Condition="exists('..\..\..\..\..\..\..\Modules.props')" />
   <Import Project="..\..\..\..\..\..\..\..\Modules.props" Condition="exists('..\..\..\..\..\..\..\..\Modules.props')" />
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\Shared\Itspecialist.Foundation\Itspecialist.Foundation.csproj" />
+  </ItemGroup>
 
 </Project>

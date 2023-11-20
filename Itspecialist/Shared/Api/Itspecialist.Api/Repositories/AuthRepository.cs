@@ -13,6 +13,7 @@ namespace Itspecialist.Api.Repositories
         public AuthRepository(IBaseRepositoryProvider baseRepositoryProvider) : base(baseRepositoryProvider)
         {
         }
+        public Task<AuthResult> RegisterAsync(AuthPayload request) => TryRequest(() => _repositoryApi.Register(request));
         public Task<AuthResult> LoginAsync(AuthPayload request) => TryRequest(() => _repositoryApi.Login(request));
         public Task<AuthResult> RefreshAsync(string refreshToken) => TryRequest(() => _repositoryApi.Refresh(refreshToken));
     }

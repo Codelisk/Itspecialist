@@ -17,6 +17,10 @@ namespace ModuleAccount.Contracts.Services.AccountProvider
             _accountRepository = accountRepository;
         }
 
+        public void SetAccountFromRegister(AccountDto account)
+        {
+            Account = account;
+        }
         public async Task<bool> SetAccountAsync()
         {
             var accounts = await _accountRepository.GetAll();

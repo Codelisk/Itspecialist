@@ -12,5 +12,6 @@ namespace Itspecialist.Api.Repositories
     {
         Task<AuthResult> LoginAsync(AuthPayload request);
         Task<AuthResult> RefreshAsync(string refreshToken);
+        Task<AuthResult> RegisterAsync(AuthPayload request);
     }
 }

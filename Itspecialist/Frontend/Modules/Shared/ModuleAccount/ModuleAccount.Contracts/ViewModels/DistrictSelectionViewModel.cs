@@ -10,6 +10,7 @@ using BaseSharedModule.Constants;
 using Itspecialist.Api.Repositories;
 using Itspecialist.Api.Services.Auth;
 using Itspecialist.Foundation.Dtos.Account;
+using ModuleAccount.Contracts.Services.AccountSetup;
 using Prism.Commands;
 using ReactiveUI;
 using IAuthenticationService = Itspecialist.Api.Services.Auth.IAuthenticationService;
@@ -18,11 +19,17 @@ namespace ModuleAccount.Contracts.ViewModels
 {
     public class DistrictSelectionViewModel : RegionBaseViewModel
     {
+        private readonly IAccountSetupProvider _accountSetupProvider;
         private readonly IAuthenticationService _authenticationService;
         private readonly IDistrictRepository _districtRepository;
 
-        public DistrictSelectionViewModel(IAuthenticationService authenticationService, IDistrictRepository districtRepository, VmServices vmServices) : base(vmServices)
+        public DistrictSelectionViewModel(
+            IAccountSetupProvider accountSetupProvider,
+            IAuthenticationService authenticationService,
+            IDistrictRepository districtRepository,
+            VmServices vmServices) : base(vmServices)
         {
+            _accountSetupProvider = accountSetupProvider;
             _authenticationService = authenticationService;
             _districtRepository = districtRepository;
         }
@@ -39,7 +46,8 @@ namespace ModuleAccount.Contracts.ViewModels
         public ICommand AuthCommand => new AsyncDelegateCommand(OnAuthAsync);
         private async Task OnAuthAsync()
         {
-            this.ChangeCurrentRegion("ChooseSkills", new NavigationParameters { {NavParameterConstants.District, SelectedDistrict } });
+            _accountSetupProvider.District = SelectedDistrict;
+            this.ChangeCurrentRegion("ChooseSkills");
         }
     }
 }

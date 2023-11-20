@@ -6,5 +6,6 @@ namespace Itspecialist.Api.Services.Auth
     {
         Task<bool> AuthenticateAndCacheTokenAsync(AuthPayload auth);
         Task<bool> RefreshAndCacheTokenAsync();
+        Task<bool> RegisterAsync(string email, string password);
     }
 }

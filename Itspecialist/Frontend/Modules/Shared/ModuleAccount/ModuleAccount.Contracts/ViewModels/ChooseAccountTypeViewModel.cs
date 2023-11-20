@@ -8,13 +8,17 @@ using BasePagesBackendModule.PageViewModels;
 using BaseServicesModule.Services.Vms;
 using BaseSharedModule.Constants;
 using Itspecialist.Foundation.Enums.Account;
+using ModuleAccount.Contracts.Services.AccountSetup;
 
 namespace ModuleAccount.Contracts.ViewModels
 {
     public partial class ChooseAccountTypeViewModel : RegionBaseViewModel
     {
-        public ChooseAccountTypeViewModel(VmServices vmServices) : base(vmServices)
+        private readonly IAccountSetupProvider _accountSetupProvider;
+
+        public ChooseAccountTypeViewModel(VmServices vmServices, IAccountSetupProvider accountSetupProvider) : base(vmServices)
         {
+            _accountSetupProvider = accountSetupProvider;
         }
 
         public AccountTypeEnum SelectedAccountType { get; set; }
@@ -23,7 +27,8 @@ namespace ModuleAccount.Contracts.ViewModels
         public ICommand FinishedCommand => this.LoadingCommand(OnFinishedAsync);
         private async Task OnFinishedAsync()
         {
-            this.ChangeCurrentRegion("TalentProfile", new NavigationParameters { { NavParameterConstants.AccountType, SelectedAccountType } });
+            _accountSetupProvider.AccountType = SelectedAccountType;
+            this.ChangeCurrentRegion("RegisterPage");
         }
     }
 }

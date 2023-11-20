@@ -7,6 +7,7 @@ using System.Windows.Input;
 using BasePagesBackendModule.PageViewModels;
 using BaseServicesModule.Services.Vms;
 using BaseSharedModule.Constants;
+using ModuleAccount.Contracts.Services.AccountSetup;
 
 namespace ModuleAccount.Contracts.ViewModels
 {
@@ -14,13 +15,16 @@ namespace ModuleAccount.Contracts.ViewModels
     {
         private readonly IProgrammingLanguageRepository _programmingLanguageRepository;
         private readonly IProgrammingFrameworkRepository _programmingFrameworkRepository;
+        private readonly IAccountSetupProvider _accountSetupProvider;
 
         public ChooseSkillsViewModel(VmServices vmServices,
             IProgrammingLanguageRepository programmingLanguageRepository,
-            IProgrammingFrameworkRepository programmingFrameworkRepository) : base(vmServices)
+            IProgrammingFrameworkRepository programmingFrameworkRepository,
+            IAccountSetupProvider accountSetupProvider) : base(vmServices)
         {
             _programmingLanguageRepository = programmingLanguageRepository;
             _programmingFrameworkRepository = programmingFrameworkRepository;
+            _accountSetupProvider = accountSetupProvider;
         }
 
         public List<ProgrammingLanguageDto> Languages { get; set; }
@@ -48,12 +52,10 @@ namespace ModuleAccount.Contracts.ViewModels
         private async Task OnFinishedAsync()
         {
             var skill=new SkillsDto { PrimaryProgrammingLanguage = PrimaryLanguage.id, SecondaryProgrammingLanguage = SecondaryLanguage.id };
-            this.ChangeCurrentRegion("ChooseAccountType", new NavigationParameters
-            {
-                { NavParameterConstants.Skill, skill},
-                { NavParameterConstants.PrimaryFrameworks, PrimaryFrameworks},
-                { NavParameterConstants.SecondaryFrameworks, SecondaryFrameworks}
-            });
+            _accountSetupProvider.Skill = skill;
+            _accountSetupProvider.PrimaryFrameworks = PrimaryFrameworks;
+            _accountSetupProvider.SecondaryFrameworks = SecondaryFrameworks;
+            this.ChangeCurrentRegion("ChooseAccountType");
         }
     }
 }
