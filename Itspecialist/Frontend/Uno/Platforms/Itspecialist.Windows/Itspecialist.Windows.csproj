@@ -43,6 +43,7 @@
     <PackageReference Include="Uno.UI.Adapter.Microsoft.Extensions.Logging" />
     <PackageReference Include="Uno.Toolkit.WinUI.Material" />
     <PackageReference Include="Uno.Toolkit.WinUI" />
+    <PackageReference Include="Uno.WinUI.DevServer" Condition="'$(Configuration)'=='Debug'" />
   </ItemGroup>
 
   <!--

@@ -44,7 +44,7 @@
                             Spacing="15">
                     <Button Command="{Binding NavigateCommand}"
                             CommandParameter="DistrictSelection">
-                        Navigate to View 113
+                        Navigate to View 116
                     </Button>
                     <Button Command="{Binding NavigateCommand}"
                             CommandParameter="ViewB">

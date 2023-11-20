@@ -1,3 +1,5 @@
+using System.Diagnostics;
+
 namespace Itspecialist.Presentation
 {
     public class ShellViewModel : BindableBase, IActiveAware
@@ -30,6 +32,7 @@ namespace Itspecialist.Presentation
         }
         private void ExecuteNavigateCommand(string viewName)
         {
+            Debug.WriteLine("TESTXXXXXXXXXXX");
             //var test = _resolveAuthService();
             _regionManager.RequestNavigate("ContentRegion", viewName);
         }
