@@ -25,6 +25,8 @@ namespace ModuleAccounts.Views.Uno
             containerRegistry.RegisterForNavigation<DistrictSelection, DistrictSelectionViewModel>();
             containerRegistry.RegisterForNavigation<ChooseSkills, ChooseSkillsViewModel>();
             containerRegistry.RegisterForNavigation<ChooseAccountType, ChooseAccountTypeViewModel>();
+            containerRegistry.RegisterForNavigation<TalentProfileSetup, TalentProfileSetupViewModel>();
+            containerRegistry.RegisterForNavigation<RegisterPage, RegisterPageViewModel>();
         }
     }
 }

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using BasePagesBackendModule.PageViewModels;
 using BaseServicesModule.Services.Vms;
+using BaseSharedModule.Constants;
 
 namespace ModuleAccount.Contracts.ViewModels
 {
@@ -46,7 +47,13 @@ namespace ModuleAccount.Contracts.ViewModels
         public ICommand FinishedCommand => this.LoadingCommand(OnFinishedAsync);
         private async Task OnFinishedAsync()
         {
-            this.ChangeCurrentRegion("ChooseAccountType");
+            var skill=new SkillsDto { PrimaryProgrammingLanguage = PrimaryLanguage.id, SecondaryProgrammingLanguage = SecondaryLanguage.id };
+            this.ChangeCurrentRegion("ChooseAccountType", new NavigationParameters
+            {
+                { NavParameterConstants.Skill, skill},
+                { NavParameterConstants.PrimaryFrameworks, PrimaryFrameworks},
+                { NavParameterConstants.SecondaryFrameworks, SecondaryFrameworks}
+            });
         }
     }
 }

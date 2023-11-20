@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using BasePagesBackendModule.PageViewModels;
 using BaseServicesModule.Services.Vms;
+using BaseSharedModule.Constants;
 using Itspecialist.Foundation.Enums.Account;
 
 namespace ModuleAccount.Contracts.ViewModels
@@ -16,12 +17,13 @@ namespace ModuleAccount.Contracts.ViewModels
         {
         }
 
+        public AccountTypeEnum SelectedAccountType { get; set; }
         public List<AccountTypeEnum> AccountTypes { get; set; }
 
         public ICommand FinishedCommand => this.LoadingCommand(OnFinishedAsync);
         private async Task OnFinishedAsync()
         {
-
+            this.ChangeCurrentRegion("TalentProfile", new NavigationParameters { { NavParameterConstants.AccountType, SelectedAccountType } });
         }
     }
 }

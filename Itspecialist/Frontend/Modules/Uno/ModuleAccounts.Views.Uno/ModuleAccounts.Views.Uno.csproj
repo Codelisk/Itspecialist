@@ -61,16 +61,26 @@
     <None Remove="DistrictSelection.xaml" />
     <None Remove="Views\ChooseAccountType.xaml" />
     <None Remove="Views\ChooseSkills.xaml" />
+    <None Remove="Views\RegisterPage.xaml" />
+    <None Remove="Views\TalentProfileSetup.xaml" />
   </ItemGroup>
 
   <ItemGroup>
     <UpToDateCheckInput Remove="DistrictSelection.xaml" />
     <UpToDateCheckInput Remove="Views\ChooseAccountType.xaml" />
     <UpToDateCheckInput Remove="Views\ChooseSkills.xaml" />
+    <UpToDateCheckInput Remove="Views\RegisterPage.xaml" />
+    <UpToDateCheckInput Remove="Views\TalentProfileSetup.xaml" />
   </ItemGroup>
 
   <ItemGroup>
     <Page Update="Views\ChooseAccountType.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="Views\RegisterPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="Views\TalentProfileSetup.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>

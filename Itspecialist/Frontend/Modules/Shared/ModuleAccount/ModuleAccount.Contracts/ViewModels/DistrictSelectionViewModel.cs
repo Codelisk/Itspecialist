@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using BasePagesBackendModule.PageViewModels;
 using BaseServicesModule.Services.Vms;
+using BaseSharedModule.Constants;
 using Itspecialist.Api.Repositories;
 using Itspecialist.Api.Services.Auth;
 using Itspecialist.Foundation.Dtos.Account;
@@ -38,7 +39,7 @@ namespace ModuleAccount.Contracts.ViewModels
         public ICommand AuthCommand => new AsyncDelegateCommand(OnAuthAsync);
         private async Task OnAuthAsync()
         {
-            this.ChangeCurrentRegion("ChooseSkills");
+            this.ChangeCurrentRegion("ChooseSkills", new NavigationParameters { {NavParameterConstants.District, SelectedDistrict } });
         }
     }
 }
