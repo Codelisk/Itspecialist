@@ -21,7 +21,7 @@ namespace ModuleAccounts.Views.Uno.Views
     {
         public ChooseSkills()
         {
-            System.Diagnostics.Debug.WriteLine("YYYYYYYYY");
+            System.Diagnostics.Debug.WriteLine("XXXXXXXX");
             Console.WriteLine("TESTTT222");
             this.InitializeComponent();
         }
