@@ -25,5 +25,11 @@ namespace ModuleShell.Contracts.ViewModels.Headers
         {
             await _shellNavigatorService.NavigateToJobsAsync(_vmServices.RegionManager);
         }
+
+        public ICommand TalentCommand => this.LoadingCommand(OnTalentAsync);
+        private async Task OnTalentAsync()
+        {
+            await _shellNavigatorService.NavigateToTalentsAsync(_vmServices.RegionManager);
+        }
     }
 }

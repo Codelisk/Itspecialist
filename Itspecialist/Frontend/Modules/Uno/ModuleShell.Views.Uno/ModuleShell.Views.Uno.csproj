@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFrameworks>net8.0;net8.0-ios;net8.0-android;net8.0-maccatalyst</TargetFrameworks>
@@ -58,11 +58,11 @@
 
 
   <ItemGroup>
-    <None Remove="ShellHeader.xaml" />
+    <None Remove="Views\Headers\ShellHeader.xaml" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="ShellHeader.xaml" />
+    <None Remove="Views\Headers\ShellHeader.xaml" />
   </ItemGroup>
 
   <ItemGroup>

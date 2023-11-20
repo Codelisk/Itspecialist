@@ -11,6 +11,7 @@
     <StackPanel Orientation="Horizontal">
         <Button Command="{Binding OpportunityCommand}"
                 Content="Jobs" />
-        <Button Content="Talente" />
+        <Button Command="{Binding TalentCommand}"
+                Content="Talente" />
     </StackPanel>
 </UserControl>

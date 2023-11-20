@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using BasePagesBackendModule.PageViewModels;
 using BaseServicesModule.Services.Vms;
 using Itspecialist.Foundation.DtoHelper;
+using Itspecialist.Api;
 
 namespace ModuleDashboard.Contracts.ViewModels.Talent
 {
@@ -14,7 +15,7 @@ namespace ModuleDashboard.Contracts.ViewModels.Talent
         private readonly ITalentCompensationRepository _talentCompensationRepository;
         private readonly ITalentProfileRepository _talentProfileRepository;
 
-        public TalentOverviewViewModel(VmServices vmServices, 
+        public TalentOverviewViewModel(VmServices vmServices,
             ITalentCompensationRepository talentCompensationRepository,
             ITalentProfileRepository talentProfileRepository) : base(vmServices)
         {
