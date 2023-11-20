@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFrameworks>net8.0;net8.0-ios;net8.0-android;net8.0-maccatalyst</TargetFrameworks>
@@ -18,7 +18,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\Shared\Itspecialist.Foundation\Itspecialist.Foundation.csproj" />
-    <ProjectReference Include="..\..\Shared\ModuleAccount\ModuleAccount.Contracts\ModuleAccount.Contracts.csproj" />
     <ProjectReference Include="..\..\Shared\ModuleShell\ModuleShell.Contracts.csproj" />
   </ItemGroup>
   <Choose>
@@ -59,11 +58,17 @@
 
 
   <ItemGroup>
-    <None Remove="Views\Headers\ShellHeader.xaml" />
+    <None Remove="ShellHeader.xaml" />
   </ItemGroup>
 
   <ItemGroup>
-    <UpToDateCheckInput Remove="ShellHeader.xaml" />
+    <None Remove="ShellHeader.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Views\Headers\ShellHeader.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
 
 </Project>
