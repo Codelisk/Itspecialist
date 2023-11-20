@@ -37,21 +37,7 @@
                 <RowDefinition Height="auto" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-            <StackPanel Margin="20"
-                        HorizontalAlignment="Center"
-                        Spacing="15">
-                <StackPanel Orientation="Horizontal"
-                            Spacing="15">
-                    <Button Command="{Binding NavigateCommand}"
-                            CommandParameter="DistrictSelection">
-                        Navigate to View 116
-                    </Button>
-                    <Button Command="{Binding NavigateCommand}"
-                            CommandParameter="ViewB">
-                        Navigate to View B
-                    </Button>
-                </StackPanel>
-            </StackPanel>
+            <ContentControl pr:RegionManager.RegionName="ShellRegion" />
             <ContentControl Grid.Row="1"
                             pr:RegionManager.RegionName="ContentRegion" />
         </Grid>

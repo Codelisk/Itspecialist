@@ -55,6 +55,8 @@ namespace Itspecialist
         protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
         {
             moduleCatalog.AddModule<ModuleAccounts.Views.Uno.ModuleInitializer>();
+            moduleCatalog.AddModule<ModuleShell.Views.Uno.ModuleInitializer>();
+            moduleCatalog.AddModule<ModuleDashboard.Views.Uno.ModuleInitializer>();
         }
     }
 }

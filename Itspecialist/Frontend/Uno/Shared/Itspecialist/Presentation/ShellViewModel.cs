@@ -28,7 +28,7 @@ namespace Itspecialist.Presentation
         private void Initialize()
         {
             _isInitialized = true;
-
+            _regionManager.RequestNavigate("ShellRegion", "ShellHeader");
         }
         private void ExecuteNavigateCommand(string viewName)
         {

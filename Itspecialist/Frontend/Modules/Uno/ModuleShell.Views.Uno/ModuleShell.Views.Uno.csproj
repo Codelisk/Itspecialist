@@ -1,5 +1,5 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-  
+<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
     <TargetFrameworks>net8.0;net8.0-ios;net8.0-android;net8.0-maccatalyst</TargetFrameworks>
     <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows')) or '$(EnableWindowsTargeting)' == 'true'">$(TargetFrameworks);net8.0-windows10.0.22621</TargetFrameworks>
@@ -7,7 +7,7 @@
     <!-- Ensures the .xr.xml files are generated in a proper layout folder -->
     <GenerateLibraryLayout>true</GenerateLibraryLayout>
   </PropertyGroup>
-  
+
   <ItemGroup>
     <PackageReference Include="Uno.WinUI" />
     <PackageReference Include="Prism.Core" />
@@ -19,6 +19,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\Shared\Itspecialist.Foundation\Itspecialist.Foundation.csproj" />
     <ProjectReference Include="..\..\Shared\ModuleAccount\ModuleAccount.Contracts\ModuleAccount.Contracts.csproj" />
+    <ProjectReference Include="..\..\Shared\ModuleShell\ModuleShell.Contracts.csproj" />
   </ItemGroup>
   <Choose>
     <When Condition="$(IsWinAppSdk)">
@@ -58,21 +59,11 @@
 
 
   <ItemGroup>
-    <None Remove="DistrictSelection.xaml" />
-    <None Remove="Views\ChooseAccountType.xaml" />
-    <None Remove="Views\ChooseSkills.xaml" />
+    <None Remove="Views\Headers\ShellHeader.xaml" />
   </ItemGroup>
 
   <ItemGroup>
-    <UpToDateCheckInput Remove="DistrictSelection.xaml" />
-    <UpToDateCheckInput Remove="Views\ChooseAccountType.xaml" />
-    <UpToDateCheckInput Remove="Views\ChooseSkills.xaml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Page Update="Views\ChooseAccountType.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
+    <UpToDateCheckInput Remove="ShellHeader.xaml" />
   </ItemGroup>
 
 </Project>
