@@ -56,6 +56,10 @@
     <PackageReference Include="Uno.UI.Adapter.Microsoft.Extensions.Logging" />
     <PackageReference Include="Uno.WinUI.DevServer" Condition="'$(Configuration)'=='Debug'" />
   </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Shared\Itspecialist\Itspecialist.csproj" />
+  </ItemGroup>
   <Choose>
     <When Condition="$(IsAndroid)">
       <ItemGroup>
@@ -95,9 +99,5 @@
       </PropertyGroup>
     </When>
   </Choose>
-  <ItemGroup>
-    <ProjectReference Include="..\Itspecialist\Itspecialist.csproj" />
-    <ProjectReference Include="..\Itspecialist.DataContracts\Itspecialist.DataContracts.csproj" />
-  </ItemGroup>
-  <Import Project="..\Itspecialist.Base\base.props" />
+  <Import Project="..\..\Shared\Itspecialist.Base\base.props" />
 </Project>
