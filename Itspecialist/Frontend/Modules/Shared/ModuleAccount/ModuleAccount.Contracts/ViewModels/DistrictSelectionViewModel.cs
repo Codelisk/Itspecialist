@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -37,16 +38,22 @@ namespace ModuleAccount.Contracts.ViewModels
         {
             base.OnNavigatedTo(navigationContext);
 
-            await _authenticationService.AuthenticateAndCacheTokenAsync(new Foundation.Api.Models.AuthPayload() { email = "user@test.at", password = "Test1234!" });
-            Districts = await _districtRepository.GetAll();
+            //await _authenticationService.AuthenticateAndCacheTokenAsync(new Foundation.Api.Models.AuthPayload() { email = "user@test.at", password = "Test1234!" });
+            Districts = new ObservableCollection<DistrictDto>( await _districtRepository.GetAll());
             this.RaisePropertyChanged(nameof(Districts));
         }
-        public DistrictDto SelectedDistrict { get; set; }
-        public List<DistrictDto> Districts { get; set; }
+
+        private DistrictDto selectedDistrict;
+        public DistrictDto SelectedDistrict
+        {
+            get { return selectedDistrict; }
+            set { this.RaiseAndSetIfChanged(ref selectedDistrict, value); }
+        }
+        public ObservableCollection<DistrictDto> Districts { get; set; }
         public ICommand AuthCommand => new AsyncDelegateCommand(OnAuthAsync);
         private async Task OnAuthAsync()
         {
-            _accountSetupProvider.District = SelectedDistrict;
+            _accountSetupProvider.District = Districts.First();
             this.ChangeCurrentRegion("ChooseSkills");
         }
     }

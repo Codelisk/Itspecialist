@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ModuleAccount.Contracts.ViewModels;
 using ModuleAccounts.Views.Uno.Views;
+using ModuleAccount.Contracts;
 
 namespace ModuleAccounts.Views.Uno
 {
@@ -23,6 +24,7 @@ namespace ModuleAccounts.Views.Uno
 
         public void RegisterTypes(IContainerRegistry containerRegistry)
         {
+            containerRegistry.AddModuleAccountContracts();
             containerRegistry.RegisterForNavigation<DistrictSelection, DistrictSelectionViewModel>();
             containerRegistry.RegisterForNavigation<ChooseSkills, ChooseSkillsViewModel>();
             containerRegistry.RegisterForNavigation<ChooseAccountType, ChooseAccountTypeViewModel>();

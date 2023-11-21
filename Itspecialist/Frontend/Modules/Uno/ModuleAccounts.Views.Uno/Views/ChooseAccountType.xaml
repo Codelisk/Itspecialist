@@ -8,7 +8,8 @@
              d:DesignWidth="400"
              mc:Ignorable="d">
 
-    <Grid>
+    <StackPanel>
         <ComboBox />
-    </Grid>
+        <Button Command="{Binding FinishedCommand}" />
+    </StackPanel>
 </UserControl>

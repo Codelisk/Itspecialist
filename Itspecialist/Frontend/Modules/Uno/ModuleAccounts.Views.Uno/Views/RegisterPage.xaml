@@ -9,9 +9,10 @@
              mc:Ignorable="d">
 
     <StackPanel>
-        <TextBox Text="{Binding Name}" />
-        <TextBox Text="{Binding Email}" />
-        <TextBox Text="{Binding Password}" />
-        <Button Content="Finish" />
+        <TextBox Text="{Binding Name, Mode=TwoWay}" />
+        <TextBox Text="{Binding Email, Mode=TwoWay}" />
+        <TextBox Text="{Binding Password, Mode=TwoWay}" />
+        <Button Command="{Binding RegisterCommand}"
+                Content="Finish" />
     </StackPanel>
 </UserControl>

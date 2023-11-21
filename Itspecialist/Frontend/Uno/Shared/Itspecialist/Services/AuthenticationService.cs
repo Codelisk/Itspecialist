@@ -25,7 +25,7 @@ namespace Itspecialist.Services
 
         public async Task<bool> RegisterAsync(string email, string password)
         {
-            var authResult = await _authRepository.RegisterAsync(new AuthPayload() { email = email, password = password });
+            var authResult = await _authRepository.RegisterAndLoginAsync(new AuthPayload() { email = email, password = password });
             _tokenProvider.UpdateCurrentToken(authResult.accessToken, authResult.refreshToken);
             return true;
         }
