@@ -12,6 +12,6 @@
         <ComboBox ItemsSource="{Binding Districts}"
                   SelectedItem="{Binding SelectedDistrict}" />
         <Button Command="{Binding AuthCommand}"
-                Content="DistrictSelection 55" />
+                Content="DistrictSelection 55 6" />
     </StackPanel>
 </UserControl>

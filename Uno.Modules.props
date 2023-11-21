@@ -13,9 +13,7 @@
   
   <ItemGroup>
     <PackageReference Include="Uno.WinUI" />
-    <PackageReference Include="Prism.Core" />
     <PackageReference Include="Prism.Uno.WinUI" />
     <PackageReference Include="Prism.DryIoc.Uno.WinUI" />
-    <PackageReference Include="Uno.WinUI.DevServer" Condition="'$(Configuration)'=='Debug'" />
   </ItemGroup>
 </Project>

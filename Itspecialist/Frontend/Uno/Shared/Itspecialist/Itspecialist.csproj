@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows')) or '$(EnableWindowsTargeting)' == 'true'">$(TargetFrameworks);net8.0-windows10.0.22621</TargetFrameworks>
@@ -12,14 +12,8 @@
   <ItemGroup>
     <PackageReference Include="Prism.DryIoc.Uno.WinUI" />
     <PackageReference Include="Uno.WinUI" />
-    <PackageReference Include="Uno.Resizetizer" />
     <PackageReference Include="Uno.Extensions.Configuration" />
-    <PackageReference Include="Uno.Extensions.Http" />
-    <PackageReference Include="Uno.Extensions.Http.Refit" />
     <PackageReference Include="Uno.Extensions.Logging.WinUI" />
-    <PackageReference Include="Uno.Extensions.Serialization.Http" />
-    <PackageReference Include="Uno.Extensions.Http.WinUI" />
-    <PackageReference Include="Uno.Extensions.Serialization.Refit" />
     <PackageReference Include="Uno.Material.WinUI" />
     <PackageReference Include="Uno.Dsp.Tasks" />
     <PackageReference Include="Uno.Extensions.Core.WinUI" />
