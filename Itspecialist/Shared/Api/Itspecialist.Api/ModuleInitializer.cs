@@ -8,11 +8,18 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Itspecialist.Api
 {
-    public class ModuleInitializerBase
+    internal class ModuleInitializerBase
     {
         public virtual void AddApis(IServiceCollection services) { }
     }
-    public partial class ModuleInitializer : ModuleInitializerBase
+    public static class ModuleInitializerExtension
+    {
+        public static void AddApi<TAuthService>(this IServiceCollection services) where TAuthService : class, IAuthenticationService
+        {
+            new ModuleInitializer().AddApi<TAuthService>(services);
+        }
+    }
+    internal partial class ModuleInitializer : ModuleInitializerBase
     {
         public virtual void AddApi<TAuthService>(IServiceCollection services) where TAuthService : class, IAuthenticationService
         {
@@ -28,14 +35,6 @@ namespace Itspecialist.Api
             services.AddSingleton<ITokenProvider, TokenProvider>();
             services.AddSingleton<IAuthRepository, AuthRepository>();
             services.AddSingleton<IAuthenticationService, TAuthService>();
-        }
-    }
-    public partial class ModuleInitializer
-    {
-        public override void AddApis(IServiceCollection services)
-        {
-            base.AddApis(services);
-            services.AddAddRepositories();
         }
     }
 }
