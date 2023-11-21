@@ -7,6 +7,13 @@ namespace Itspecialist
 {
     public partial class App : PrismApplication
     {
+        protected override void ConfigureApp(IApplicationBuilder builder)
+        {
+            base.ConfigureApp(builder);
+#if DEBUG
+            builder.Window.EnableHotReload();
+#endif
+        }
         protected override void ConfigureHost(IHostBuilder builder)
         {
             builder
@@ -40,6 +47,7 @@ namespace Itspecialist
                     {
                         services.AddApi<AuthenticationService>();
                     });
+
         }
 
         protected override UIElement CreateShell()
