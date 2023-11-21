@@ -10,6 +10,7 @@
 
     <StackPanel>
         <ComboBox />
-        <Button Command="{Binding FinishedCommand}" />
+        <Button Command="{Binding FinishedCommand}"
+                Content="Finish" />
     </StackPanel>
 </UserControl>
