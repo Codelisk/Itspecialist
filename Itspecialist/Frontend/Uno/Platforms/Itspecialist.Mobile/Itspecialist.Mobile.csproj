@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   
   <Import Project="..\Uno.Directory.Build.props" Condition="exists('..\Uno.Directory.Build.props')" />
   <Import Project="..\..\Uno.Directory.Build.props" Condition="exists('..\..\Uno.Directory.Build.props')" />
@@ -38,8 +38,6 @@
     <PackageReference Include="Uno.WinUI" />
     <PackageReference Include="Uno.Extensions.Configuration" />
     <PackageReference Include="Uno.Extensions.Logging.WinUI" />
-    <PackageReference Include="Uno.Extensions.Serialization.Http" />
-    <PackageReference Include="Uno.Extensions.Serialization.Refit" />
     <PackageReference Include="Uno.Material.WinUI" />
     <PackageReference Include="Uno.Toolkit.WinUI.Material" />
     <PackageReference Include="Uno.Toolkit.WinUI" />
@@ -49,7 +47,6 @@
     <PackageReference Include="Microsoft.Extensions.Logging.Console" />
     <PackageReference Include="Uno.Extensions.Logging.OSLog" />
     <PackageReference Include="Uno.UI.Adapter.Microsoft.Extensions.Logging" />
-    <PackageReference Include="Uno.WinUI.DevServer" Condition="'$(Configuration)'=='Debug'" />
   </ItemGroup>
 
   <ItemGroup>
