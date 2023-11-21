@@ -8,9 +8,10 @@
   <Import Project="..\..\..\..\..\..\Backend.props" Condition="exists('..\..\..\..\..\..\Backend.props')" />
   <Import Project="..\..\..\..\..\..\..\Backend.props" Condition="exists('..\..\..\..\..\..\..\Backend.props')" />
   <Import Project="..\..\..\..\..\..\..\..\Backend.props" Condition="exists('..\..\..\..\..\..\..\..\Backend.props')" />
-
   <ItemGroup>
-    <Folder Include="Services\" />
+    <Compile Remove="Services\**" />
+    <EmbeddedResource Remove="Services\**" />
+    <None Remove="Services\**" />
   </ItemGroup>
 
   <ItemGroup>

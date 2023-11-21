@@ -28,7 +28,15 @@ namespace Itspecialist.Presentation
         private void Initialize()
         {
             _isInitialized = true;
-            _regionManager.RequestNavigate("ShellRegion", "ShellHeader");
+            try
+            {
+                _regionManager.RequestNavigate("ContentRegion", "DistrictSelection");
+                _regionManager.RequestNavigate("ShellRegion", "ShellHeader");
+            }
+            catch(Exception ex)
+            {
+
+            }
         }
         private void ExecuteNavigateCommand(string viewName)
         {
