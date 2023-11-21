@@ -10,12 +10,13 @@ using Codelisk.GeneratorAttributes.WebAttributes.Dto;
 
 namespace Itspecialist.Foundation.Dtos.Account
 {
-    public partial class AccountSubBaseDto
+    public partial class AccountSubBaseDto : BaseIdDto
     {
         [Id]
         [Key]
         [ForeignKey(nameof(AccountDto))]
         [JsonPropertyName("AccountId")]
-        public required Guid AccountId { get; set; }
+        public new required Guid id { get; set; }
+
     }
 }

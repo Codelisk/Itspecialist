@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Itspecialist.Managers.Base
 {
-    public interface IDefaultUserManager<TDto, TKey, TEntity> : IDefaultManager<TDto, TKey, TEntity> where TDto : class where TEntity : class
+    public interface IDefaultUserManager<TDto, TKey, TEntity> : IDefaultManager<TDto, TKey, TEntity> where TDto : BaseIdDto where TEntity : BaseIdDto
     {
     }
 }

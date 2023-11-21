@@ -32,9 +32,9 @@ namespace Itspecialist.Repositories.Base
             return result.Where(x => x.IsUser(uid)).ToList();
         }
         [Delete]
-        public override async Task Delete(T t)
+        public override async Task Delete(TKey id)
         {
-            await base.Delete(t);
+            await base.Delete(id);
         }
 
         private TKey GetUserId()

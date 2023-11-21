@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Itspecialist.Foundation.Dtos.Base
 {
-    public class BaseDtoWithName : BaseDto
+    public class BaseDtoWithName : BaseIdDto
     {
         public required string Name { get; set; }
     }

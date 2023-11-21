@@ -11,7 +11,7 @@ using Itspecialist.Repositories.Base;
 namespace Itspecialist.Managers.Base
 {
     [DefaultManager]
-    public class DefaultManager<TDto, TKey, TEntity> : IDefaultManager<TDto, TKey, TEntity> where TDto : class where TEntity : class
+    public class DefaultManager<TDto, TKey, TEntity> : IDefaultManager<TDto, TKey, TEntity> where TDto : class where TEntity : BaseIdDto
     {
         private readonly IDefaultRepository<TEntity, TKey> _repo;
         private readonly IMapper _mapper;
@@ -22,9 +22,9 @@ namespace Itspecialist.Managers.Base
             _mapper = mapper;
         }
         [Delete]
-        public Task Delete(TDto t)
+        public Task Delete(TKey id)
         {
-            return _repo.Delete(_mapper.Map<TEntity>(t));
+            return _repo.Delete(id);
         }
         [GetAll]
         public async Task<List<TDto>> GetAll()

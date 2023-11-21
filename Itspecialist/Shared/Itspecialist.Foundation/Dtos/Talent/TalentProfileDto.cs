@@ -13,7 +13,6 @@ using Itspecialist.Foundation.Enums.Account;
 namespace Itspecialist.Foundation.Dtos.Talent
 {
     [Dto]
-    [UserDto]
     [CustomizeGetAll(AllowAnonymous = true)]
     public class TalentProfileDto : AccountSubBaseDto
     {

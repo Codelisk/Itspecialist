@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Itspecialist.Foundation.Dtos.Base
 {
-    public class BaseUserDto : BaseDto
+    public class BaseUserDto : BaseIdDto
     {
         [JsonPropertyName("userId")]
         public Guid UserId { get; set; }

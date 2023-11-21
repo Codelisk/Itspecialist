@@ -9,7 +9,7 @@ using Codelisk.GeneratorAttributes.WebAttributes.Dto;
 
 namespace Itspecialist.Foundation.Dtos.Base
 {
-    public class BaseDto
+    public class BaseIdDto
     {
         [Id]
         [Key]

@@ -7,10 +7,10 @@ using Codelisk.GeneratorAttributes.WebAttributes.HttpMethod;
 
 namespace Itspecialist.Repositories.Base
 {
-    public interface IDefaultRepository<TEntity, TKey> where TEntity : class
+    public interface IDefaultRepository<TEntity, TKey> where TEntity : BaseIdDto
     {
         [Delete]
-        Task Delete(TEntity t);
+        Task Delete(TKey id);
         [Get]
         Task<TEntity> Get(TKey id);
         [GetAll]

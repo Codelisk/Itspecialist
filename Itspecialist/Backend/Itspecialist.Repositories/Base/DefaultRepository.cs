@@ -1,8 +1,10 @@
 
+using System;
+
 namespace Itspecialist.Repositories.Base
 {
     [DefaultRepository]
-    public class DefaultRepository<T, TKey> : IDefaultRepository<T, TKey> where T : class
+    public class DefaultRepository<T, TKey> : IDefaultRepository<T, TKey> where T : BaseIdDto
     {
         private readonly ItspecialistContext _context;
         public DefaultRepository(ItspecialistContext context)
@@ -21,7 +23,7 @@ namespace Itspecialist.Repositories.Base
         [Get]
         public virtual async Task<T> Get(TKey id)
         {
-            return await _context.FindAsync<T>(id);
+            return await EntityByIdAsync(id);
         }
         [GetAll]
         public virtual async Task<List<T>> GetAll()
@@ -29,10 +31,20 @@ namespace Itspecialist.Repositories.Base
             return await _context.Set<T>().AsNoTracking().ToListAsync();
         }
         [Delete]
-        public virtual async Task Delete(T t)
+        public virtual async Task Delete(TKey id)
         {
-            _context.Remove(t);
+            var entity = await EntityByIdAsync(id);
+            _context.Remove(entity);
             await _context.SaveChangesAsync();
+        }
+        private async Task<T> EntityByIdAsync(TKey id)
+        {
+            if(id is Guid idGuid)
+            {
+                return await _context.Set<T>().FirstAsync(e => e.id == idGuid);
+            }
+
+            throw new KeyNotFoundException();
         }
     }
 }
