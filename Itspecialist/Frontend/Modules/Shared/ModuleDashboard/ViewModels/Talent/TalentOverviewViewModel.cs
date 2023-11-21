@@ -7,6 +7,7 @@ using BasePagesBackendModule.PageViewModels;
 using BaseServicesModule.Services.Vms;
 using Itspecialist.Foundation.DtoHelper;
 using Itspecialist.Api;
+using System.Windows.Input;
 
 namespace ModuleDashboard.Contracts.ViewModels.Talent
 {
@@ -32,6 +33,14 @@ namespace ModuleDashboard.Contracts.ViewModels.Talent
             List<TalentProfileDto> talentProfilesDtos = await _talentProfileRepository.GetAll();
 
             TalentProfiles = talentProfilesDtos.Select(x => new TalentProfileFull(x, talentCompensationsDtos.FirstOrDefault(y => y.id == x.TalentCompensationId))).ToList();
+        }
+
+        public ICommand LoadTalentsCommand => this.LoadingCommand(OnLoadTalentsAsync);
+        private async Task OnLoadTalentsAsync()
+        {
+            List<TalentCompensationDto> talentCompensationsDtos = await _talentCompensationRepository.GetAll();
+            List<TalentProfileDto> talentProfilesDtos = await _talentProfileRepository.GetAll();
+            this.GoRegionBack();
         }
     }
 }

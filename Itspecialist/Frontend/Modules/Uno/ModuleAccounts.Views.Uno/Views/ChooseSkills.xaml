@@ -11,15 +11,15 @@
 
     <StackPanel>
         <utu:ChipGroup ItemsSource="{Binding Languages}"
+                       SelectedItem="{Binding PrimaryLanguage, Mode=TwoWay}"
                        Style="{StaticResource ElevatedSuggestionChipGroupStyle}">
             <utu:ChipGroup.ItemTemplate>
                 <DataTemplate>
-
                     <TextBlock Text="{Binding Name}" />
                 </DataTemplate>
             </utu:ChipGroup.ItemTemplate>
         </utu:ChipGroup>
         <Button Command="{Binding FinishedCommand}"
-                Content="ChooseSkills 2" />
+                Content="ChooseSkills" />
     </StackPanel>
 </UserControl>

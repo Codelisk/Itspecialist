@@ -4,14 +4,20 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="using:ModuleAccounts.Views.Uno.Views"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:utu="using:Uno.Toolkit.UI"
+             xmlns:utu2="using:Uno.Toolkit.UI.Material"
              d:DesignHeight="300"
              d:DesignWidth="400"
              mc:Ignorable="d">
-
     <StackPanel>
+        <utu:Chip Content="Default"
+                  Style="{StaticResource ElevatedAssistChipStyle}" />
+        <utu:Chip Content="Disabled"
+                  IsEnabled="False"
+                  Style="{StaticResource ElevatedAssistChipStyle}" />
         <ComboBox ItemsSource="{Binding Districts}"
                   SelectedItem="{Binding SelectedDistrict}" />
         <Button Command="{Binding AuthCommand}"
-                Content="DistrictSelection test 222" />
+                Content="DistrictSelection test 222   " />
     </StackPanel>
 </UserControl>

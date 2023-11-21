@@ -13,6 +13,9 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\Shared\Itspecialist.Foundation\Itspecialist.Foundation.csproj" />
     <ProjectReference Include="..\..\Shared\ModuleAccount\ModuleAccount.Contracts\ModuleAccount.Contracts.csproj" />
+    <PackageReference Include="Uno.Material.WinUI" />
+    <PackageReference Include="Uno.Toolkit.WinUI.Material" />
+    <PackageReference Include="Uno.Toolkit.WinUI" />
   </ItemGroup>
  
   <ItemGroup>

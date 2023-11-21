@@ -7,7 +7,9 @@
              d:DesignHeight="300"
              d:DesignWidth="400"
              mc:Ignorable="d">
-    <Grid>
+    <StackPanel>
         <TextBox PlaceholderText="" />
-    </Grid>
+        <Button Command="{Binding LoadTalentsCommand}"
+                Content="Load Talents" />
+    </StackPanel>
 </UserControl>

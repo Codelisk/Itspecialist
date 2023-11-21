@@ -9,6 +9,7 @@ using BaseServicesModule.Services.Vms;
 using Itspecialist.Api;
 using Itspecialist.Foundation.Enums.Account;
 using ModuleAccount.Contracts.Services.AccountProvider;
+using ReactiveUI;
 
 namespace ModuleAccount.Contracts.ViewModels
 {
@@ -28,7 +29,12 @@ namespace ModuleAccount.Contracts.ViewModels
             _talentCompensationRepository = talentCompensationRepository;
             _accountProvider = accountProvider;
         }
-        public TalentProfileDto TalentProfile { get; set; }
+        private TalentProfileDto talentProfile;
+        public TalentProfileDto TalentProfile
+        {
+            get { return talentProfile; }
+            set { this.RaiseAndSetIfChanged(ref talentProfile, value); }
+        }
         public TalentCompensationDto TalentCompensation { get; set; }
         public override async void Initialize(NavigationContext navigationContext)
         {
@@ -76,8 +82,10 @@ namespace ModuleAccount.Contracts.ViewModels
         public ICommand SaveTalentProfileCommand => this.LoadingCommand(OnSaveTalentProfileAsync);
         private async Task OnSaveTalentProfileAsync()
         {
-            await _talentCompensationRepository.Save(TalentCompensation);
+            TalentCompensation = await _talentCompensationRepository.Save(TalentCompensation);
+            TalentProfile.TalentCompensationId = TalentCompensation.id;
             await _talentProfileRepository.Save(TalentProfile);
+            this.ChangeCurrentRegion("TalentOverview");
         }
     }
 }

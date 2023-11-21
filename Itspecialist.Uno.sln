@@ -107,6 +107,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BaseSharedModule", "Itspeci
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Itspecialist.Skia.Wpf", "Itspecialist\Frontend\Uno\Platforms\Itspecialist.Skia.Wpf\Itspecialist.Skia.Wpf.csproj", "{6B7BB184-D5D1-42AB-ABE6-7FC0E2D1DC4A}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Itspecialist.Wasm", "Itspecialist\Frontend\Uno\Platforms\Itspecialist.Wasm\Itspecialist.Wasm.csproj", "{2B851E4D-DA13-4895-9565-B831D559EF60}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -471,6 +473,22 @@ Global
 		{6B7BB184-D5D1-42AB-ABE6-7FC0E2D1DC4A}.Release|x64.Build.0 = Release|Any CPU
 		{6B7BB184-D5D1-42AB-ABE6-7FC0E2D1DC4A}.Release|x86.ActiveCfg = Release|Any CPU
 		{6B7BB184-D5D1-42AB-ABE6-7FC0E2D1DC4A}.Release|x86.Build.0 = Release|Any CPU
+		{2B851E4D-DA13-4895-9565-B831D559EF60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B851E4D-DA13-4895-9565-B831D559EF60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B851E4D-DA13-4895-9565-B831D559EF60}.Debug|arm64.ActiveCfg = Debug|Any CPU
+		{2B851E4D-DA13-4895-9565-B831D559EF60}.Debug|arm64.Build.0 = Debug|Any CPU
+		{2B851E4D-DA13-4895-9565-B831D559EF60}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{2B851E4D-DA13-4895-9565-B831D559EF60}.Debug|x64.Build.0 = Debug|Any CPU
+		{2B851E4D-DA13-4895-9565-B831D559EF60}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{2B851E4D-DA13-4895-9565-B831D559EF60}.Debug|x86.Build.0 = Debug|Any CPU
+		{2B851E4D-DA13-4895-9565-B831D559EF60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B851E4D-DA13-4895-9565-B831D559EF60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B851E4D-DA13-4895-9565-B831D559EF60}.Release|arm64.ActiveCfg = Release|Any CPU
+		{2B851E4D-DA13-4895-9565-B831D559EF60}.Release|arm64.Build.0 = Release|Any CPU
+		{2B851E4D-DA13-4895-9565-B831D559EF60}.Release|x64.ActiveCfg = Release|Any CPU
+		{2B851E4D-DA13-4895-9565-B831D559EF60}.Release|x64.Build.0 = Release|Any CPU
+		{2B851E4D-DA13-4895-9565-B831D559EF60}.Release|x86.ActiveCfg = Release|Any CPU
+		{2B851E4D-DA13-4895-9565-B831D559EF60}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -514,6 +532,7 @@ Global
 		{972D0FB6-DB7B-4F77-BEB7-4181B03099DD} = {6CD7DE22-048C-405C-87D0-9A212D04C299}
 		{FEB2D0BE-8212-40D6-A269-2260D49D6BEA} = {58D64903-0AE8-4390-B1BB-C54AFBB0C06F}
 		{6B7BB184-D5D1-42AB-ABE6-7FC0E2D1DC4A} = {46D7B884-40C7-49F6-9EEB-46E336142CA9}
+		{2B851E4D-DA13-4895-9565-B831D559EF60} = {46D7B884-40C7-49F6-9EEB-46E336142CA9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A6E9BB8A-C390-483E-B203-63E4092FAFB1}
