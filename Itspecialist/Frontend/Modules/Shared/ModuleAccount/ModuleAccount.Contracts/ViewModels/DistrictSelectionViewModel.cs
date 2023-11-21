@@ -53,7 +53,7 @@ namespace ModuleAccount.Contracts.ViewModels
         public ICommand AuthCommand => new AsyncDelegateCommand(OnAuthAsync);
         private async Task OnAuthAsync()
         {
-            Console.WriteLine("WWWWWWWWWWWW");
+            Console.WriteLine("XXXXXXX");
             //_accountSetupProvider.District = Districts.First();
             //this.ChangeCurrentRegion("ChooseSkills");
         }

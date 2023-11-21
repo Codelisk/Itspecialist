@@ -8,7 +8,7 @@
       <LangVersion>preview</LangVersion>
       <ImplicitUsings>enable</ImplicitUsings>
       <Nullable>enable</Nullable>
-      <OverrideTargetFrameworks>net8.0-android</OverrideTargetFrameworks>
+      <!--<OverrideTargetFrameworks>net8.0-android</OverrideTargetFrameworks>-->
 
       <!--<!<DebugType>portable</DebugType>
       <DebugSymbols>True</DebugSymbols>-->
