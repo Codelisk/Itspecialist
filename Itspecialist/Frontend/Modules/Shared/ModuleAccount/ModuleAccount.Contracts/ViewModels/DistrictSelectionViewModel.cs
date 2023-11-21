@@ -56,7 +56,7 @@ namespace ModuleAccount.Contracts.ViewModels
         {
             Console.WriteLine("XXXXXXX");
             _accountSetupProvider.District = Districts.First();
-            this.ChangeCurrentRegion("ChooseSkills");
+            this.ChangeCurrentRegion("TalentOverview");
         }
     }
 }

@@ -14,6 +14,7 @@ namespace Itspecialist.Foundation.Dtos.Talent
 {
     [Dto]
     [UserDto]
+    [CustomizeGetAll(AllowAnonymous = true)]
     public class TalentCompensationDto : BaseUserDto
     {
         [ForeignKey(nameof(AccountDto))]

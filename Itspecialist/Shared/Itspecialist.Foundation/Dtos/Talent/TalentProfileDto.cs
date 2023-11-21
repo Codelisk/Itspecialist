@@ -14,13 +14,12 @@ namespace Itspecialist.Foundation.Dtos.Talent
 {
     [Dto]
     [UserDto]
-    public class TalentProfileDto : BaseUserDto
+    [CustomizeGetAll(AllowAnonymous = true)]
+    public class TalentProfileDto : AccountSubBaseDto
     {
         public required string Title { get; set; }
         public required string FirstName { get; set; }
         public required string LastName { get; set; }
-        [ForeignKey(nameof(AccountDto))]
-        public required Guid AccountId { get; set; }
         [ForeignKey(nameof(TalentCompensationDto))]
         public Guid? TalentCompensationId { get; set; }
         public required PreferredEmploymentStatusEnum PreferredEmploymentStatus { get; set; }
