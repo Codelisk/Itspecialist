@@ -9,10 +9,10 @@
              mc:Ignorable="d">
 
     <StackPanel>
-        <TextBox Text="{Binding TalentProfile.Title}" />
-        <TextBox Text="{Binding TalentProfile.FirstName}" />
-        <TextBox Text="{Binding TalentProfile.LastName}" />
-        <TextBox Text="{Binding TalentCompensation.Wage}" />
+        <TextBox Text="{Binding TalentProfile.Title, Mode=TwoWay}" />
+        <TextBox Text="{Binding TalentProfile.FirstName, Mode=TwoWay}" />
+        <TextBox Text="{Binding TalentProfile.LastName, Mode=TwoWay}" />
+        <TextBox Text="{Binding TalentCompensation.Wage, Mode=TwoWay}" />
 
         <Button Command="{Binding SaveTalentProfileCommand}"
                 Content="Save" />

@@ -76,7 +76,7 @@ namespace ModuleAccount.Contracts.ViewModels
             _accountProvider.SetAccountFromRegister(account);
 
             //TODO Implement depending on account type
-            ChangeCurrentRegion("TalentProfile");
+            ChangeCurrentRegion("TalentProfileSetup");
         }
     }
 }
