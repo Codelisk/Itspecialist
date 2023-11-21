@@ -39,7 +39,7 @@ namespace ModuleAccount.Contracts.ViewModels
             base.OnNavigatedTo(navigationContext);
 
             //await _authenticationService.AuthenticateAndCacheTokenAsync(new Foundation.Api.Models.AuthPayload() { email = "user@test.at", password = "Test1234!" });
-            Districts = new ObservableCollection<DistrictDto>( await _districtRepository.GetAll());
+            //Districts = new ObservableCollection<DistrictDto>( await _districtRepository.GetAll());
             this.RaisePropertyChanged(nameof(Districts));
         }
 
