@@ -10,8 +10,8 @@
       <Nullable>enable</Nullable>
       <!--<OverrideTargetFrameworks>net8.0-android</OverrideTargetFrameworks>-->
 
-      <!--<!<DebugType>portable</DebugType>
-      <DebugSymbols>True</DebugSymbols>-->
+      <DebugType>portable</DebugType>
+      <DebugSymbols>True</DebugSymbols>
 
       <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
       <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
