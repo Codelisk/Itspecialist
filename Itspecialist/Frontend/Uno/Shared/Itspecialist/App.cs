@@ -1,6 +1,5 @@
 using Itspecialist.Api;
 using Itspecialist.Services;
-using Prism.DryIoc;
 using Uno.UI;
 
 namespace Itspecialist
@@ -12,6 +11,7 @@ namespace Itspecialist
             base.ConfigureApp(builder);
 #if DEBUG
             builder.Window.EnableHotReload();
+            //ClientHotReloadProcessor.CurrentWindow = builder.Window;
 #endif
         }
         protected override void ConfigureHost(IHostBuilder builder)

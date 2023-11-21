@@ -24,11 +24,12 @@ namespace ModuleAccount.Contracts.ViewModels
         private readonly IAuthenticationService _authenticationService;
         private readonly IDistrictRepository _districtRepository;
 
+
         public DistrictSelectionViewModel(
-            IAccountSetupProvider accountSetupProvider,
-            IAuthenticationService authenticationService,
-            IDistrictRepository districtRepository,
-            VmServices vmServices) : base(vmServices)
+            IAccountSetupProvider accountSetupProvider=null,
+            IAuthenticationService authenticationService = null,
+            IDistrictRepository districtRepository = null,
+            VmServices vmServices = null) : base(vmServices)
         {
             _accountSetupProvider = accountSetupProvider;
             _authenticationService = authenticationService;
