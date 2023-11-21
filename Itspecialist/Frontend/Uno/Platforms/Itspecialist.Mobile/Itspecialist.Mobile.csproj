@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   
   <Import Project="..\Uno.Directory.Build.props" Condition="exists('..\Uno.Directory.Build.props')" />
   <Import Project="..\..\Uno.Directory.Build.props" Condition="exists('..\..\Uno.Directory.Build.props')" />
@@ -36,7 +36,6 @@
 
   <ItemGroup>
     <PackageReference Include="Uno.WinUI" />
-    <PackageReference Include="CommunityToolkit.Mvvm" />
     <PackageReference Include="Uno.Extensions.Configuration" />
     <PackageReference Include="Uno.Extensions.Http" />
     <PackageReference Include="Uno.Extensions.Http.Refit" />
