@@ -4,12 +4,22 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="using:ModuleAccounts.Views.Uno.Views"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:utu="using:Uno.Toolkit.UI"
              d:DesignHeight="300"
              d:DesignWidth="400"
              mc:Ignorable="d">
 
-    <Grid>
+    <StackPanel>
+        <utu:ChipGroup ItemsSource="{Binding Languages}"
+                       Style="{StaticResource ElevatedSuggestionChipGroupStyle}">
+            <utu:ChipGroup.ItemTemplate>
+                <DataTemplate>
+
+                    <TextBlock Text="{Binding Name}" />
+                </DataTemplate>
+            </utu:ChipGroup.ItemTemplate>
+        </utu:ChipGroup>
         <Button Command="{Binding FinishedCommand}"
-                Content="klkljh sdfsdf" />
-    </Grid>
+                Content="ChooseSkills 2" />
+    </StackPanel>
 </UserControl>

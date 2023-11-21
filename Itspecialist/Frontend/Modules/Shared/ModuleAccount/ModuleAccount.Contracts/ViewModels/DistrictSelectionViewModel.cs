@@ -39,8 +39,8 @@ namespace ModuleAccount.Contracts.ViewModels
         {
             base.OnNavigatedTo(navigationContext);
 
-            //await _authenticationService.AuthenticateAndCacheTokenAsync(new Foundation.Api.Models.AuthPayload() { email = "user@test.at", password = "Test1234!" });
-            //Districts = new ObservableCollection<DistrictDto>( await _districtRepository.GetAll());
+            await _authenticationService.AuthenticateAndCacheTokenAsync(new Foundation.Api.Models.AuthPayload() { email = "user@test.at", password = "Test1234!" });
+            Districts = new ObservableCollection<DistrictDto>( await _districtRepository.GetAll());
             this.RaisePropertyChanged(nameof(Districts));
         }
 
@@ -55,8 +55,8 @@ namespace ModuleAccount.Contracts.ViewModels
         private async Task OnAuthAsync()
         {
             Console.WriteLine("XXXXXXX");
-            //_accountSetupProvider.District = Districts.First();
-            //this.ChangeCurrentRegion("ChooseSkills");
+            _accountSetupProvider.District = Districts.First();
+            this.ChangeCurrentRegion("ChooseSkills");
         }
     }
 }
