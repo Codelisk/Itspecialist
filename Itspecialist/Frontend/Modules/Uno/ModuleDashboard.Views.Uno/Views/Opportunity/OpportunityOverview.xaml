@@ -10,5 +10,6 @@
 
     <Grid>
         <Button Content="Test" />
+        <TextBox PlaceholderText="Test" />
     </Grid>
 </UserControl>
