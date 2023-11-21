@@ -11,7 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		Itspecialist\.gitignore = Itspecialist\.gitignore
 		Directory.Build.props = Directory.Build.props
-		Directory.Package.props = Directory.Package.props
+		Directory.Packages.props = Directory.Packages.props
 		ReadME.md = ReadME.md
 	EndProjectSection
 EndProject
@@ -107,7 +107,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BaseSharedModule", "Itspeci
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Itspecialist.Mobile", "Itspecialist\Frontend\Uno\Platforms\Itspecialist.Mobile\Itspecialist.Mobile.csproj", "{B36049BD-C23A-4102-89BA-1A987568A514}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Itspecialist.Skia.Wpf", "Itspecialist\Frontend\Uno\Platforms\Itspecialist.Skia.Wpf\Itspecialist.Skia.Wpf.csproj", "{6B7BB184-D5D1-42AB-ABE6-7FC0E2D1DC4A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Itspecialist.Skia.Wpf", "Itspecialist\Frontend\Uno\Platforms\Itspecialist.Skia.Wpf\Itspecialist.Skia.Wpf.csproj", "{6B7BB184-D5D1-42AB-ABE6-7FC0E2D1DC4A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
