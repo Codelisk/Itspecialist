@@ -11,22 +11,17 @@ namespace Itspecialist.Server.Migrations
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "testEntity");
-
             migrationBuilder.CreateTable(
                 name: "accountCompensationEntity",
                 columns: table => new
                 {
-                    id = table.Column<Guid>(type: "TEXT", nullable: false),
-                    UserId = table.Column<Guid>(type: "TEXT", nullable: false),
                     AccountId = table.Column<Guid>(type: "TEXT", nullable: false),
                     Wage = table.Column<decimal>(type: "TEXT", nullable: false),
                     Type = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_accountCompensationEntity", x => x.id);
+                    table.PrimaryKey("PK_accountCompensationEntity", x => x.AccountId);
                 });
 
             migrationBuilder.CreateTable(
@@ -37,9 +32,9 @@ namespace Itspecialist.Server.Migrations
                     UserId = table.Column<Guid>(type: "TEXT", nullable: false),
                     Name = table.Column<string>(type: "TEXT", nullable: false),
                     Email = table.Column<string>(type: "TEXT", nullable: false),
-                    PrimaryProgrammingLanguage = table.Column<Guid>(type: "TEXT", nullable: false),
-                    SecondaryProgrammingLanguage = table.Column<Guid>(type: "TEXT", nullable: true),
-                    PreferredEmploymentStatus = table.Column<int>(type: "INTEGER", nullable: false)
+                    SkillsId = table.Column<Guid>(type: "TEXT", nullable: false),
+                    AccountType = table.Column<int>(type: "INTEGER", nullable: false),
+                    DistrictId = table.Column<Guid>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -58,6 +53,46 @@ namespace Itspecialist.Server.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_accountProgrammingFrameworkEntity", x => x.id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "careerOpportunityEntity",
+                columns: table => new
+                {
+                    id = table.Column<Guid>(type: "TEXT", nullable: false),
+                    UserId = table.Column<Guid>(type: "TEXT", nullable: false),
+                    DistrictId = table.Column<Guid>(type: "TEXT", nullable: false),
+                    SkillsId = table.Column<Guid>(type: "TEXT", nullable: false),
+                    Description = table.Column<string>(type: "TEXT", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_careerOpportunityEntity", x => x.id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "districtEntity",
+                columns: table => new
+                {
+                    id = table.Column<Guid>(type: "TEXT", nullable: false),
+                    Name = table.Column<string>(type: "TEXT", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_districtEntity", x => x.id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "opportunityProgrammingFrameworkEntity",
+                columns: table => new
+                {
+                    id = table.Column<Guid>(type: "TEXT", nullable: false),
+                    CareerOpportunityId = table.Column<Guid>(type: "TEXT", nullable: false),
+                    ProgrammingFrameworkId = table.Column<Guid>(type: "TEXT", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_opportunityProgrammingFrameworkEntity", x => x.id);
                 });
 
             migrationBuilder.CreateTable(
@@ -86,35 +121,46 @@ namespace Itspecialist.Server.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "specialistCompensationEntity",
+                name: "skillsEntity",
+                columns: table => new
+                {
+                    AccountId = table.Column<Guid>(type: "TEXT", nullable: false),
+                    PrimaryProgrammingLanguage = table.Column<Guid>(type: "TEXT", nullable: false),
+                    SecondaryProgrammingLanguage = table.Column<Guid>(type: "TEXT", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_skillsEntity", x => x.AccountId);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "talentCompensationEntity",
                 columns: table => new
                 {
                     id = table.Column<Guid>(type: "TEXT", nullable: false),
-                    UserId = table.Column<Guid>(type: "TEXT", nullable: false),
                     AccountId = table.Column<Guid>(type: "TEXT", nullable: false),
                     Wage = table.Column<decimal>(type: "TEXT", nullable: false),
                     Type = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_specialistCompensationEntity", x => x.id);
+                    table.PrimaryKey("PK_talentCompensationEntity", x => x.id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "specialistProfileEntity",
+                name: "talentProfileEntity",
                 columns: table => new
                 {
-                    id = table.Column<Guid>(type: "TEXT", nullable: false),
-                    UserId = table.Column<Guid>(type: "TEXT", nullable: false),
+                    AccountId = table.Column<Guid>(type: "TEXT", nullable: false),
                     Title = table.Column<string>(type: "TEXT", nullable: false),
                     FirstName = table.Column<string>(type: "TEXT", nullable: false),
                     LastName = table.Column<string>(type: "TEXT", nullable: false),
-                    AccountId = table.Column<Guid>(type: "TEXT", nullable: false),
-                    SpecialistCompensationId = table.Column<Guid>(type: "TEXT", nullable: true)
+                    TalentCompensationId = table.Column<Guid>(type: "TEXT", nullable: true),
+                    PreferredEmploymentStatus = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_specialistProfileEntity", x => x.id);
+                    table.PrimaryKey("PK_talentProfileEntity", x => x.AccountId);
                 });
         }
 
@@ -131,28 +177,28 @@ namespace Itspecialist.Server.Migrations
                 name: "accountProgrammingFrameworkEntity");
 
             migrationBuilder.DropTable(
+                name: "careerOpportunityEntity");
+
+            migrationBuilder.DropTable(
+                name: "districtEntity");
+
+            migrationBuilder.DropTable(
+                name: "opportunityProgrammingFrameworkEntity");
+
+            migrationBuilder.DropTable(
                 name: "programmingFrameworkEntity");
 
             migrationBuilder.DropTable(
                 name: "programmingLanguageEntity");
 
             migrationBuilder.DropTable(
-                name: "specialistCompensationEntity");
+                name: "skillsEntity");
 
             migrationBuilder.DropTable(
-                name: "specialistProfileEntity");
+                name: "talentCompensationEntity");
 
-            migrationBuilder.CreateTable(
-                name: "testEntity",
-                columns: table => new
-                {
-                    id = table.Column<Guid>(type: "TEXT", nullable: false),
-                    UserId = table.Column<Guid>(type: "TEXT", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_testEntity", x => x.id);
-                });
+            migrationBuilder.DropTable(
+                name: "talentProfileEntity");
         }
     }
 }

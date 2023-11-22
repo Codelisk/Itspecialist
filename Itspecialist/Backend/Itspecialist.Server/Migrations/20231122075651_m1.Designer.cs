@@ -11,14 +11,14 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Itspecialist.Server.Migrations
 {
     [DbContext(typeof(ItspecialistContext))]
-    [Migration("20231110165435_m6")]
-    partial class m6
+    [Migration("20231122075651_m1")]
+    partial class m1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
-            modelBuilder.HasAnnotation("ProductVersion", "8.0.0-rc.2.23480.1");
+            modelBuilder.HasAnnotation("ProductVersion", "8.0.0");
 
             modelBuilder.Entity("Itspecialist.Foundation.Dtos.User.UserDto", b =>
                 {
@@ -83,196 +83,6 @@ namespace Itspecialist.Server.Migrations
                         .HasDatabaseName("UserNameIndex");
 
                     b.ToTable("AspNetUsers", (string)null);
-                });
-
-            modelBuilder.Entity("Itspecialist.Foundation.Entities.Account.AccountCompensationEntity", b =>
-                {
-                    b.Property<Guid>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("TEXT")
-                        .HasAnnotation("Relational:JsonPropertyName", "id");
-
-                    b.Property<Guid>("AccountId")
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("Type")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("TEXT")
-                        .HasAnnotation("Relational:JsonPropertyName", "userId");
-
-                    b.Property<decimal>("Wage")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("id");
-
-                    b.ToTable("accountCompensationEntity");
-                });
-
-            modelBuilder.Entity("Itspecialist.Foundation.Entities.Account.AccountEntity", b =>
-                {
-                    b.Property<Guid>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("TEXT")
-                        .HasAnnotation("Relational:JsonPropertyName", "id");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("PreferredEmploymentStatus")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<Guid>("PrimaryProgrammingLanguage")
-                        .HasColumnType("TEXT");
-
-                    b.Property<Guid?>("SecondaryProgrammingLanguage")
-                        .HasColumnType("TEXT");
-
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("TEXT")
-                        .HasAnnotation("Relational:JsonPropertyName", "userId");
-
-                    b.HasKey("id");
-
-                    b.ToTable("accountEntity");
-                });
-
-            modelBuilder.Entity("Itspecialist.Foundation.Entities.Account.AccountProgrammingFrameworkEntity", b =>
-                {
-                    b.Property<Guid>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("TEXT")
-                        .HasAnnotation("Relational:JsonPropertyName", "id");
-
-                    b.Property<Guid>("AccountId")
-                        .HasColumnType("TEXT");
-
-                    b.Property<Guid>("ProgrammingFrameworkId")
-                        .HasColumnType("TEXT");
-
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("TEXT")
-                        .HasAnnotation("Relational:JsonPropertyName", "userId");
-
-                    b.HasKey("id");
-
-                    b.ToTable("accountProgrammingFrameworkEntity");
-                });
-
-            modelBuilder.Entity("Itspecialist.Foundation.Entities.Account.DistrictEntity", b =>
-                {
-                    b.Property<Guid>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("TEXT")
-                        .HasAnnotation("Relational:JsonPropertyName", "id");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("id");
-
-                    b.ToTable("districtEntity");
-                });
-
-            modelBuilder.Entity("Itspecialist.Foundation.Entities.Account.ProgrammingFrameworkEntity", b =>
-                {
-                    b.Property<Guid>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("TEXT")
-                        .HasAnnotation("Relational:JsonPropertyName", "id");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<Guid>("ProgrammingLanguageId")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("id");
-
-                    b.ToTable("programmingFrameworkEntity");
-                });
-
-            modelBuilder.Entity("Itspecialist.Foundation.Entities.Account.ProgrammingLanguageEntity", b =>
-                {
-                    b.Property<Guid>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("TEXT")
-                        .HasAnnotation("Relational:JsonPropertyName", "id");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("id");
-
-                    b.ToTable("programmingLanguageEntity");
-                });
-
-            modelBuilder.Entity("Itspecialist.Foundation.Entities.Specialist.SpecialistCompensationEntity", b =>
-                {
-                    b.Property<Guid>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("TEXT")
-                        .HasAnnotation("Relational:JsonPropertyName", "id");
-
-                    b.Property<Guid>("AccountId")
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("Type")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("TEXT")
-                        .HasAnnotation("Relational:JsonPropertyName", "userId");
-
-                    b.Property<decimal>("Wage")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("id");
-
-                    b.ToTable("specialistCompensationEntity");
-                });
-
-            modelBuilder.Entity("Itspecialist.Foundation.Entities.Specialist.SpecialistProfileEntity", b =>
-                {
-                    b.Property<Guid>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("TEXT")
-                        .HasAnnotation("Relational:JsonPropertyName", "id");
-
-                    b.Property<Guid>("AccountId")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("FirstName")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("LastName")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<Guid?>("SpecialistCompensationId")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Title")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("TEXT")
-                        .HasAnnotation("Relational:JsonPropertyName", "userId");
-
-                    b.HasKey("id");
-
-                    b.ToTable("specialistProfileEntity");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole<System.Guid>", b =>

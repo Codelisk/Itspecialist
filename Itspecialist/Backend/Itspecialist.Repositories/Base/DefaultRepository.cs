@@ -4,7 +4,7 @@ using System;
 namespace Itspecialist.Repositories.Base
 {
     [DefaultRepository]
-    public class DefaultRepository<T, TKey> : IDefaultRepository<T, TKey> where T : BaseIdDto
+    public class DefaultRepository<T, TKey> : IDefaultRepository<T, TKey> where T : BaseBaseIdDto
     {
         private readonly ItspecialistContext _context;
         public DefaultRepository(ItspecialistContext context)
@@ -41,7 +41,7 @@ namespace Itspecialist.Repositories.Base
         {
             if(id is Guid idGuid)
             {
-                return await _context.Set<T>().FirstAsync(e => e.id == idGuid);
+                return await _context.Set<T>().FirstAsync(e => e.GetId() == idGuid);
             }
 
             throw new KeyNotFoundException();

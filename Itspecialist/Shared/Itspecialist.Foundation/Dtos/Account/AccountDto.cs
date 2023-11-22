@@ -16,8 +16,6 @@ namespace Itspecialist.Foundation.Dtos.Account
     public class AccountDto : Base.BaseUserDtoWithName
     {
         public required string Email { get; set; }
-        [ForeignKey(nameof(SkillsDto))]
-        public required Guid SkillsId { get; set; }
         public required AccountTypeEnum AccountType { get; set; }
         [ForeignKey(nameof(DistrictDto))]
         public required Guid DistrictId { get; set; }

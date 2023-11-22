@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Itspecialist.Server.Migrations
 {
     [DbContext(typeof(ItspecialistContext))]
-    [Migration("20231121220322_newMig")]
-    partial class newMig
+    [Migration("20231122073033_Init")]
+    partial class Init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -239,6 +239,24 @@ namespace Itspecialist.Server.Migrations
                     b.HasKey("id");
 
                     b.ToTable("careerOpportunityEntity");
+                });
+
+            modelBuilder.Entity("Itspecialist.Foundation.Entities.Opportunity.OpportunityProgrammingFrameworkEntity", b =>
+                {
+                    b.Property<Guid>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TEXT")
+                        .HasAnnotation("Relational:JsonPropertyName", "id");
+
+                    b.Property<Guid>("CareerOpportunityId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<Guid>("ProgrammingFrameworkId")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("id");
+
+                    b.ToTable("opportunityProgrammingFrameworkEntity");
                 });
 
             modelBuilder.Entity("Itspecialist.Foundation.Entities.Skills.SkillsEntity", b =>

@@ -11,7 +11,7 @@ using Itspecialist.Repositories.Base;
 namespace Itspecialist.Managers.Base
 {
     [DefaultManager]
-    public class DefaultManager<TDto, TKey, TEntity> : IDefaultManager<TDto, TKey, TEntity> where TDto : class where TEntity : BaseIdDto
+    public class DefaultManager<TDto, TKey, TEntity> : IDefaultManager<TDto, TKey, TEntity> where TDto : class where TEntity : BaseBaseIdDto
     {
         private readonly IDefaultRepository<TEntity, TKey> _repo;
         private readonly IMapper _mapper;

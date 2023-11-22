@@ -6,5 +6,5 @@ using System.Threading.Tasks;
 
 namespace Itspecialist.Foundation.DtoHelper
 {
-    public record TalentProfileFull(TalentProfileDto TalentProfile, TalentCompensationDto? TalentCompensation);
+    public record TalentProfileFull(TalentProfileDto TalentProfile, TalentCompensationDto? TalentCompensation, DistrictDto District);
 }

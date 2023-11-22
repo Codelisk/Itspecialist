@@ -10,7 +10,9 @@
   <Import Project="..\..\..\..\..\..\..\Modules.props" Condition="exists('..\..\..\..\..\..\..\Modules.props')" />
   <Import Project="..\..\..\..\..\..\..\..\Modules.props" Condition="exists('..\..\..\..\..\..\..\..\Modules.props')" />
   <ItemGroup>
+    <UnoImage Include="Assets\Images\*" />
     <ProjectReference Include="..\..\..\..\..\Shared\Itspecialist.Foundation\Itspecialist.Foundation.csproj" />
+    <PackageReference Include="Uno.Resizetizer"/>
   </ItemGroup>
 
 </Project>

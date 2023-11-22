@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Itspecialist.Foundation.Dtos.Base
 {
-    public class BaseDtoWithName : BaseDefaultIdDto
+    public abstract class BaseBaseIdDto
     {
-        public required string Name { get; set; }
+        public abstract Guid GetId();
     }
 }

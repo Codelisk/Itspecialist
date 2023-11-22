@@ -5,8 +5,8 @@ namespace Itspecialist.Controller.Controllers.Base
     [DefaultController]
     [UserDto]
     public class DefaultUserController<T, TKey, TEntity> : DefaultController<T, TKey, TEntity>
-        where T : BaseIdDto
-        where TEntity : BaseIdDto
+        where T : BaseBaseIdDto
+        where TEntity : BaseBaseIdDto
         where TKey : IComparable
     {
         protected new readonly IDefaultUserManager<T, TKey, TEntity> _manager;

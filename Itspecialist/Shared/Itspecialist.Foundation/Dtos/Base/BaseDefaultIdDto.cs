@@ -9,11 +9,16 @@ using Codelisk.GeneratorAttributes.WebAttributes.Dto;
 
 namespace Itspecialist.Foundation.Dtos.Base
 {
-    public class BaseIdDto
+    public class BaseDefaultIdDto : BaseBaseIdDto
     {
         [Id]
         [Key]
         [JsonPropertyName("id")]
         public Guid id { get; set; }
+
+        public override Guid GetId()
+        {
+            return id;
+        }
     }
 }

@@ -5,7 +5,7 @@
 namespace Itspecialist.Server.Migrations
 {
     /// <inheritdoc />
-    public partial class m3 : Migration
+    public partial class m2 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

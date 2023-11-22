@@ -8,9 +8,8 @@ using Codelisk.GeneratorAttributes.WebAttributes.Dto;
 
 namespace Itspecialist.Foundation.Dtos.Skills
 {
-    [UserDto]
     [Dto]
-    public class SkillsDto : BaseUserDto
+    public class SkillsDto : AccountSubBaseDto
     {
         [ForeignKey(nameof(ProgrammingLanguageDto))]
         public required Guid PrimaryProgrammingLanguage { get; set; }

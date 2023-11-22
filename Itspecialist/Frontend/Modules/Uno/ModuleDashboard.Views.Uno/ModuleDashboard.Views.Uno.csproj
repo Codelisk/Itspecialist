@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\Shared\Itspecialist.Foundation\Itspecialist.Foundation.csproj" />
+    <ProjectReference Include="..\..\Shared\BaseModules\BaseSharedModule\BaseSharedModule.csproj" />
     <ProjectReference Include="..\..\Shared\ModuleDashboard\ModuleDashboard.Contracts.csproj" />
   </ItemGroup>
 

@@ -62,18 +62,19 @@ namespace ModuleAccount.Contracts.ViewModels
         {
             await _authenticationService.RegisterAsync(Email, Password);
 
-            var skill = await _skillsRepository.Save(_accountSetupProvider.Skill!);
             var account = new AccountDto()
             {
                 Name = Name,
                 Email = Email,
                 AccountType = _accountSetupProvider.AccountType!.Value,
                 DistrictId = _accountSetupProvider.District!.id,
-                SkillsId = skill.id,
             };
 
             account = await _accountRepository.Save(account);
             _accountProvider.SetAccountFromRegister(account);
+
+            _accountSetupProvider.Skill!.AccountId = _accountProvider.Account!.id;
+            var skill = await _skillsRepository.Save(_accountSetupProvider.Skill!);
 
             //TODO Implement depending on account type
             ChangeCurrentRegion("TalentProfileSetup");

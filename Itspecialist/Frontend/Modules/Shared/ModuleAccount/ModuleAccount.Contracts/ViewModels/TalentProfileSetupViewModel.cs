@@ -18,16 +18,19 @@ namespace ModuleAccount.Contracts.ViewModels
         private readonly ITalentProfileRepository _talentProfileRepository;
         private readonly ITalentCompensationRepository _talentCompensationRepository;
         private readonly IAccountProvider _accountProvider;
+        private readonly IDistrictRepository _districtRepository;
 
         public TalentProfileSetupViewModel(
             VmServices vmServices, 
             ITalentProfileRepository talentProfileRepository,
             ITalentCompensationRepository talentCompensationRepository,
-            IAccountProvider accountProvider) : base(vmServices)
+            IAccountProvider accountProvider,
+            IDistrictRepository districtRepository) : base(vmServices)
         {
             _talentProfileRepository = talentProfileRepository;
             _talentCompensationRepository = talentCompensationRepository;
             _accountProvider = accountProvider;
+            _districtRepository = districtRepository;
         }
         private TalentProfileDto talentProfile;
         public TalentProfileDto TalentProfile
@@ -35,35 +38,39 @@ namespace ModuleAccount.Contracts.ViewModels
             get { return talentProfile; }
             set { this.RaiseAndSetIfChanged(ref talentProfile, value); }
         }
-        public TalentCompensationDto TalentCompensation { get; set; }
+        public TalentCompensationDto? TalentCompensation { get; set; }
         public override async void Initialize(NavigationContext navigationContext)
         {
             base.Initialize(navigationContext);
 
             var account = _accountProvider.Account!;
 
-            var talentProfiles = await _talentProfileRepository.GetAll();
-            if (talentProfiles.Any())
+            var districts = await _districtRepository.GetAll();
+            try
             {
-                TalentProfile = talentProfiles.Last();
+                TalentProfile = await _talentProfileRepository.Get(account.id);
             }
-            else
+            catch(Exception ex)
+            {
+
+            }
+            if(TalentProfile is null)
             {
                 TalentProfile = new TalentProfileDto
                 {
                     Title = "",
                     FirstName = "",
                     LastName = "",
-                    id = account.id,
+                    AccountId = account.id,
                     PreferredEmploymentStatus = PreferredEmploymentStatusEnum.Contract,
                 };
             }
 
 
             var talentCompensations = await _talentCompensationRepository.GetAll();
-            if (talentCompensations.Any())
+            TalentCompensation = talentCompensations.LastOrDefault(x => x.AccountId == account.id);
+            if (TalentCompensation is not null)
             {
-                TalentCompensation = talentCompensations.Last();
                 TalentProfile.TalentCompensationId = TalentCompensation.id;
             }
             else
@@ -76,7 +83,7 @@ namespace ModuleAccount.Contracts.ViewModels
                 };
             }
 
-
+            TalentProfile.DistrictId = districts.First(x=>x.id == account.DistrictId).id;
         }
 
         public ICommand SaveTalentProfileCommand => this.LoadingCommand(OnSaveTalentProfileAsync);

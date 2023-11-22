@@ -7,7 +7,7 @@ using Codelisk.GeneratorAttributes.WebAttributes.HttpMethod;
 
 namespace Itspecialist.Managers.Base
 {
-    public interface IDefaultManager<TDto, TKey, TEntity> where TDto : class where TEntity : BaseIdDto
+    public interface IDefaultManager<TDto, TKey, TEntity> where TDto : class where TEntity : BaseBaseIdDto
     {
         [Delete]
         Task Delete(TKey id);

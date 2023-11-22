@@ -12,11 +12,8 @@ using Itspecialist.Foundation.Enums.Account;
 namespace Itspecialist.Foundation.Dtos.Account
 {
     [Dto]
-    [UserDto]
-    public class AccountCompensationDto : BaseUserDto
+    public class AccountCompensationDto : AccountSubBaseDto
     {
-        [ForeignKey(nameof(AccountDto))]
-        public required Guid AccountId { get; set; }
         public required decimal Wage { get; set; }
         public required CompensationTypeEnum Type { get; set; }
     }

@@ -51,7 +51,7 @@ namespace ModuleAccount.Contracts.ViewModels
         public ICommand FinishedCommand => this.LoadingCommand(OnFinishedAsync);
         private async Task OnFinishedAsync()
         {
-            var skill=new SkillsDto { PrimaryProgrammingLanguage = PrimaryLanguage.id, SecondaryProgrammingLanguage = SecondaryLanguage.id };
+            var skill=new SkillsDto { AccountId = Guid.Empty, PrimaryProgrammingLanguage = PrimaryLanguage.id, SecondaryProgrammingLanguage = SecondaryLanguage.id };
             _accountSetupProvider.Skill = skill;
             _accountSetupProvider.PrimaryFrameworks = PrimaryFrameworks;
             _accountSetupProvider.SecondaryFrameworks = SecondaryFrameworks;

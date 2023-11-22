@@ -21,6 +21,8 @@ namespace Itspecialist.Foundation.Dtos.Talent
         public required string LastName { get; set; }
         [ForeignKey(nameof(TalentCompensationDto))]
         public Guid? TalentCompensationId { get; set; }
+        [ForeignKey(nameof(DistrictDto))]
+        public Guid? DistrictId { get; set; }
         public required PreferredEmploymentStatusEnum PreferredEmploymentStatus { get; set; }
     }
 }

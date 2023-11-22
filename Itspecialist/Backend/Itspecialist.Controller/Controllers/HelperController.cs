@@ -14,24 +14,47 @@ namespace Itspecialist.Controller.Controllers
         private readonly ItspecialistContext _itspecialistContext;
         private readonly IProgrammingLanguageManager _programmingLanguageManager;
         private readonly IProgrammingFrameworkManager _programmingFrameworkManager;
+        private readonly IDistrictManager _districtManager;
 
         public HelperController(ItspecialistContext itspecialistContext,
             IProgrammingLanguageManager programmingLanguageManager,
-            IProgrammingFrameworkManager programmingFrameworkManager)
+            IProgrammingFrameworkManager programmingFrameworkManager,
+            IDistrictManager districtManager)
         {
             _itspecialistContext = itspecialistContext;
             _programmingLanguageManager = programmingLanguageManager;
             _programmingFrameworkManager = programmingFrameworkManager;
+            _districtManager = districtManager;
         }
         [Microsoft.AspNetCore.Mvc.HttpGet("Get")]
         public async Task AddMigrations()
         {
             _itspecialistContext.Database.Migrate();
         }
-        [Microsoft.AspNetCore.Mvc.HttpGet("ClearDb")]
-        public async Task ClearDb()
+        [Microsoft.AspNetCore.Mvc.HttpGet("SetupDb")]
+        public async Task SetupDb()
         {
-            _itspecialistContext.Database.();
+            //_itspecialistContext.Database.();
+
+            var allLangs = await _programmingLanguageManager.GetAll();
+            var allFrameworks = await _programmingFrameworkManager.GetAll();
+            var allDistricts = await _districtManager.GetAll();
+
+            foreach (var item in allLangs)
+            {
+                _programmingLanguageManager.Delete(item.id);
+            }
+            foreach (var item in allFrameworks)
+            {
+                _programmingFrameworkManager.Delete(item.id);
+            }
+            foreach (var item in allDistricts)
+            {
+                _districtManager.Delete(item.id);
+            }
+
+            _districtManager.Save(new DistrictDto { Name = "Gmunden" });
+            _districtManager.Save(new DistrictDto { Name = "Vöcklabruck" });
 
             var csharp = await _programmingLanguageManager.Save(new ProgrammingLanguageDto { Name = "C#" });
             var java = await _programmingLanguageManager.Save(new ProgrammingLanguageDto { Name = "Java" });

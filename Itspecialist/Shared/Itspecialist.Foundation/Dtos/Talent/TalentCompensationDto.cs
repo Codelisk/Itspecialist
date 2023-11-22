@@ -13,12 +13,9 @@ using Itspecialist.Foundation.Enums.Account;
 namespace Itspecialist.Foundation.Dtos.Talent
 {
     [Dto]
-    [UserDto]
     [CustomizeGetAll(AllowAnonymous = true)]
-    public class TalentCompensationDto : BaseUserDto
+    public class TalentCompensationDto : AccountReferenceBaseDto
     {
-        [ForeignKey(nameof(AccountDto))]
-        public required Guid AccountId { get; set; }
         public required decimal Wage { get; set; }
         public required CompensationTypeEnum Type { get; set; }
     }

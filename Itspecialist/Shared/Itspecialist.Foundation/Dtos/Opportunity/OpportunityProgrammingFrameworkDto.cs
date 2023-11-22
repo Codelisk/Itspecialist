@@ -10,7 +10,7 @@ namespace Itspecialist.Foundation.Dtos.Opportunity
 {
     [Dto]
     [CustomizeGetAll(AllowAnonymous = true)]
-    public class OpportunityProgrammingFrameworkDto : BaseIdDto
+    public class OpportunityProgrammingFrameworkDto : BaseDefaultIdDto
     {
         [ForeignKey(nameof(CareerOpportunityDto))]
         public required Guid CareerOpportunityId { get; set; }
