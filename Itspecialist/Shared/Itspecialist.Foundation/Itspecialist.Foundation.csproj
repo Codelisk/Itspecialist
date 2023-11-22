@@ -17,6 +17,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Submodules\CodeGen\src\Common\Codelisk.GeneratorAttributes\Codelisk.GeneratorAttributes.csproj" />
+    <ProjectReference Include="..\..\Submodules\CodeGen\src\Generators\Foundation\Codelisk.Foundation.Generator\Codelisk.Foundation.Generator.csproj"  PrivateAssets="all" OutputItemType="Analyzer" />
     <ProjectReference Include="..\..\Submodules\CodeGen\src\Generators\Web\WebAutoMapperProfile.Generator\WebAutoMapperProfile.Generator.csproj" PrivateAssets="all" OutputItemType="Analyzer" />
   </ItemGroup>
 

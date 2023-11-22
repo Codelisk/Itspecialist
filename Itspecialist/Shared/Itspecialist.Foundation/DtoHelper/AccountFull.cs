@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Itspecialist.Foundation.DtoHelper
 {
-    public record AccountFull(AccountDto Account,
+    public record AccountFull3(AccountDto Account,
         ProgrammingLanguageDto PrimaryProgrammingLanguage, 
         ProgrammingLanguageDto? SecondaryProgrammingLanguage, 
         List<ProgrammingFrameworkDto> PrimaryFameworks,
