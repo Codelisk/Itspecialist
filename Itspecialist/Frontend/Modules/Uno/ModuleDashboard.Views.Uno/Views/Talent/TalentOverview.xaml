@@ -28,7 +28,7 @@
                                     </Grid.ColumnDefinitions>
                                     <StackPanel>
                                         <utu:Chip VerticalAlignment="Top"
-                                                  Content="C#" />
+                                                  Content="{Binding TalentProfile.}" />
                                         <utu:Chip VerticalAlignment="Top"
                                                   Content="{Binding District.Name}" />
                                     </StackPanel>
