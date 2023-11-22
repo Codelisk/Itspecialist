@@ -36,21 +36,21 @@ namespace ModuleAccount.Contracts.ViewModels
             _skillsRepository = skillsRepository;
         }
 
-        private string email;
+        private string email="maxfranz@codelisk.com";
         public string Email
         {
             get => email;
             set => this.RaiseAndSetIfChanged(ref email, value);
         }
 
-        private string name;
+        private string name="Max franz";
         public string Name
         {
             get => name;
             set => this.RaiseAndSetIfChanged(ref name, value);
         }
 
-        private string password;
+        private string password="Test1234!";
         public string Password
         {
             get { return password; }

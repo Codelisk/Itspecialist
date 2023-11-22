@@ -31,5 +31,10 @@ namespace ModuleShell.Contracts.ViewModels.Headers
         {
             await _shellNavigatorService.NavigateToTalentsAsync(_vmServices.RegionManager);
         }
+        public ICommand SetupCommand => this.LoadingCommand(OnSetupAsync);
+        private async Task OnSetupAsync()
+        {
+            _vmServices.RegionManager.RequestNavigate("ContentRegion", "DistrictSelection");
+        }
     }
 }

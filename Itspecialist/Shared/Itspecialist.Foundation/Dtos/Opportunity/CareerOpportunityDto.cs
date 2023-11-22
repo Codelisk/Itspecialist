@@ -11,11 +11,11 @@ namespace Itspecialist.Foundation.Dtos.Opportunity
 {
     [Dto]
     [UserDto]
+    [CustomizeGetAll(AllowAnonymous = true)]
     public class CareerOpportunityDto : Base.BaseUserDto
     {
         [ForeignKey(nameof(DistrictDto))]
         public required Guid DistrictId { get; set; }
-
         [ForeignKey(nameof(SkillsDto))]
         public required Guid SkillsId { get; set; }
         public string? Description { get; set; }

@@ -14,6 +14,7 @@
     <ProjectReference Include="..\..\..\..\Shared\Itspecialist.Foundation\Itspecialist.Foundation.csproj" />
     <ProjectReference Include="..\BaseModules\BasePagesBackendModule\BasePagesBackendModule.csproj" />
     <ProjectReference Include="..\BaseModules\BaseServicesModule\BaseServicesModule.csproj" />
+    <ProjectReference Include="..\ModuleAccount\ModuleAccount.Contracts\ModuleAccount.Contracts.csproj" />
   </ItemGroup>
 
 </Project>
