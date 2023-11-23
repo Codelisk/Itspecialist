@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <Import Project="..\Backend.props" Condition="exists('..\Backend.props')" />
   <Import Project="..\..\Backend.props" Condition="exists('..\..\Backend.props')" />

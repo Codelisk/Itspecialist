@@ -43,15 +43,18 @@ namespace Itspecialist.Managers.Base
         }
 
         [GetFull]
-        public virtual Task<object> GetFull(TKey id)
+        public virtual async Task<object> GetFull(TKey id)
         {
             throw new NotImplementedException();
+            return await Get(id);
         }
 
         [GetAllFull]
-        public virtual Task<List<object>> GetAllFull()
+        public virtual async Task<List<object>> GetAllFull()
         {
             throw new NotImplementedException();
+            var result = await GetAll();
+            return result.Cast<object>().ToList();
         }
     }
 }
