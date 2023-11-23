@@ -13,7 +13,7 @@ namespace Itspecialist.Managers.Base
     [DefaultManager]
     public class DefaultManager<TDto, TKey, TEntity> : IDefaultManager<TDto, TKey, TEntity> where TDto : class where TEntity : BaseBaseIdDto
     {
-        private readonly IDefaultRepository<TEntity, TKey> _repo;
+        public readonly IDefaultRepository<TEntity, TKey> _repo;
         private readonly IMapper _mapper;
 
         public DefaultManager(IDefaultRepository<TEntity, TKey> Repo, IMapper mapper)
@@ -40,6 +40,12 @@ namespace Itspecialist.Managers.Base
         public async Task<TDto> Get(TKey id)
         {
             return _mapper.Map<TDto>(await _repo.Get(id));
+        }
+
+        [GetFull]
+        public Task<TDto> GetFull(TKey id)
+        {
+            throw new NotImplementedException();
         }
 
         [GetAllFull]

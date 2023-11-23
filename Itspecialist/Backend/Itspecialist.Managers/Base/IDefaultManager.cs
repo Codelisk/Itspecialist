@@ -13,6 +13,8 @@ namespace Itspecialist.Managers.Base
         Task Delete(TKey id);
         [Get]
         Task<TDto> Get(TKey id);
+        [GetFull]
+        Task<TDto> GetFull(TKey id);
         [GetAll]
         Task<List<TDto>> GetAll();
         [Save]
