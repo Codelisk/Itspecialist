@@ -43,13 +43,13 @@ namespace Itspecialist.Managers.Base
         }
 
         [GetFull]
-        public Task<TDto> GetFull(TKey id)
+        public virtual Task<TFull> GetFull<TFull>(TKey id)
         {
             throw new NotImplementedException();
         }
 
         [GetAllFull]
-        public Task<List<TDto>> GetAllFull()
+        public virtual Task<List<TFull>> GetAllFull<TFull>()
         {
             throw new NotImplementedException();
         }

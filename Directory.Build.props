@@ -5,6 +5,7 @@
   <!-- Required for Hot Reload (See https://github.com/unoplatform/uno.templates/issues/376) -->
   <GenerateAssemblyInfo Condition="'$(Configuration)'=='Debug'">false</GenerateAssemblyInfo>
     <EnableSourceControlManagerQueries>true</EnableSourceControlManagerQueries>
+	<EnforceExtendedAnalyzerRules>true</EnforceExtendedAnalyzerRules>
       <LangVersion>preview</LangVersion>
       <ImplicitUsings>enable</ImplicitUsings>
       <Nullable>enable</Nullable>
