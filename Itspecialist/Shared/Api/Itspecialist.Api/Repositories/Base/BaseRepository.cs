@@ -48,6 +48,8 @@ namespace Itspecialist.Api.Repositories.Base
         [Save]
         [Codelisk.GeneratorAttributes.WebAttributes.HttpMethod.Get]
         [GetAll]
+        [GetFull]
+        [GetAllFull]
         protected virtual async Task<T> TryRequest<T>(Func<Task<T>> func, T defaultValue = default(T))
         {
             return await func().ConfigureAwait(false);

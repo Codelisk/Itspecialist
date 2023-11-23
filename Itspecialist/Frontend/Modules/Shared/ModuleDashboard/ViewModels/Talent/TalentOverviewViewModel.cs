@@ -67,23 +67,7 @@ namespace ModuleDashboard.Contracts.ViewModels.Talent
                 });
                 await _accountProvider.SetAccountAsync();
 
-                var accounts = await _accountRepository.GetAll();
-                var districts = await _districtRepository.GetAll();
-                List<TalentCompensationDto> talentCompensationsDtos = await _talentCompensationRepository.GetAll();
-                List<TalentProfileDto> talentProfilesDtos = await _talentProfileRepository.GetAll();
-                var languages = await _programmingLanguageRepository.GetAll();
-                var frameworks = await _programmingFrameworkRepository.GetAll();
-                var accountProgrammingFrameworks = await _accountProgrammingFrameworkRepository.GetAll();
-                var skills = await _skillsRepository.GetAll();
-                var skill = skills.First(x => x.AccountId == _accountProvider.Account!.id);
-                Account = new AccountFull(_accountProvider.Account!,
-                    languages.First(x => x.id == skill.PrimaryProgrammingLanguage),
-                    languages.First(x => x.id == skill.SecondaryProgrammingLanguage),
-                    frameworks.Where(x => accountProgrammingFrameworks.Any(y => y.ProgrammingFrameworkId == x.id && x.ProgrammingLanguageId == skill.PrimaryProgrammingLanguage)).ToList(),
-                    frameworks.Where(x => accountProgrammingFrameworks.Any(y => y.ProgrammingFrameworkId == x.id && x.ProgrammingLanguageId == skill.SecondaryProgrammingLanguage)).ToList());
-
-                TalentProfiles = talentProfilesDtos.Select(x => new TalentProfileFull(x, talentCompensationsDtos.FirstOrDefault(y => y.id == x.TalentCompensationId), districts.FirstOrDefault(y=>y.id == x.DistrictId))).ToList();
-
+                TalentProfiles = await _talentProfileRepository.GetAllFull();
                 this.RaisePropertyChanged(nameof(TalentProfiles));
             }
             catch (Exception ex) { }
