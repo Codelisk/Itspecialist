@@ -41,5 +41,11 @@ namespace Itspecialist.Managers.Base
         {
             return _mapper.Map<TDto>(await _repo.Get(id));
         }
+
+        [GetAllFull]
+        public Task<List<TDto>> GetAllFull()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
