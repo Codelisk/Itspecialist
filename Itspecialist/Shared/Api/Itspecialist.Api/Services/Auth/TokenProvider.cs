@@ -4,6 +4,10 @@ namespace Itspecialist.Api.Services.Auth
     {
         private string AccessToken;
         private string RefreshToken;
+        public TokenProvider()
+        {
+            
+        }
         public string GetCurrentAccessToken()
         {
             return AccessToken;
