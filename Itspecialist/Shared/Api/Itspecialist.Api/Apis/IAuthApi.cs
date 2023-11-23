@@ -17,4 +17,5 @@ namespace Itspecialist.Api.Apis
         [Post("/refresh")]
         Task<AuthResult> Refresh([Body] string refreshToken);
     }
+
 }

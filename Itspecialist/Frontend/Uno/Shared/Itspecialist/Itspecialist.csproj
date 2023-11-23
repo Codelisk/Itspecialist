@@ -15,6 +15,7 @@
     <PackageReference Include="Uno.Extensions.Logging.WinUI" />
     <PackageReference Include="Uno.Material.WinUI" />
     <PackageReference Include="Uno.Dsp.Tasks" />
+    <PackageReference Include="Uno.Extensions.Http.Refit" />
     <PackageReference Include="Uno.Extensions.Core.WinUI" />
     <PackageReference Include="Uno.Extensions.Authentication.WinUI" />
     <PackageReference Include="Uno.Extensions.Hosting.WinUI" />

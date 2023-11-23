@@ -1,6 +1,11 @@
+using Foundation.Api.Models;
 using Itspecialist.Api;
+using Itspecialist.Api.Apis;
+using Itspecialist.Api.Repositories;
+using Itspecialist.Api.Services.Auth;
 using Itspecialist.Services;
 using Uno.UI;
+using static System.Net.WebRequestMethods;
 
 namespace Itspecialist
 {
@@ -17,7 +22,31 @@ namespace Itspecialist
         protected override void ConfigureHost(IHostBuilder builder)
         {
             builder
-                .UseAuthentication(b => b.AddCustom())
+                .UseAuthentication(b => b.AddCustom(custom =>
+                {
+                    custom.Refresh(
+                        async (sp, tokenCache, credentials, cancellationToken) =>
+                        {
+                            var tokenProvider = sp.GetService<ITokenProvider>();
+                            var token = await tokenCache.AccessTokenAsync();
+                            var rToken = await tokenCache.RefreshTokenAsync();
+                            tokenProvider.UpdateCurrentToken(token, rToken);
+                            return default;
+                        });
+                    custom.Login(
+                    async (sp, dispatcher, tokenCache, credentials, cancellationToken) =>
+                    {
+                        var auth = sp.GetService<IAuthRepository>();
+                        var tokenProvider = sp.GetService<ITokenProvider>();
+                        credentials.TryGetValue("email", out var email);
+                        credentials.TryGetValue("password", out var password);
+                        var authenticated = await auth.LoginAsync(new AuthPayload { email = email, password = password });
+                        tokenProvider.UpdateCurrentToken(authenticated.accessToken, authenticated.refreshToken);
+                        credentials["AccessToken"] = authenticated.accessToken;
+                        credentials["RefreshToken"] = authenticated.refreshToken;
+                        return credentials;
+                    });
+                }))
 #if DEBUG
                     // Switch to Development environment when running in DEBUG
                     .UseEnvironment(Environments.Development)
@@ -45,6 +74,7 @@ namespace Itspecialist
                     .UseLocalization()
                     .ConfigureServices((context, services) =>
                     {
+                        services.AddSingleton<IDispatcher, Dispatcher>();
                         services.AddApi<AuthenticationService>();
                     });
 

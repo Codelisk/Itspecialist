@@ -7,6 +7,7 @@ using Foundation.Api.Models;
 using Itspecialist.Api.Models.Auth;
 using Itspecialist.Api.Repositories;
 using Itspecialist.Api.Services.Auth;
+using Uno.Extensions.Authentication;
 
 namespace Itspecialist.Services
 {
@@ -17,11 +18,14 @@ namespace Itspecialist.Services
         private readonly ITokenProvider _tokenProvider;
         private readonly ITokenCache _tokenCache;
         private readonly IKeyValueStorage _keyValueStorage;
-        
+        private readonly IDispatcher _dispatcher;
+        private readonly Uno.Extensions.Authentication.IAuthenticationService _authenticationService;
         private readonly IAuthRepository _authRepository;
 
-        public AuthenticationService(IAuthRepository authRepository, IKeyValueStorage keyValueStorage, ITokenProvider tokenProvider, ITokenCache tokenCache)
+        public AuthenticationService(IDispatcher dispatcher, Uno.Extensions.Authentication.IAuthenticationService authenticationService, IAuthRepository authRepository, IKeyValueStorage keyValueStorage, ITokenProvider tokenProvider, ITokenCache tokenCache)
         {
+            _dispatcher = dispatcher;
+            _authenticationService = authenticationService;
             _authRepository = authRepository;
             _keyValueStorage = keyValueStorage;
             _tokenProvider = tokenProvider;
@@ -31,34 +35,26 @@ namespace Itspecialist.Services
         public async Task<bool> RegisterAsync(string email, string password)
         {
             var authResult = await _authRepository.RegisterAndLoginAsync(new AuthPayload() { email = email, password = password });
-            await _keyValueStorage.SetAsync(AuthProvider, authResult.accessToken, CancellationToken.None);
-            var authResultCached = await _keyValueStorage.GetStringAsync(AuthProvider, CancellationToken.None);
-            _tokenProvider.UpdateCurrentToken(authResult.accessToken, authResult.refreshToken);
+            await _authenticationService.LoginAsync(_dispatcher, new Dictionary<string, string>
+            {
+                { "email", email},
+                { "password", password}
+            });
             return true;
         }
 
         public async Task<bool> AuthenticateAndCacheTokenAsync(AuthPayload auth)
         {
-            var authResult = await _authRepository.LoginAsync(auth);
-            await _keyValueStorage.SetAsync(AuthProvider, authResult.accessToken, CancellationToken.None);
-            _tokenProvider.UpdateCurrentToken(authResult.accessToken, authResult.refreshToken);
-            return true;
+            return await _authenticationService.LoginAsync(_dispatcher, new Dictionary<string,string>() 
+            { 
+                { "email", auth.email},
+                { "password", auth.password}
+            });
         }
 
         public async Task<bool> RefreshAndCacheTokenAsync()
         {
-            var dsf = await _keyValueStorage.GetAllValuesAsync(CancellationToken.None);
-            var authResultCached = await _keyValueStorage.GetStringAsync(AuthProvider, CancellationToken.None);
-            if (authResultCached is not null)
-            {
-                //_tokenProvider.UpdateCurrentToken(authResultCached.accessToken, authResultCached.refreshToken);
-            }
-
-            var refreshToken = _tokenProvider.GetCurrentRefreshToken();
-            var authResult = await _authRepository.RefreshAsync(refreshToken);
-            await _tokenCache.SaveAsync(AuthProvider, new Dictionary<string, string> { { AccessTokenKey, authResult.accessToken } }, default);
-            _tokenProvider.UpdateCurrentToken(authResult.accessToken, authResult.refreshToken);
-            return true;
+            return await _authenticationService.RefreshAsync(CancellationToken.None);
         }
     }
 }
