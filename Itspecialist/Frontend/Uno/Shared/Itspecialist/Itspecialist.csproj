@@ -67,6 +67,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\Modules\Uno\ModuleAccounts.Views.Uno\ModuleAccounts.Views.Uno.csproj" />
     <ProjectReference Include="..\..\..\Modules\Uno\ModuleDashboard.Views.Uno\ModuleDashboard.Views.Uno.csproj" />
+    <ProjectReference Include="..\..\..\Modules\Uno\ModuleList.Views.Uno\ModuleList.Views.Uno.csproj" />
     <ProjectReference Include="..\..\..\Modules\Uno\ModuleShell.Views.Uno\ModuleShell.Views.Uno.csproj" />
   </ItemGroup>
 

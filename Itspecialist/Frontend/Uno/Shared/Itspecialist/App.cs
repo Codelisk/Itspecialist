@@ -65,6 +65,7 @@ namespace Itspecialist
             moduleCatalog.AddModule<ModuleAccounts.Views.Uno.ModuleInitializer>();
             moduleCatalog.AddModule<ModuleShell.Views.Uno.ModuleInitializer>();
             moduleCatalog.AddModule<ModuleDashboard.Views.Uno.ModuleInitializer>();
+            moduleCatalog.AddModule<ModuleList.Views.Uno.ModuleInitializer>();
         }
     }
 }
