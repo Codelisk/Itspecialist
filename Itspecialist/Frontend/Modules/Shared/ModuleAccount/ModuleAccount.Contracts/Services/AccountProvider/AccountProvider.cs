@@ -23,9 +23,16 @@ namespace ModuleAccount.Contracts.Services.AccountProvider
         }
         public async Task<bool> SetAccountAsync()
         {
-            var accounts = await _accountRepository.GetAll();
-            Account = accounts.FirstOrDefault();
-            return Account is not null;
+            try
+            {
+                var accounts = await _accountRepository.GetAll();
+                Account = accounts.FirstOrDefault();
+                return Account is not null;
+            }
+            catch(Exception ex)
+            {
+                return false;
+            }
         }
     }
 }

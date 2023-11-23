@@ -55,22 +55,17 @@ namespace ModuleDashboard.Contracts.ViewModels.Talent
         public AccountFull Account { get; set; }
         public override async void Initialize(NavigationContext navigationContext)
         {
-            try
+            base.Initialize(navigationContext);
+
+            await _authenticationService.AuthenticateAndCacheTokenAsync(new Foundation.Api.Models.AuthPayload
             {
+                email = "d.hufnagl@codelisk.com",
+                password = "Test1234!"
+            });
+            await _accountProvider.SetAccountAsync();
 
-                base.Initialize(navigationContext);
-
-                await _authenticationService.AuthenticateAndCacheTokenAsync(new Foundation.Api.Models.AuthPayload
-                {
-                    email = "d.hufnagl@codelisk.com",
-                    password = "Test1234!"
-                });
-                await _accountProvider.SetAccountAsync();
-
-                TalentProfiles = await _talentProfileRepository.GetAllFull();
-                this.RaisePropertyChanged(nameof(TalentProfiles));
-            }
-            catch (Exception ex) { }
+            TalentProfiles = await _talentProfileRepository.GetAllFull();
+            this.RaisePropertyChanged(nameof(TalentProfiles));
         }
 
         public ICommand LoadTalentsCommand => this.LoadingCommand(OnLoadTalentsAsync);
