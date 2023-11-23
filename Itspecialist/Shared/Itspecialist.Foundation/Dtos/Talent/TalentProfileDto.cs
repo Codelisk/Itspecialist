@@ -23,6 +23,8 @@ namespace Itspecialist.Foundation.Dtos.Talent
         public Guid? TalentCompensationId { get; set; }
         [ForeignKey(nameof(DistrictDto))]
         public Guid? DistrictId { get; set; }
+        [ForeignKey(nameof(SkillsDto))]
+        public Guid? SkillsId { get; set; }
         public required PreferredEmploymentStatusEnum PreferredEmploymentStatus { get; set; }
     }
 }

@@ -57,13 +57,6 @@ namespace ModuleDashboard.Contracts.ViewModels.Talent
         {
             base.Initialize(navigationContext);
 
-            await _authenticationService.AuthenticateAndCacheTokenAsync(new Foundation.Api.Models.AuthPayload
-            {
-                email = "d.hufnagl@codelisk.com",
-                password = "Test1234!"
-            });
-            await _accountProvider.SetAccountAsync();
-
             TalentProfiles = await _talentProfileRepository.GetAllFull();
             this.RaisePropertyChanged(nameof(TalentProfiles));
         }

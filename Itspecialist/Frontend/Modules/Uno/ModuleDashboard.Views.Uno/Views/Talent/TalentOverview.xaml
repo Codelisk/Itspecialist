@@ -28,13 +28,14 @@
                                     </Grid.ColumnDefinitions>
                                     <StackPanel>
                                         <utu:Chip VerticalAlignment="Top"
-                                                  Content="{Binding TalentProfile}" />
+                                                  Content="{Binding TalentProfile.account.accountDto.}" />
                                         <utu:Chip VerticalAlignment="Top"
                                                   Content="{Binding District.Name}" />
                                     </StackPanel>
 
                                     <Image Grid.Column="1"
                                            Width="120"
+                                           Height="120"
                                            Source="https://upload.wikimedia.org/wikipedia/commons/4/43/Dotnet-bot.svg"
                                            Stretch="Fill" />
                                 </Grid>

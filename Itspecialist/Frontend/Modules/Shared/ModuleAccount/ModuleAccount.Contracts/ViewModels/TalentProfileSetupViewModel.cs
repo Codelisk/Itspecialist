@@ -18,6 +18,7 @@ namespace ModuleAccount.Contracts.ViewModels
         private readonly ITalentProfileRepository _talentProfileRepository;
         private readonly ITalentCompensationRepository _talentCompensationRepository;
         private readonly IAccountProvider _accountProvider;
+        private readonly ISkillsRepository _skillsRepository;
         private readonly IDistrictRepository _districtRepository;
 
         public TalentProfileSetupViewModel(
@@ -25,11 +26,13 @@ namespace ModuleAccount.Contracts.ViewModels
             ITalentProfileRepository talentProfileRepository,
             ITalentCompensationRepository talentCompensationRepository,
             IAccountProvider accountProvider,
+            ISkillsRepository skillsRepository,
             IDistrictRepository districtRepository) : base(vmServices)
         {
             _talentProfileRepository = talentProfileRepository;
             _talentCompensationRepository = talentCompensationRepository;
             _accountProvider = accountProvider;
+            _skillsRepository = skillsRepository;
             _districtRepository = districtRepository;
         }
         private TalentProfileDto talentProfile;
@@ -84,6 +87,8 @@ namespace ModuleAccount.Contracts.ViewModels
             }
 
             TalentProfile.DistrictId = districts.First(x=>x.id == account.DistrictId).id;
+            var skill = await _skillsRepository.Get(account.id);
+            TalentProfile.SkillsId = skill.AccountId;
         }
 
         public ICommand SaveTalentProfileCommand => this.LoadingCommand(OnSaveTalentProfileAsync);

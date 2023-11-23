@@ -6,17 +6,20 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using BasePagesBackendModule.PageViewModels;
 using BaseServicesModule.Services.Vms;
+using Itspecialist.Api.Services.Auth;
 
 namespace ModuleShell.Contracts.ViewModels.Headers
 {
     public partial class ShellHeaderViewModel : RegionBaseViewModel
     {
         private readonly VmServices _vmServices;
+        private readonly IAuthenticationService _authenticationService;
         private readonly IShellNavigatorService _shellNavigatorService;
 
-        public ShellHeaderViewModel(VmServices vmServices, IShellNavigatorService shellNavigatorService) : base(vmServices)
+        public ShellHeaderViewModel(VmServices vmServices, IAuthenticationService authenticationService, IShellNavigatorService shellNavigatorService) : base(vmServices)
         {
             _vmServices = vmServices;
+            _authenticationService = authenticationService;
             _shellNavigatorService = shellNavigatorService;
         }
 
@@ -35,6 +38,16 @@ namespace ModuleShell.Contracts.ViewModels.Headers
         private async Task OnSetupAsync()
         {
             _vmServices.RegionManager.RequestNavigate("ContentRegion", "DistrictSelection");
+        }
+
+        public ICommand LoginCommand => this.LoadingCommand(OnLoginAsync);
+        private async Task OnLoginAsync()
+        {
+            await _authenticationService.AuthenticateAndCacheTokenAsync(new Foundation.Api.Models.AuthPayload
+            {
+                email = "d.hufnagl@codelisk.com",
+                password = "Test1234!"
+            });
         }
     }
 }

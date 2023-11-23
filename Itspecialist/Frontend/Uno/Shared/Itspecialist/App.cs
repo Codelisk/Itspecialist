@@ -4,6 +4,7 @@ using Itspecialist.Api.Apis;
 using Itspecialist.Api.Repositories;
 using Itspecialist.Api.Services.Auth;
 using Itspecialist.Services;
+using ModuleAccount.Contracts.Services.AccountProvider;
 using Uno.UI;
 using static System.Net.WebRequestMethods;
 
@@ -22,6 +23,7 @@ namespace Itspecialist
         protected override void ConfigureHost(IHostBuilder builder)
         {
             builder
+                .UseStorage()
                 .UseAuthentication(b => b.AddCustom(custom =>
                 {
                     custom.Refresh(
@@ -38,12 +40,14 @@ namespace Itspecialist
                     {
                         var auth = sp.GetService<IAuthRepository>();
                         var tokenProvider = sp.GetService<ITokenProvider>();
+                        var accountProvider = sp.GetService<IAccountProvider>();
                         credentials.TryGetValue("email", out var email);
                         credentials.TryGetValue("password", out var password);
                         var authenticated = await auth.LoginAsync(new AuthPayload { email = email, password = password });
                         tokenProvider.UpdateCurrentToken(authenticated.accessToken, authenticated.refreshToken);
                         credentials["AccessToken"] = authenticated.accessToken;
                         credentials["RefreshToken"] = authenticated.refreshToken;
+                        await accountProvider.SetAccountAsync();
                         return credentials;
                     });
                 }))

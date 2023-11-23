@@ -54,7 +54,8 @@ namespace Itspecialist.Services
 
         public async Task<bool> RefreshAndCacheTokenAsync()
         {
-            return await _authenticationService.RefreshAsync(CancellationToken.None);
+            var result = await _authenticationService.RefreshAsync();
+            return result;
         }
     }
 }
