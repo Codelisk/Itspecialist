@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Itspecialist.Foundation.Dtos.Account
 {
-    public class AccountReferenceBaseDto : BaseDefaultIdDto
+    public class AccountReferenceBaseDto : BaseUserDto
     {
         [ForeignKey(nameof(AccountDto))]
         public required Guid AccountId { get; set; }
