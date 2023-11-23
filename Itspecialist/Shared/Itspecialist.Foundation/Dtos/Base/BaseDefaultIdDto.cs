@@ -6,9 +6,11 @@ using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using Codelisk.GeneratorAttributes.WebAttributes.Dto;
+using Microsoft.EntityFrameworkCore;
 
 namespace Itspecialist.Foundation.Dtos.Base
 {
+    [PrimaryKey(nameof(id))]
     public class BaseDefaultIdDto : BaseBaseIdDto
     {
         [Id]

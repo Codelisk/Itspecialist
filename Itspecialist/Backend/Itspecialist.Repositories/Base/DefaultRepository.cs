@@ -41,7 +41,7 @@ namespace Itspecialist.Repositories.Base
         {
             if(id is Guid idGuid)
             {
-                return await _context.Set<T>().FirstAsync(e => e.GetId() == idGuid);
+                return await _context.Set<T>().FindAsync(idGuid);
             }
 
             throw new KeyNotFoundException();
