@@ -26,6 +26,7 @@ namespace ModuleDashboard.Contracts.ViewModels.Talent
         private readonly IAuthenticationService _authenticationService;
         private readonly IDistrictRepository _districtRepository;
         private readonly IAccountRepository _accountRepository;
+        private readonly IFavoriteTalentRepository _favoriteTalentRepository;
 
         public TalentOverviewViewModel(VmServices vmServices,
             ITalentCompensationRepository talentCompensationRepository,
@@ -37,7 +38,8 @@ namespace ModuleDashboard.Contracts.ViewModels.Talent
             IAccountProvider accountProvider,
             IAuthenticationService authenticationService,
             IDistrictRepository districtRepository,
-            IAccountRepository accountRepository) : base(vmServices)
+            IAccountRepository accountRepository,
+            IFavoriteTalentRepository favoriteTalentRepository) : base(vmServices)
         {
             _talentCompensationRepository = talentCompensationRepository;
             _talentProfileRepository = talentProfileRepository;
@@ -49,6 +51,7 @@ namespace ModuleDashboard.Contracts.ViewModels.Talent
             _authenticationService = authenticationService;
             _districtRepository = districtRepository;
             _accountRepository = accountRepository;
+            _favoriteTalentRepository = favoriteTalentRepository;
         }
 
         public List<TalentProfileFull> TalentProfiles { get; set; }
@@ -58,6 +61,7 @@ namespace ModuleDashboard.Contracts.ViewModels.Talent
             base.Initialize(navigationContext);
 
             TalentProfiles = await _talentProfileRepository.GetAllFull();
+            Console.WriteLine(TalentProfiles.Last().skills.primaryProgrammingLanguage.programmingLanguageDto.Name);
             this.RaisePropertyChanged(nameof(TalentProfiles));
         }
 
@@ -67,6 +71,24 @@ namespace ModuleDashboard.Contracts.ViewModels.Talent
             List<TalentCompensationDto> talentCompensationsDtos = await _talentCompensationRepository.GetAll();
             List<TalentProfileDto> talentProfilesDtos = await _talentProfileRepository.GetAll();
             this.GoRegionBack();
+        }
+
+        public ICommand FavoriteCommand => this.LoadingCommand<TalentProfileFull>(OnFavoriteAsync);
+        private async Task OnFavoriteAsync(TalentProfileFull talentProfileFull)
+        {
+            await _favoriteTalentRepository.Save(new FavoriteTalentDto
+            {
+                AccountId = _accountProvider.Account!.id,
+                TalentProfileId = talentProfileFull.talentProfileDto.GetId(),
+            });
+
+            var tt = await _favoriteTalentRepository.GetAll();
+        }
+
+        public ICommand GotoTalentListCommand => this.LoadingCommand(OnGotoTalentListAsync);
+        private async Task OnGotoTalentListAsync()
+        {
+            ChangeCurrentRegion("FavoriteTalentOverview");
         }
     }
 }

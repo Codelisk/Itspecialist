@@ -7,83 +7,93 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:utu="using:Uno.Toolkit.UI"
              xmlns:vm="using:ModuleDashboard.Contracts.ViewModels.Talent"
+             x:Name="TalentOverviewRoot"
              d:DesignHeight="300"
              d:DesignWidth="400"
              mc:Ignorable="d">
-    <StackPanel>
-        <ListView ItemsSource="{Binding TalentProfiles}">
-            <ListView.ItemTemplate>
-                <DataTemplate x:DataType="foundation:TalentProfileFull">
-                    <utu:Card AutomationProperties.AutomationId="Outlined_Card"
-                              HeaderContent="{Binding}"
-                              Style="{StaticResource SmallMediaElevatedCardStyle}"
-                              SubHeaderContent="With title and subtitle only"
-                              SupportingContent="Test">
-                        <utu:Card.HeaderContentTemplate>
-                            <DataTemplate x:DataType="foundation:TalentProfileFull">
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*" />
-                                        <ColumnDefinition Width="2*" />
-                                    </Grid.ColumnDefinitions>
-                                    <StackPanel>
-                                        <utu:Chip VerticalAlignment="Top"
-                                                  Content="{Binding TalentProfile.account.accountDto.}" />
-                                        <utu:Chip VerticalAlignment="Top"
-                                                  Content="{Binding District.Name}" />
-                                    </StackPanel>
+    <ScrollViewer Height="700">
+        <StackPanel>
+            <Button Command="{Binding GotoTalentListCommand}"
+                    Content="Talent List" />
+            <ListView ItemsSource="{Binding TalentProfiles}">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="foundation:TalentProfileFull">
+                        <StackPanel Orientation="Horizontal">
+                            <Button VerticalAlignment="Center"
+                                    Command="{Binding ElementName=TalentOverviewRoot, Path=DataContext.FavoriteCommand}"
+                                    CommandParameter="{Binding}" />
+                            <utu:Card AutomationProperties.AutomationId="Outlined_Card"
+                                      HeaderContent="{Binding}"
+                                      Style="{StaticResource SmallMediaElevatedCardStyle}"
+                                      SubHeaderContent="With title and subtitle only"
+                                      SupportingContent="Test">
+                                <utu:Card.HeaderContentTemplate>
+                                    <DataTemplate x:DataType="foundation:TalentProfileFull">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="2*" />
+                                            </Grid.ColumnDefinitions>
+                                            <StackPanel>
+                                                <utu:Chip VerticalAlignment="Top"
+                                                          Content="{Binding skills.primaryProgrammingLanguage.programmingLanguageDto.Name}" />
+                                                <utu:Chip VerticalAlignment="Top"
+                                                          Content="{Binding District.Name}" />
+                                            </StackPanel>
 
-                                    <Image Grid.Column="1"
-                                           Width="120"
-                                           Height="120"
-                                           Source="https://upload.wikimedia.org/wikipedia/commons/4/43/Dotnet-bot.svg"
-                                           Stretch="Fill" />
-                                </Grid>
-                            </DataTemplate>
-                        </utu:Card.HeaderContentTemplate>
-                        <utu:Card.SubHeaderContentTemplate>
-                            <DataTemplate>
-                                <TextBlock HorizontalAlignment="Center"
-                                           FontSize="30"
-                                           Text="Test" />
-                            </DataTemplate>
-                        </utu:Card.SubHeaderContentTemplate>
-                        <utu:Card.SupportingContentTemplate>
-                            <DataTemplate>
-                                <Border BorderBrush="{ThemeResource OnSurfaceFocusedBrush}"
-                                        BorderThickness="0,1,0,0">
-                                    <Grid>
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="auto" />
-                                            <RowDefinition Height="auto" />
-                                            <RowDefinition Height="auto" />
-                                        </Grid.RowDefinitions>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="*" />
-                                            <ColumnDefinition Width="auto" />
-                                            <ColumnDefinition Width="*" />
-                                        </Grid.ColumnDefinitions>
+                                            <Image Grid.Column="1"
+                                                   Width="120"
+                                                   Height="120"
+                                                   Source="https://upload.wikimedia.org/wikipedia/commons/4/43/Dotnet-bot.svg"
+                                                   Stretch="Fill" />
+                                        </Grid>
+                                    </DataTemplate>
+                                </utu:Card.HeaderContentTemplate>
+                                <utu:Card.SubHeaderContentTemplate>
+                                    <DataTemplate>
                                         <TextBlock HorizontalAlignment="Center"
-                                                   Text="Xamarin.Forms" />
-                                        <Border Grid.Column="1"
-                                                HorizontalAlignment="Center"
-                                                VerticalAlignment="Stretch"
-                                                BorderBrush="{ThemeResource OnSurfaceFocusedBrush}"
-                                                BorderThickness="1" />
-                                        <TextBlock Grid.Column="2"
-                                                   HorizontalAlignment="Center"
-                                                   Text=".NET MAUI" />
-                                    </Grid>
-                                </Border>
-                            </DataTemplate>
-                        </utu:Card.SupportingContentTemplate>
-                    </utu:Card>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-        <Button Command="{Binding LoadTalentsCommand}"
-                Content="Load Talents   " />
+                                                   FontSize="30"
+                                                   Text="Test" />
+                                    </DataTemplate>
+                                </utu:Card.SubHeaderContentTemplate>
+                                <utu:Card.SupportingContentTemplate>
+                                    <DataTemplate>
+                                        <Border BorderBrush="{ThemeResource OnSurfaceFocusedBrush}"
+                                                BorderThickness="0,1,0,0">
+                                            <Grid>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="auto" />
+                                                    <RowDefinition Height="auto" />
+                                                    <RowDefinition Height="auto" />
+                                                </Grid.RowDefinitions>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="auto" />
+                                                    <ColumnDefinition Width="*" />
+                                                </Grid.ColumnDefinitions>
+                                                <TextBlock HorizontalAlignment="Center"
+                                                           Text="Xamarin.Forms" />
+                                                <Border Grid.Column="1"
+                                                        HorizontalAlignment="Center"
+                                                        VerticalAlignment="Stretch"
+                                                        BorderBrush="{ThemeResource OnSurfaceFocusedBrush}"
+                                                        BorderThickness="1" />
+                                                <TextBlock Grid.Column="2"
+                                                           HorizontalAlignment="Center"
+                                                           Text=".NET MAUI" />
+                                            </Grid>
+                                        </Border>
+                                    </DataTemplate>
+                                </utu:Card.SupportingContentTemplate>
+                            </utu:Card>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button Command="{Binding LoadTalentsCommand}"
+                    Content="Load Talents   " />
 
-        <Frame />
-    </StackPanel>
+            <Frame />
+        </StackPanel>
+    </ScrollViewer>
 </UserControl>
