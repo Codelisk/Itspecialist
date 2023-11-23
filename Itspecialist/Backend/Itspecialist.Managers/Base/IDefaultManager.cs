@@ -14,12 +14,12 @@ namespace Itspecialist.Managers.Base
         [Get]
         Task<TDto> Get(TKey id);
         [GetFull]
-        Task<TDto> GetFull(TKey id);
+        Task<object> GetFull(TKey id);
         [GetAll]
         Task<List<TDto>> GetAll();
         [Save]
         Task<TDto> Save(TDto t);
         [GetAllFull]
-        Task<List<TDto>> GetAllFull();
+        Task<List<object>> GetAllFull();
     }
 }
