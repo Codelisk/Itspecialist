@@ -91,7 +91,7 @@
     <PackageVersion Include="Uno.UI.RemoteControl" Version="$(UnoWinUI)" />
     <PackageVersion Include="Uno.UI.Adapter.Microsoft.Extensions.Logging" Version="$(UnoWinUI)" />
     <PackageVersion Include="Uno.UniversalImageLoader" Version="1.9.36" />
-    <PackageVersion Include="Uno.Wasm.Bootstrap" Version="8.0.0" />
+    <PackageVersion Include="Uno.Wasm.Bootstrap" Version="8.0.4" />
     <PackageVersion Include="Uno.Wasm.Bootstrap.DevServer" Version="8.0.0" />
     <PackageVersion Include="Uno.Wasm.Bootstrap.Server" Version="8.0.0" />
     <PackageVersion Include="Uno.WinUI" Version="$(UnoWinUI)" />
