@@ -14,17 +14,18 @@ namespace Itspecialist.UnitTests.Login
         public override async Task Setup()
         {
             await SetupDefaultDatabaseTables();
-            await RegisterNewAccount("account1@email.at");
-            TestHttpContext.UserId = Guid.NewGuid();
-            await RegisterNewAccount("account2@email.at");
-            TestHttpContext.UserId = Guid.NewGuid();
-            await RegisterNewAccount("account3@email.at");
+            for (int i = 0; i < 10; i++)
+            {
+                var account = await RegisterNewAccount($"account{i}@email.at");
+                await TalentProfileCreation(account, $"Max{i}", $"Mustermann{i}", $"Software developer{i}");
+                TestHttpContext.UserId = Guid.NewGuid();
+            }
         }
         [Fact]
         public async Task TalentListOverview()
         {
             await Setup();
-
+            var talents = await _talentProfileManager.GetAll();
         }
         private async Task TalentProfileCreation(AccountDto account, string firstname = "Max", string lastname= "Mustermann", string title= "Software Developer")
         {
