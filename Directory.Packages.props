@@ -102,7 +102,7 @@
     <PackageVersion Include="Uno.WinUI.Svg" Version="$(UnoWinUI)" />
     <PackageVersion Include="SkiaSharp.Skottie" Version="2.88.6" />
     <PackageVersion Include="SkiaSharp.Views.Uno.WinUI" Version="2.88.6" />
-    <PackageVersion Include="Svg.Skia" Version="1.0.0.4" />
+    <PackageVersion Include="Svg.Skia" Version="1.0.0.6" />
     <PackageVersion Include="Uno.WinUI.Skia.Wpf" Version="$(UnoWinUI)" />
   </ItemGroup>
   <ItemGroup>
