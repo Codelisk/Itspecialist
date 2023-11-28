@@ -31,6 +31,11 @@ namespace Itspecialist.Managers.Base
         {
             return _mapper.Map<List<TDto>>(await _repo.GetAll());
         }
+        [Add]
+        public async Task<TDto> Add(TDto t)
+        {
+            return _mapper.Map<TDto>(await _repo.Add(_mapper.Map<TEntity>(t)));
+        }
         [Save]
         public async Task<TDto> Save(TDto t)
         {
@@ -46,15 +51,12 @@ namespace Itspecialist.Managers.Base
         public virtual async Task<object> GetFull(TKey id)
         {
             throw new NotImplementedException();
-            return await Get(id);
         }
 
         [GetAllFull]
         public virtual async Task<List<object>> GetAllFull()
         {
             throw new NotImplementedException();
-            var result = await GetAll();
-            return result.Cast<object>().ToList();
         }
     }
 }

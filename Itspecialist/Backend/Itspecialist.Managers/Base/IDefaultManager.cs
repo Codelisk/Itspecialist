@@ -19,6 +19,8 @@ namespace Itspecialist.Managers.Base
         Task<List<TDto>> GetAll();
         [Save]
         Task<TDto> Save(TDto t);
+        [Add]
+        Task<TDto> Add(TDto t);
         [GetAllFull]
         Task<List<object>> GetAllFull();
     }

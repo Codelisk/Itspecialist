@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Moq" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Backend\Itspecialist.Server\Itspecialist.Server.csproj" />
+    <ProjectReference Include="..\..\Frontend\Modules\Shared\ModuleAccount\ModuleAccount.Contracts\ModuleAccount.Contracts.csproj" />
+    <ProjectReference Include="..\..\Shared\Itspecialist.Foundation\Itspecialist.Foundation.csproj" />
+  </ItemGroup>
+
+</Project>

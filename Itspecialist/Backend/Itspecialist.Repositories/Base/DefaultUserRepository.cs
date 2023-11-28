@@ -13,6 +13,12 @@ namespace Itspecialist.Repositories.Base
             HttpContextAccessor = defaultRepositoryProvider.HttpContextAccessor;
             UserManager = defaultRepositoryProvider.UserManager;
         }
+        [Add]
+        public override async Task<T> Add(T t)
+        {
+            t.UserId = GetUserIdGuid();
+            return await base.Add(t);
+        }
         [Save]
         public override async Task<T> Save(T t)
         {

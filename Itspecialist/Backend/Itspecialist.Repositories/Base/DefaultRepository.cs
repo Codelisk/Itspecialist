@@ -11,12 +11,24 @@ namespace Itspecialist.Repositories.Base
         {
             _context = context;
         }
+
+        [Add]
+        public virtual async Task<T> Add(T t)
+        {
+            EntityEntry<T> result;
+            result = await  _context.Set<T>().AddAsync(t);
+
+            await _context.SaveChangesAsync();
+            return result.Entity;
+        }
+
         [Save]
         public virtual async Task<T> Save(T t)
         {
-            EntityEntry<T> result;
-            result = _context.Add(t);
-
+            var foundEntity = await _context.Set<T>().FindAsync(t.GetId());
+            EntityEntry<T> result = _context.Entry(foundEntity);
+            result.CurrentValues.SetValues(t);
+            
             await _context.SaveChangesAsync();
             return result.Entity;
         }

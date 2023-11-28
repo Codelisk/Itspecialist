@@ -46,6 +46,7 @@ namespace Itspecialist.Api.Repositories.Base
         /// <param name="defaultValue">Default value</param>
         /// <returns>Request result or default value when exception handle</returns>
         [Save]
+        [Add]
         [Codelisk.GeneratorAttributes.WebAttributes.HttpMethod.Get]
         [GetAll]
         [GetFull]
