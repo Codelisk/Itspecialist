@@ -123,6 +123,8 @@ namespace Itspecialist.UnitTests.Base
         public ITalentCompensationManager _talentCompensationManager;
         public ISkillsManager _skillsManager;
         public IFavoriteTalentManager _favoriteTalentManager;
+        public IOpportunityProgrammingFrameworkManager _opportunityProgrammingFrameworkManager;
+        public ICareerOpportunityManager _careerOpportunityManager;
 
         public IAccountSetupProvider _accountSetupProvider;
         private void SetupServices()
@@ -137,6 +139,8 @@ namespace Itspecialist.UnitTests.Base
             _talentCompensationManager = GetRequiredService<ITalentCompensationManager>();
             _skillsManager = GetRequiredService<ISkillsManager>();
             _favoriteTalentManager = GetRequiredService<IFavoriteTalentManager>();
+            _opportunityProgrammingFrameworkManager = GetRequiredService<IOpportunityProgrammingFrameworkManager>();
+            _careerOpportunityManager = GetRequiredService<ICareerOpportunityManager>();
 
             _accountSetupProvider = GetRequiredService<IAccountSetupProvider>();
         }

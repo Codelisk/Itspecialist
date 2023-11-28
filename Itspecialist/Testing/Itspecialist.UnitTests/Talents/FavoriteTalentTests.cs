@@ -7,7 +7,7 @@ using Itspecialist.Foundation.Enums.Account;
 using Itspecialist.Testbase.Mocks;
 using Itspecialist.UnitTests.Base;
 
-namespace Itspecialist.UnitTests.Login
+namespace Itspecialist.UnitTests.Talents
 {
     public class FavoriteTalentTests : BaseUnitTest
     {
@@ -27,7 +27,7 @@ namespace Itspecialist.UnitTests.Login
             await Setup();
             var talents = await _talentProfileManager.GetAll();
         }
-        private async Task TalentProfileCreation(AccountDto account, string firstname = "Max", string lastname= "Mustermann", string title= "Software Developer")
+        private async Task TalentProfileCreation(AccountDto account, string firstname = "Max", string lastname = "Mustermann", string title = "Software Developer")
         {
             var skill = await _skillsManager.Get(account.id);
             var talentCompensation = await _talentCompensationManager.Add(new TalentCompensationDto
