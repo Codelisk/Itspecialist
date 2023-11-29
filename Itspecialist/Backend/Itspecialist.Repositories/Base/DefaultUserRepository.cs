@@ -4,7 +4,7 @@ namespace Itspecialist.Repositories.Base
 {
     [DefaultRepository]
     [UserDto]
-    public class DefaultUserRepository<T, TKey> : DefaultRepository<T, TKey>, IDefaultUserRepository<T, TKey> where T : BaseUserDto
+    public class DefaultUserRepository<TEntity, TKey> : DefaultRepository<TEntity, TKey>, IDefaultUserRepository<TEntity, TKey> where TEntity : BaseUserDto
     {
         private readonly IHttpContextAccessor HttpContextAccessor;
         private readonly UserManager<UserDto> UserManager;
@@ -14,24 +14,34 @@ namespace Itspecialist.Repositories.Base
             UserManager = defaultRepositoryProvider.UserManager;
         }
         [Add]
-        public override async Task<T> Add(T t)
+        public override async Task<TEntity> Add(TEntity t)
         {
             t.UserId = GetUserIdGuid();
             return await base.Add(t);
         }
+        [AddRange]
+        public override async Task AddRange(List<TEntity> list)
+        {
+            foreach (var t in list)
+            {
+                t.UserId = GetUserIdGuid();
+            }
+
+            await base.AddRange(list);
+        }
         [Save]
-        public override async Task<T> Save(T t)
+        public override async Task<TEntity> Save(TEntity t)
         {
             t.UserId = GetUserIdGuid();
             return await base.Save(t);
         }
         [Get]
-        public override async Task<T> Get(TKey id)
+        public override async Task<TEntity> Get(TKey id)
         {
             return await base.Get(id);
         }
         [GetAll]
-        public override async Task<List<T>> GetAll()
+        public override async Task<List<TEntity>> GetAll()
         {
             var uid = GetUserId();
             var result = await base.GetAll();

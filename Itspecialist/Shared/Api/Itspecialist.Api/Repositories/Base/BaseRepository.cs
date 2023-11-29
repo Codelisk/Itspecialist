@@ -47,6 +47,7 @@ namespace Itspecialist.Api.Repositories.Base
         /// <returns>Request result or default value when exception handle</returns>
         [Save]
         [Add]
+        [AddRange]
         [Codelisk.GeneratorAttributes.WebAttributes.HttpMethod.Get]
         [GetAll]
         [GetFull]

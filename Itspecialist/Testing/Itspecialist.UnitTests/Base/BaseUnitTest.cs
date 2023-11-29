@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using Itspecialist.Foundation.Enums.Account;
 using Itspecialist.Managers;
 using Itspecialist.Testbase;
+using Itspecialist.Testbase.Helpers.Services.Account;
+using Itspecialist.Testbase.Helpers.Services.Setup;
 using ModuleAccount.Contracts.Services.AccountSetup;
 
 namespace Itspecialist.UnitTests.Base
@@ -21,94 +23,18 @@ namespace Itspecialist.UnitTests.Base
 
         public async Task SetupDefaultDatabaseTables()
         {
-            var district = await _districtManager.Add(new DistrictDto { Name = "Gmunden" });
-            await _districtManager.Save(district);
-
-            await _programmingLanguageManager.Add(
-                new ProgrammingLanguageDto { Name = "C#" }
-                );
-            await _programmingLanguageManager.Add(
-                new ProgrammingLanguageDto { Name = "Java" }
-                );
-            var programmingLanguages = await _programmingLanguageManager.GetAll();
-
-            await _programmingFrameworkManager.Add(
-                new ProgrammingFrameworkDto { ProgrammingLanguageId = programmingLanguages.First().id, Name = ".NET Core" }
-                );
-            await _programmingFrameworkManager.Add(
-                new ProgrammingFrameworkDto { ProgrammingLanguageId = programmingLanguages.First().id, Name = ".NET MAUI" }
-                );
+            await _databaseSetupService.SetupDefaultDatabaseTables();
         }
 
         public async Task<AccountDto> RegisterNewAccount(string email)
         {
-            //DistrictSelection
-            var allDistricts = await _districtManager.GetAll();
-            var district = allDistricts.First();
-
-            //ProgrammingLanguageSelection and FrameworkSelection
-            var allProgrammingLanguages = await _programmingLanguageManager.GetAll();
-            var allProgrammingFrameworks = await _programmingFrameworkManager.GetAll();
-            var primaryProgrammingLanguage = allProgrammingLanguages.First();
-            var secondaryProgrammingLanguage = allProgrammingLanguages.Last();
-            List<ProgrammingFrameworkDto> primaryProgrammingFrameworks = new List<ProgrammingFrameworkDto>()
-            {
-                allProgrammingFrameworks.First(x=>x.ProgrammingLanguageId == primaryProgrammingLanguage.id),
-                allProgrammingFrameworks.Last(x=>x.ProgrammingLanguageId == primaryProgrammingLanguage.id),
-            };
-
-            var skill = new SkillsDto
-            {
-                AccountId = Guid.Empty,
-                PrimaryProgrammingLanguage = primaryProgrammingLanguage.id,
-                SecondaryProgrammingLanguage = secondaryProgrammingLanguage.id
-            };
-
-            //AccountTypeSelection
-            var accountType = AccountTypeEnum.Talent;
-            _accountSetupProvider.AccountType = accountType;
-
-            //RegisterPage
-            var password = "Test1234!";
-            var account = new AccountDto
-            {
-                DistrictId = district.id,
-                AccountType = accountType,
-                Email = email,
-                Name = password
-            };
-            account = await _accountManager.Add(account);
-
-            await PostRegisterAccountSetup(account, skill, primaryProgrammingFrameworks);
-
-            return account;
+            return await _accountCreationService.RegisterNewAccount(email);
         }
 
 
         public async Task PostRegisterAccountSetup(AccountDto account, SkillsDto skill, List<ProgrammingFrameworkDto> primaryProgrammingFrameworks, List<ProgrammingFrameworkDto> secondaryProgrammingFrameworks = null)
         {
-            skill.AccountId = account.id;
-            await _skillsManager.Add(skill);
-
-            foreach (var item in primaryProgrammingFrameworks)
-            {
-                await _accountProgrammingFrameworkManager.Add(new AccountProgrammingFrameworkDto
-                {
-                    AccountId = account.id,
-                    ProgrammingFrameworkId = item.id
-                });
-            }
-            if (secondaryProgrammingFrameworks is not null)
-            {
-                foreach (var item in secondaryProgrammingFrameworks!)
-                {
-                    await _accountProgrammingFrameworkManager.Add(new AccountProgrammingFrameworkDto
-                    {
-                        AccountId = account.id,
-                        ProgrammingFrameworkId = item.id
-                    });
-                }
-            }
+            await _accountCreationService.PostRegisterAccountSetup(account, skill, primaryProgrammingFrameworks, secondaryProgrammingFrameworks);
         }
 
         public abstract Task Setup();
@@ -127,6 +53,8 @@ namespace Itspecialist.UnitTests.Base
         public ICareerOpportunityManager _careerOpportunityManager;
 
         public IAccountSetupProvider _accountSetupProvider;
+        public IDatabaseSetupService _databaseSetupService;
+        public IAccountCreationService _accountCreationService;
         private void SetupServices()
         {
             _districtManager = GetRequiredService<IDistrictManager>();
@@ -143,6 +71,9 @@ namespace Itspecialist.UnitTests.Base
             _careerOpportunityManager = GetRequiredService<ICareerOpportunityManager>();
 
             _accountSetupProvider = GetRequiredService<IAccountSetupProvider>();
+
+            _databaseSetupService = GetRequiredService<IDatabaseSetupService>();
+            _accountCreationService = GetRequiredService<IAccountCreationService>();
         }
     }
 }

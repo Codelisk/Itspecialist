@@ -36,6 +36,11 @@ namespace Itspecialist.Managers.Base
         {
             return _mapper.Map<TDto>(await _repo.Add(_mapper.Map<TEntity>(t)));
         }
+        [AddRange]
+        public async Task AddRange(List<TDto> list)
+        {
+            await _repo.Add(_mapper.Map<TEntity>(list));
+        }
         [Save]
         public async Task<TDto> Save(TDto t)
         {

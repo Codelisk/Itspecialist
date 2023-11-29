@@ -19,5 +19,7 @@ namespace Itspecialist.Repositories.Base
         Task<TEntity> Save(TEntity t);
         [Add]
         Task<TEntity> Add(TEntity t);
+        [AddRange]
+        Task AddRange(List<TEntity> list);
     }
 }

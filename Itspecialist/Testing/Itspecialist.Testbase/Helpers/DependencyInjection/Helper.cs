@@ -13,6 +13,9 @@ using Moq;
 using System.Security.Claims;
 using System.Net.Http;
 using Itspecialist.Testbase.Mocks;
+using Itspecialist.Testbase.Helpers.Services.Account;
+using Itspecialist.Testbase.Helpers.Services.Talent;
+using Itspecialist.Testbase.Helpers.Services.Opportunity;
 
 namespace Itspecialist.Testbase.Helpers.DependencyInjection
 {
@@ -31,6 +34,11 @@ namespace Itspecialist.Testbase.Helpers.DependencyInjection
 
             //Uno
             services.AddModuleAccountContracts();
+
+            //Testing specific services
+            services.AddSingleton<IAccountCreationService, AccountCreationService>();
+            services.AddSingleton<ITalentProfileCreationService, TalentProfileCreationService>();
+            services.AddSingleton<IOpportunityProfileCreationService, OpportunityProfileCreationService>();
 
             return services.BuildServiceProvider();
         }
